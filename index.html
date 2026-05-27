@@ -107,6 +107,10 @@
   <a class="nav-link" href="#layout-toggle">Layout toggle</a>
   <a class="nav-link" href="#dark-mode">Dark mode</a>
 
+  <div class="nav-section-label">Standards</div>
+  <a class="nav-link" href="#accessibility">Accessibility</a>
+  <a class="nav-link" href="#naming">Naming conventions</a>
+
   <div class="nav-section-label">Usage</div>
   <a class="nav-link" href="#guidelines">Brand rules</a>
   <a class="nav-link" href="#for-claude">Using with Claude</a>
@@ -929,7 +933,7 @@
       <div class="code-block">&lt;<span class="kw">script</span>&gt;
 (function(){
   <span class="kw">var</span> prefersDark=window.matchMedia(<span class="str">'(prefers-color-scheme: dark)'</span>).matches;
-  <span class="kw">var</span> initBtn=document.querySelector(<span class="str">'.layout-toggle-btn[data-group="theme"][data-value="'</span>+(prefersDark?<span class="str">'dark'</span>:<span class="str">'light'</span>)+<span class="str">'"]'</span>);
+  <span class="kw">var</span> initBtn=document.querySelector(<span class="str">'.layout-toggle-btn[data-group="theme"][data-value="'</span>+(prefersDark?<span class="str">'dark'</span>:<span class="str">'light'</span>)+<span class="str">'"</span>]<span class="str">'</span>);
   <span class="kw">if</span>(initBtn) initBtn.classList.add(<span class="str">'active'</span>);
   document.querySelectorAll(<span class="str">'.layout-toggle-btn'</span>).forEach(function(btn){
     btn.addEventListener(<span class="str">'click'</span>,function(){
@@ -1056,6 +1060,134 @@
       <div class="subsection-label">Photography &amp; illustration</div>
       <div class="card">
         <p style="font-size:14px;line-height:1.7;">RDC photography should feel candid, human, and professional — never stock-photo staged. Illustrations use the brand palette with a geometric line style. All custom illustration and photography assets are maintained in Box under <strong>Red Door File Database → Red Door Guidelines and Assets → RDC 2025 Branding</strong>.</p>
+      </div>
+    </div>
+  </section>
+  <hr class="divider">
+
+  <!-- ============================================================
+       ACCESSIBILITY
+  ============================================================ -->
+  <section class="section" id="accessibility">
+    <div class="section-eyebrow">Standards</div>
+    <h2 class="section-title">Accessibility</h2>
+    <p class="section-desc">All RDC HTML output targets WCAG 2.1 Level AA — the standard also referenced by the Americans with Disabilities Act (ADA) for web content. The requirements below cover color contrast, interactive elements, semantic structure, and written language.</p>
+
+    <div class="subsection">
+      <div class="subsection-label">Color contrast — key pairings</div>
+      <div class="card">
+        <table class="table-rdc">
+          <thead><tr><th>Pairing</th><th>Ratio</th><th>Normal text (4.5:1)</th><th>Large text (3:1)</th><th>Notes</th></tr></thead>
+          <tbody>
+            <tr><td>White on Squid</td><td class="mono">16.1:1</td><td><span class="badge badge-success">Pass</span></td><td><span class="badge badge-success">Pass</span></td><td>Primary dark surface — excellent</td></tr>
+            <tr><td>Squid on White</td><td class="mono">16.1:1</td><td><span class="badge badge-success">Pass</span></td><td><span class="badge badge-success">Pass</span></td><td>Primary body text</td></tr>
+            <tr><td>White on Wine</td><td class="mono">10.4:1</td><td><span class="badge badge-success">Pass</span></td><td><span class="badge badge-success">Pass</span></td><td>Reversed labels on Wine surfaces</td></tr>
+            <tr><td>Coral on Squid</td><td class="mono">5.1:1</td><td><span class="badge badge-success">Pass</span></td><td><span class="badge badge-success">Pass</span></td><td>Coral accents on dark backgrounds</td></tr>
+            <tr><td>Coral on White</td><td class="mono">3.2:1</td><td><span class="badge badge-coral">Fail</span></td><td><span class="badge badge-success">Pass</span></td><td>Large text and UI elements only — never body copy</td></tr>
+            <tr><td>White on Coral</td><td class="mono">3.2:1</td><td><span class="badge badge-coral">Fail</span></td><td><span class="badge badge-success">Pass</span></td><td>Button labels pass (large/bold); avoid for small text</td></tr>
+          </tbody>
+        </table>
+        <p style="font-size:12px;color:var(--gray-500);margin-top:12px;">Large text = 18pt (24px) or larger regular weight, or 14pt (approximately 19px) bold. UI components and graphical objects require 3:1.</p>
+      </div>
+    </div>
+
+    <div class="subsection">
+      <div class="subsection-label">Coral contrast constraint</div>
+      <div class="alert alert-warning">
+        <div class="alert-dot"></div>
+        <div class="alert-body">
+          <div class="alert-title">Coral on white fails AA for body text</div>
+          Coral (#FF4F58) achieves only 3.2:1 against white — sufficient for large headings, button labels, and eyebrow tags, but not for paragraph copy or small UI labels. Never use Coral as a body text color on light backgrounds.
+        </div>
+      </div>
+    </div>
+
+    <div class="subsection">
+      <div class="subsection-label">Interactive elements</div>
+      <div class="card">
+        <ul style="line-height:2.2;">
+          <li><strong>Focus indicators</strong> — all focusable elements must have a visible focus ring. RDC CSS provides a Coral focus outline on inputs and buttons. Never suppress <code>outline</code> without a custom visible replacement.</li>
+          <li><strong>Buttons</strong> — always include descriptive label text. Icon-only buttons require an <code>aria-label</code>.</li>
+          <li><strong>Links</strong> — color alone is insufficient to distinguish links from surrounding text (WCAG 1.4.1). Always pair color with underline or another non-color cue.</li>
+          <li><strong>Form labels</strong> — associate every label with its input via matching <code>for</code>/<code>id</code> attributes or <code>aria-label</code>. The <code>.form-label</code> + <code>.input-rdc</code> pattern handles this — maintain it.</li>
+          <li><strong>Images</strong> — include descriptive <code>alt</code> text on all informational images. Use <code>alt=""</code> on purely decorative images to hide them from screen readers.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="subsection">
+      <div class="subsection-label">Semantic structure</div>
+      <div class="do-dont">
+        <div class="do-box">
+          <div class="do-label">Do</div>
+          <p>Use semantic HTML: <code>&lt;main&gt;</code>, <code>&lt;aside&gt;</code>, <code>&lt;nav&gt;</code>, <code>&lt;section&gt;</code>, <code>&lt;header&gt;</code>, <code>&lt;footer&gt;</code>. Maintain a logical heading order (H1 → H2 → H3 — never skip levels). All four templates follow this structure by default.</p>
+        </div>
+        <div class="dont-box">
+          <div class="dont-label">Don't</div>
+          <p>Use <code>&lt;div&gt;</code> for structural landmarks or tables for page layout. Don't skip heading levels for visual sizing — adjust size with CSS, not heading rank.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="subsection">
+      <div class="subsection-label">Written language</div>
+      <div class="card">
+        <ul style="line-height:2.2;">
+          <li><strong>Reading level</strong> — target 6th–8th grade for client-facing documents. Short sentences, active voice, plain words. Avoid jargon unless the audience expects it.</li>
+          <li><strong>Language attribute</strong> — always include <code>lang="en"</code> on the <code>&lt;html&gt;</code> element so screen readers use the correct pronunciation rules. All templates set this by default.</li>
+          <li><strong>Page titles</strong> — every page must have a unique, descriptive <code>&lt;title&gt;</code> that identifies both the document and the organization. Format: <code>[Document Name] — Red Door Collaborative</code>.</li>
+          <li><strong>Error messages</strong> — when forms are used, errors must identify the specific field and describe how to correct it — not just flag that an error occurred.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+  <hr class="divider">
+
+  <!-- ============================================================
+       NAMING CONVENTIONS
+  ============================================================ -->
+  <section class="section" id="naming">
+    <div class="section-eyebrow">Standards</div>
+    <h2 class="section-title">Naming conventions</h2>
+    <p class="section-desc">RDC uses kebab-case for CSS, HTML, and the file system, and camelCase for JavaScript. Consistency within each context is required — mixing conventions in the same layer signals careless authorship and breaks tooling assumptions.</p>
+
+    <div class="subsection">
+      <div class="subsection-label">Convention by context</div>
+      <div class="card">
+        <table class="table-rdc">
+          <thead><tr><th>Context</th><th>Convention</th><th>Examples</th></tr></thead>
+          <tbody>
+            <tr><td>CSS class names</td><td class="mono">kebab-case</td><td class="mono">.doc-card, .page-header, .layout-toggle-btn</td></tr>
+            <tr><td>CSS custom properties</td><td class="mono">kebab-case</td><td class="mono">--coral, --page-bg, --space-4</td></tr>
+            <tr><td>HTML element IDs</td><td class="mono">kebab-case</td><td class="mono">id="layout-toggle", id="dark-mode"</td></tr>
+            <tr><td>File names</td><td class="mono">kebab-case</td><td class="mono">rdc.css, hub.html, acme-q2-report.html</td></tr>
+            <tr><td>Folder names</td><td class="mono">kebab-case</td><td class="mono">css/, templates/, client-assets/</td></tr>
+            <tr><td>JavaScript variables</td><td class="mono">camelCase</td><td class="mono">prefersDark, initBtn, pageHeader</td></tr>
+            <tr><td>JavaScript functions</td><td class="mono">camelCase</td><td class="mono">copyPrompt(), setActive(), initToggle()</td></tr>
+            <tr><td>Git branch names</td><td class="mono">kebab-case</td><td class="mono">feature/dark-mode, fix/align-toggle</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <div class="subsection">
+      <div class="subsection-label">Examples</div>
+      <div class="do-dont">
+        <div class="do-box">
+          <div class="do-label">Do</div>
+          <p style="font-family:var(--font-mono);font-size:12px;line-height:2.0;">.doc-card { ... }<br>--page-bg: #F7F6F4;<br>id="dark-mode"<br>var prefersDark = true;<br>acme-q2-report.html</p>
+        </div>
+        <div class="dont-box">
+          <div class="dont-label">Don't</div>
+          <p style="font-family:var(--font-mono);font-size:12px;line-height:2.0;">.docCard { ... }<br>--pageBg: #F7F6F4;<br>id="darkMode"<br>var prefer_dark = true;<br>AcmeQ2Report.html</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="subsection">
+      <div class="subsection-label">Deliverable file naming</div>
+      <div class="card">
+        <p style="font-size:14px;line-height:1.7;">Name client HTML deliverables with the pattern <code>client-name-document-type.html</code> or include a version suffix when iterating: <code>acme-brand-brief-v2.html</code>, <code>databricks-q2-report.html</code>. Never use spaces, underscores, or mixed case in file names shared externally — they break in URLs and look inconsistent in file listings.</p>
       </div>
     </div>
   </section>
