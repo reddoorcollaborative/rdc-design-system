@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>[Document Title] — Red Door Collaborative</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,300&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/rdc.css">
+</head>
+<body>
+
+<!-- ============================================================
+     SIDEBAR NAVIGATION
+     Add/remove nav-link items and nav-section-label groups to
+     match the sections in your document. The scroll observer
+     script at the bottom auto-highlights the active section.
+============================================================ -->
+<aside class="sidebar">
+  <a class="sidebar-logo" href="#">
+    <div class="logo-mark">rd</div>
+    <div class="logo-text">Red Door<br>Collaborative<span>[Document type]</span></div>
+  </a>
+
+  <div class="nav-section-label">Overview</div>
+  <a class="nav-link active" href="#introduction">Introduction</a>
+  <a class="nav-link" href="#background">Background</a>
+
+  <div class="nav-section-label">Main content</div>
+  <a class="nav-link" href="#section-a">[Section A]</a>
+  <a class="nav-link" href="#section-b">[Section B]</a>
+  <a class="nav-link" href="#section-c">[Section C]</a>
+
+  <div class="nav-section-label">Appendix</div>
+  <a class="nav-link" href="#appendix-a">Appendix A</a>
+
+  <div class="sidebar-version">v1.0 · [Month Year]</div>
+</aside>
+
+<!-- ============================================================
+     MAIN CONTENT
+============================================================ -->
+<main class="sidebar-content">
+<div class="sidebar-inner">
+
+  <!-- Page header -->
+  <div class="page-header">
+    <div class="eyebrow">[Document category]</div>
+    <h1 class="page-header-title">[Document Title]</h1>
+    <p class="page-header-desc">[One to two sentences describing what this document is and its purpose.]</p>
+    <div class="header-meta">
+      <div class="header-meta-item">
+        <span class="header-meta-label">Version</span>
+        <span class="header-meta-value">1.0</span>
+      </div>
+      <div class="header-meta-item">
+        <span class="header-meta-label">Status</span>
+        <span class="header-meta-value">[Draft / Review / Approved]</span>
+      </div>
+      <div class="header-meta-item">
+        <span class="header-meta-label">Owner</span>
+        <span class="header-meta-value">[Name]</span>
+      </div>
+      <div class="header-meta-item">
+        <span class="header-meta-label">Last updated</span>
+        <span class="header-meta-value">[Month Year]</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============================================================
+       SECTION: Introduction
+  ============================================================ -->
+  <section class="section" id="introduction">
+    <div class="section-eyebrow">Overview</div>
+    <h2 class="section-title">Introduction</h2>
+    <p class="section-desc">[Brief section description — what this section covers and why it matters.]</p>
+
+    <div class="card">
+      <p>[Introduction body text. Use standard <code>&lt;p&gt;</code> tags for paragraphs. This card wrapper is optional — remove it if you prefer bare text.]</p>
+    </div>
+  </section>
+  <hr class="divider">
+
+  <!-- ============================================================
+       SECTION: Background
+  ============================================================ -->
+  <section class="section" id="background">
+    <div class="section-eyebrow">Context</div>
+    <h2 class="section-title">Background</h2>
+    <p class="section-desc">[What context or history does the reader need?]</p>
+
+    <div class="subsection">
+      <div class="subsection-label">Key points</div>
+      <div class="card">
+        <ul>
+          <li>[Key point one]</li>
+          <li>[Key point two]</li>
+          <li>[Key point three]</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Alert example -->
+    <div class="alert alert-info">
+      <div class="alert-dot"></div>
+      <div class="alert-body">
+        <div class="alert-title">[Alert title]</div>
+        [Supporting context or important note for the reader.]
+      </div>
+    </div>
+  </section>
+  <hr class="divider">
+
+  <!-- ============================================================
+       SECTION: Section A — with table
+  ============================================================ -->
+  <section class="section" id="section-a">
+    <div class="section-eyebrow">[Category]</div>
+    <h2 class="section-title">[Section A Title]</h2>
+    <p class="section-desc">[What does this section cover?]</p>
+
+    <div class="subsection">
+      <div class="subsection-label">[Subsection label]</div>
+      <div class="card">
+        <table class="table-rdc">
+          <thead>
+            <tr>
+              <th>[Column 1]</th>
+              <th>[Column 2]</th>
+              <th>[Column 3]</th>
+              <th>[Notes]</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>[Value]</td>
+              <td class="mono">[Code or path]</td>
+              <td><span class="badge badge-success">Active</span></td>
+              <td>[Notes]</td>
+            </tr>
+            <tr>
+              <td>[Value]</td>
+              <td class="mono">[Code or path]</td>
+              <td><span class="badge badge-warning">Pending</span></td>
+              <td>[Notes]</td>
+            </tr>
+            <tr>
+              <td>[Value]</td>
+              <td class="mono">[Code or path]</td>
+              <td><span class="badge badge-neutral">Archived</span></td>
+              <td>[Notes]</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+  <hr class="divider">
+
+  <!-- ============================================================
+       SECTION: Section B — with do/don't
+  ============================================================ -->
+  <section class="section" id="section-b">
+    <div class="section-eyebrow">[Category]</div>
+    <h2 class="section-title">[Section B Title]</h2>
+    <p class="section-desc">[What does this section cover?]</p>
+
+    <div class="subsection">
+      <div class="subsection-label">[Subsection label]</div>
+      <div class="do-dont">
+        <div class="do-box">
+          <div class="do-label">Do</div>
+          <p>[Correct approach or required behavior. Be specific and actionable.]</p>
+        </div>
+        <div class="dont-box">
+          <div class="dont-label">Don't</div>
+          <p>[What to avoid and why. Frame it around real failure modes, not hypotheticals.]</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="subsection">
+      <div class="subsection-label">[Another subsection]</div>
+      <div class="card">
+        <p>[Body content. Add more subsections as needed by duplicating the <code>.subsection</code> block above.]</p>
+      </div>
+    </div>
+  </section>
+  <hr class="divider">
+
+  <!-- ============================================================
+       SECTION: Section C — with content cards
+  ============================================================ -->
+  <section class="section" id="section-c">
+    <div class="section-eyebrow">[Category]</div>
+    <h2 class="section-title">[Section C Title]</h2>
+    <p class="section-desc">[What does this section cover?]</p>
+
+    <div class="grid-2">
+      <div class="content-card">
+        <div class="content-card-bar" style="background:var(--coral);"></div>
+        <div class="content-card-body">
+          <div class="content-card-eyebrow">[Label]</div>
+          <div class="content-card-title">[Card Title]</div>
+          <div class="content-card-copy">[Supporting description for this item.]</div>
+          <a href="#" class="btn btn-primary btn-sm">Learn more</a>
+        </div>
+      </div>
+      <div class="content-card">
+        <div class="content-card-bar" style="background:var(--wine);"></div>
+        <div class="content-card-body">
+          <div class="content-card-eyebrow">[Label]</div>
+          <div class="content-card-title">[Card Title]</div>
+          <div class="content-card-copy">[Supporting description for this item.]</div>
+          <a href="#" class="btn btn-dark btn-sm">View details</a>
+        </div>
+      </div>
+    </div>
+  </section>
+  <hr class="divider">
+
+  <!-- ============================================================
+       SECTION: Appendix A
+  ============================================================ -->
+  <section class="section" id="appendix-a">
+    <div class="section-eyebrow">Appendix</div>
+    <h2 class="section-title">Appendix A — [Title]</h2>
+    <p class="section-desc">[What supplementary material is in this appendix?]</p>
+
+    <div class="card">
+      <div class="asset-row">
+        <div>
+          <div class="asset-name">[File or reference name]</div>
+          <div class="asset-format">[Format — PDF, XLSX, etc.]</div>
+        </div>
+        <div class="asset-path">[path/to/file]</div>
+      </div>
+      <div class="asset-row">
+        <div>
+          <div class="asset-name">[File or reference name]</div>
+          <div class="asset-format">[Format]</div>
+        </div>
+        <div class="asset-path">[path/to/file]</div>
+      </div>
+    </div>
+  </section>
+
+</div>
+</main>
+
+<!-- Scroll-spy: highlights the active sidebar nav item -->
+<script>
+(function() {
+  const sections = document.querySelectorAll('.section');
+  const navLinks = document.querySelectorAll('.nav-link');
+  function setActive(el) {
+    navLinks.forEach(l => l.classList.remove('active'));
+    if (el) el.classList.add('active');
+  }
+  navLinks.forEach(l => l.addEventListener('click', function() { setActive(this); }));
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        const id = entry.target.getAttribute('id');
+        const link = document.querySelector('.nav-link[href="#' + id + '"]');
+        setActive(link);
+      }
+    });
+  }, { rootMargin: '-20% 0px -70% 0px' });
+  sections.forEach(s => observer.observe(s));
+})();
+</script>
+
+</body>
+</html>
