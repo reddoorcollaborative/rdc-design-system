@@ -10,20 +10,55 @@
 <link rel="stylesheet" href="../css/rdc.css">
 </head>
 <body>
+
+<!-- Layout toggle — remove if not needed -->
+<div class="layout-toggle">
+  <div class="layout-toggle-group">
+    <span class="layout-toggle-label">Align</span>
+    <button class="layout-toggle-btn active" data-group="align" data-value="center">Center</button>
+    <button class="layout-toggle-btn" data-group="align" data-value="left">Left</button>
+  </div>
+  <div class="layout-toggle-sep"></div>
+  <div class="layout-toggle-group">
+    <span class="layout-toggle-label">Size</span>
+    <button class="layout-toggle-btn active" data-group="size" data-value="default">Default</button>
+    <button class="layout-toggle-btn" data-group="size" data-value="large">Large</button>
+    <button class="layout-toggle-btn" data-group="size" data-value="editorial">Editorial</button>
+  </div>
+</div>
+
 <div class="wrap-narrow">
 
+  <!-- ============================================================
+       PAGE HEADER
+  ============================================================ -->
   <div class="page-header">
     <div class="eyebrow">[Report type — e.g., Performance Report · Q2 2025]</div>
     <h1 class="page-header-title">[Report Title]</h1>
     <p class="page-header-desc">[One sentence describing what this report covers and the time period or scope.]</p>
     <div class="header-meta">
-      <div class="header-meta-item"><span class="header-meta-label">Period</span><span class="header-meta-value">[Month YYYY – Month YYYY]</span></div>
-      <div class="header-meta-item"><span class="header-meta-label">Client</span><span class="header-meta-value">[Client name]</span></div>
-      <div class="header-meta-item"><span class="header-meta-label">Prepared by</span><span class="header-meta-value">[Name]</span></div>
-      <div class="header-meta-item"><span class="header-meta-label">Issued</span><span class="header-meta-value">[Month DD, YYYY]</span></div>
+      <div class="header-meta-item">
+        <span class="header-meta-label">Period</span>
+        <span class="header-meta-value">[Month YYYY – Month YYYY]</span>
+      </div>
+      <div class="header-meta-item">
+        <span class="header-meta-label">Client</span>
+        <span class="header-meta-value">[Client name]</span>
+      </div>
+      <div class="header-meta-item">
+        <span class="header-meta-label">Prepared by</span>
+        <span class="header-meta-value">[Name]</span>
+      </div>
+      <div class="header-meta-item">
+        <span class="header-meta-label">Issued</span>
+        <span class="header-meta-value">[Month DD, YYYY]</span>
+      </div>
     </div>
   </div>
 
+  <!-- ============================================================
+       HERO METRICS ROW
+  ============================================================ -->
   <div class="eyebrow" style="margin-bottom:var(--space-3);">Key metrics</div>
   <div class="grid-4" style="margin-bottom:var(--space-8);">
     <div class="metric-card"><div class="metric-label">[Metric name]</div><div class="metric-value">[Value]</div><div class="metric-delta">↑ [+X vs prior period]</div></div>
@@ -32,15 +67,21 @@
     <div class="metric-card"><div class="metric-label">[Metric name]</div><div class="metric-value">[Value]</div><div class="metric-sub">[Context note]</div></div>
   </div>
 
+  <!-- ============================================================
+       EXECUTIVE SUMMARY
+  ============================================================ -->
   <div class="eyebrow" style="margin-bottom:4px;">Overview</div>
   <h2 style="font-size:22px;font-weight:700;color:var(--squid);letter-spacing:-0.02em;margin:0 0 16px;padding-bottom:8px;border-bottom:1px solid var(--gray-200);">Executive summary</h2>
   <div class="card" style="margin-bottom:var(--space-8);">
-    <p>[2–3 sentences summarizing the most important findings. Lead with the single most significant result, then provide context.]</p>
+    <p>[2–3 sentences summarizing the most important findings from this reporting period.]</p>
     <p>[Second paragraph if needed: what changed vs. prior period, and what's driving those changes.]</p>
   </div>
 
+  <!-- ============================================================
+       SECTION: Performance detail
+  ============================================================ -->
   <div class="eyebrow" style="margin-bottom:4px;">[Category label]</div>
-  <h2 style="font-size:22px;font-weight:700;color:var(--squid);letter-spacing:-0.02em;margin:0 0 16px;padding-bottom:8px;border-bottom:1px solid var(--gray-200);">[Performance area — e.g., Content performance]</h2>
+  <h2 style="font-size:22px;font-weight:700;color:var(--squid);letter-spacing:-0.02em;margin:0 0 16px;padding-bottom:8px;border-bottom:1px solid var(--gray-200);">[Performance area]</h2>
   <div class="card" style="margin-bottom:var(--space-6);">
     <table class="table-rdc">
       <thead><tr><th>[Item]</th><th>[Metric A]</th><th>[Metric B]</th><th>[Metric C]</th><th>vs. prior</th></tr></thead>
@@ -54,14 +95,17 @@
   </div>
   <div class="card" style="margin-bottom:var(--space-8);"><p style="font-size:14px;"><strong>Insight:</strong> [1–2 sentences explaining what the data above means for the client.]</p></div>
 
+  <!-- ============================================================
+       SECTION: Campaign results
+  ============================================================ -->
   <div class="eyebrow" style="margin-bottom:4px;">[Category label]</div>
-  <h2 style="font-size:22px;font-weight:700;color:var(--squid);letter-spacing:-0.02em;margin:0 0 16px;padding-bottom:8px;border-bottom:1px solid var(--gray-200);">[Second performance area — e.g., Campaign results]</h2>
+  <h2 style="font-size:22px;font-weight:700;color:var(--squid);letter-spacing:-0.02em;margin:0 0 16px;padding-bottom:8px;border-bottom:1px solid var(--gray-200);">[Campaign results]</h2>
   <div class="grid-2" style="margin-bottom:var(--space-8);">
     <div class="content-card">
       <div class="content-card-bar" style="background:var(--coral);"></div>
       <div class="content-card-body">
-        <div class="content-card-eyebrow">[Campaign / initiative label]</div>
-        <div class="content-card-title">[Campaign or initiative name]</div>
+        <div class="content-card-eyebrow">[Campaign label]</div>
+        <div class="content-card-title">[Campaign name]</div>
         <div class="content-card-copy">[2–3 sentences on results.]</div>
         <div style="display:flex;gap:var(--space-4);margin-top:var(--space-2);">
           <div><div class="metric-label" style="font-size:9px;">Reach</div><div style="font-size:18px;font-weight:700;color:var(--squid);letter-spacing:-0.02em;">[Value]</div></div>
@@ -73,8 +117,8 @@
     <div class="content-card">
       <div class="content-card-bar" style="background:var(--wine);"></div>
       <div class="content-card-body">
-        <div class="content-card-eyebrow">[Campaign / initiative label]</div>
-        <div class="content-card-title">[Campaign or initiative name]</div>
+        <div class="content-card-eyebrow">[Campaign label]</div>
+        <div class="content-card-title">[Campaign name]</div>
         <div class="content-card-copy">[2–3 sentences on results.]</div>
         <div style="display:flex;gap:var(--space-4);margin-top:var(--space-2);">
           <div><div class="metric-label" style="font-size:9px;">Reach</div><div style="font-size:18px;font-weight:700;color:var(--squid);letter-spacing:-0.02em;">[Value]</div></div>
@@ -85,23 +129,29 @@
     </div>
   </div>
 
+  <!-- ============================================================
+       ALERTS
+  ============================================================ -->
   <div class="eyebrow" style="margin-bottom:4px;">Flags</div>
   <h2 style="font-size:22px;font-weight:700;color:var(--squid);letter-spacing:-0.02em;margin:0 0 16px;padding-bottom:8px;border-bottom:1px solid var(--gray-200);">Notices &amp; flags</h2>
   <div style="display:flex;flex-direction:column;gap:var(--space-2);margin-bottom:var(--space-8);">
-    <div class="alert alert-success"><div class="alert-dot"></div><div class="alert-body"><div class="alert-title">[Positive result to call out]</div>[Supporting detail.]</div></div>
-    <div class="alert alert-warning"><div class="alert-dot"></div><div class="alert-body"><div class="alert-title">[Area needing attention]</div>[What's happening and what action is recommended.]</div></div>
-    <div class="alert alert-info"><div class="alert-dot"></div><div class="alert-body"><div class="alert-title">[Informational note]</div>[Context or upcoming change the client should be aware of.]</div></div>
+    <div class="alert alert-success"><div class="alert-dot"></div><div class="alert-body"><div class="alert-title">[Positive result]</div>[Supporting detail.]</div></div>
+    <div class="alert alert-warning"><div class="alert-dot"></div><div class="alert-body"><div class="alert-title">[Area needing attention]</div>[What's happening and recommended action.]</div></div>
+    <div class="alert alert-info"><div class="alert-dot"></div><div class="alert-body"><div class="alert-title">[Informational note]</div>[Context or upcoming change.]</div></div>
   </div>
 
+  <!-- ============================================================
+       NEXT PERIOD
+  ============================================================ -->
   <div class="eyebrow" style="margin-bottom:4px;">Forward look</div>
   <h2 style="font-size:22px;font-weight:700;color:var(--squid);letter-spacing:-0.02em;margin:0 0 16px;padding-bottom:8px;border-bottom:1px solid var(--gray-200);">Next period priorities</h2>
   <div class="card" style="margin-bottom:var(--space-8);">
     <table class="table-rdc">
       <thead><tr><th>Priority</th><th>Activity</th><th>Owner</th><th>Target date</th></tr></thead>
       <tbody>
-        <tr><td><span class="badge badge-coral">High</span></td><td>[Priority activity for next period]</td><td>[Owner name]</td><td class="mono">[MM/DD]</td></tr>
-        <tr><td><span class="badge badge-wine">Medium</span></td><td>[Priority activity]</td><td>[Owner name]</td><td class="mono">[MM/DD]</td></tr>
-        <tr><td><span class="badge badge-neutral">Low</span></td><td>[Priority activity]</td><td>[Owner name]</td><td class="mono">[MM/DD]</td></tr>
+        <tr><td><span class="badge badge-coral">High</span></td><td>[Priority activity]</td><td>[Owner]</td><td class="mono">[MM/DD]</td></tr>
+        <tr><td><span class="badge badge-wine">Medium</span></td><td>[Priority activity]</td><td>[Owner]</td><td class="mono">[MM/DD]</td></tr>
+        <tr><td><span class="badge badge-neutral">Low</span></td><td>[Priority activity]</td><td>[Owner]</td><td class="mono">[MM/DD]</td></tr>
       </tbody>
     </table>
   </div>
@@ -111,5 +161,25 @@
   </div>
 
 </div>
+
+<script>
+(function(){
+  document.querySelectorAll('.layout-toggle-btn').forEach(function(btn){
+    btn.addEventListener('click',function(){
+      var g=this.dataset.group,v=this.dataset.value;
+      document.querySelectorAll('.layout-toggle-btn[data-group="'+g+'"]')
+        .forEach(function(b){b.classList.remove('active');});
+      this.classList.add('active');
+      if(g==='align'){
+        document.body.classList.remove('layout-center','layout-left');
+        if(v!=='center') document.body.classList.add('layout-'+v);
+      } else {
+        document.body.classList.remove('size-default','size-large','size-editorial');
+        if(v!=='default') document.body.classList.add('size-'+v);
+      }
+    });
+  });
+})();
+</script>
 </body>
 </html>

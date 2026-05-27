@@ -10,13 +10,27 @@
 <link rel="stylesheet" href="../css/rdc.css">
 </head>
 <body>
+
+<!-- Layout toggle — remove if not needed -->
+<div class="layout-toggle">
+  <div class="layout-toggle-group">
+    <span class="layout-toggle-label">Align</span>
+    <button class="layout-toggle-btn active" data-group="align" data-value="center">Center</button>
+    <button class="layout-toggle-btn" data-group="align" data-value="left">Left</button>
+  </div>
+  <div class="layout-toggle-sep"></div>
+  <div class="layout-toggle-group">
+    <span class="layout-toggle-label">Size</span>
+    <button class="layout-toggle-btn active" data-group="size" data-value="default">Default</button>
+    <button class="layout-toggle-btn" data-group="size" data-value="large">Large</button>
+    <button class="layout-toggle-btn" data-group="size" data-value="editorial">Editorial</button>
+  </div>
+</div>
+
 <div class="wrap" style="max-width:980px;">
 
   <!-- ============================================================
        PAGE HEADER
-       Replace [Hub Title] and description. Remove the ::before
-       watermark by overriding .page-header::before { content: '' }
-       if a custom watermark word is preferred.
   ============================================================ -->
   <div class="page-header">
     <div class="eyebrow">Red Door Collaborative</div>
@@ -25,26 +39,22 @@
   </div>
 
   <!-- ============================================================
-       SECTION: Active project / primary content
+       SECTION: Primary content
   ============================================================ -->
   <div class="eyebrow" style="margin-bottom:4px;">[Section label]</div>
   <h2 style="font-size:20px;font-weight:600;color:var(--squid);margin:0 0 10px;padding-bottom:6px;border-bottom:1px solid var(--gray-200);">[Section heading]</h2>
   <p style="font-size:14px;color:var(--gray-700);margin:0 0 18px;">[One-sentence description of what this section contains.]</p>
 
   <div class="grid-auto" style="margin-bottom:40px;">
-
-    <!-- Doc card: primary / password-protected -->
     <a href="#" class="doc-card">
       <div class="doc-card-bar" style="background:var(--squid);"></div>
       <div class="doc-card-body">
         <div class="eyebrow">[Category · Status]</div>
         <h3>[Document Title]</h3>
-        <p>[One to two sentences describing what this document contains and why it matters.]</p>
+        <p>[One to two sentences describing what this document contains.]</p>
         <div class="doc-card-lock">Password-protected</div>
       </div>
     </a>
-
-    <!-- Doc card: coral bar -->
     <a href="#" class="doc-card">
       <div class="doc-card-bar"></div>
       <div class="doc-card-body">
@@ -54,8 +64,6 @@
         <div class="doc-card-lock">Password-protected</div>
       </div>
     </a>
-
-    <!-- Doc card: wine bar, open access -->
     <a href="#" class="doc-card">
       <div class="doc-card-bar" style="background:var(--wine);"></div>
       <div class="doc-card-body">
@@ -65,16 +73,13 @@
         <div class="doc-card-lock doc-card-open" style="color:var(--gray-500);">Open access</div>
       </div>
     </a>
-
   </div>
 
   <!-- ============================================================
-       SECTION: Reference / secondary content
+       SECTION: Reference
   ============================================================ -->
   <h2 style="font-size:20px;font-weight:600;color:var(--squid);margin:0 0 18px;padding-bottom:6px;border-bottom:1px solid var(--gray-200);">Reference</h2>
-
   <div class="grid-auto" style="margin-bottom:40px;">
-
     <a href="#" class="doc-card">
       <div class="doc-card-bar" style="background:var(--squid);"></div>
       <div class="doc-card-body">
@@ -84,23 +89,39 @@
         <div class="doc-card-lock doc-card-open" style="color:var(--gray-500);">Open access</div>
       </div>
     </a>
-
   </div>
 
   <!-- ============================================================
-       ALERT: Access or info notice (remove if not needed)
+       ALERT
   ============================================================ -->
   <div class="alert-banner" style="margin-bottom:var(--space-8);">
     <strong>Access:</strong> [Any access instructions, passwords, or contact info for locked documents.]
   </div>
 
-  <!-- ============================================================
-       FOOTER
-  ============================================================ -->
   <div class="page-footer">
     Red Door Collaborative &middot; [Hub Name] &middot; <a href="https://github.com/reddoorcollaborative">GitHub</a>
   </div>
 
 </div>
+
+<script>
+(function(){
+  document.querySelectorAll('.layout-toggle-btn').forEach(function(btn){
+    btn.addEventListener('click',function(){
+      var g=this.dataset.group,v=this.dataset.value;
+      document.querySelectorAll('.layout-toggle-btn[data-group="'+g+'"]')
+        .forEach(function(b){b.classList.remove('active');});
+      this.classList.add('active');
+      if(g==='align'){
+        document.body.classList.remove('layout-center','layout-left');
+        if(v!=='center') document.body.classList.add('layout-'+v);
+      } else {
+        document.body.classList.remove('size-default','size-large','size-editorial');
+        if(v!=='default') document.body.classList.add('size-'+v);
+      }
+    });
+  });
+})();
+</script>
 </body>
 </html>

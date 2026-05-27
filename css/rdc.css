@@ -746,3 +746,187 @@ hr {
   h2 { font-size: 22px; }
   .section-title { font-size: 24px; }
 }
+
+
+/* ——————————————————————————————————————————
+   15. LAYOUT TOGGLE
+   Floating view-control bar. Add the HTML snippet
+   (from the design system docs) to any page.
+—————————————————————————————————————————— */
+.layout-toggle {
+  position: fixed;
+  top: 14px; right: 16px;
+  z-index: 200;
+  display: flex; align-items: center; gap: 6px;
+  background: var(--white);
+  border: 1px solid var(--gray-200);
+  border-radius: var(--radius-pill);
+  padding: 5px 8px;
+  box-shadow: var(--shadow-md);
+  font-family: var(--font-sans);
+}
+
+.layout-toggle-group { display: flex; align-items: center; gap: 2px; }
+
+.layout-toggle-label {
+  font-size: 9px; font-weight: 600;
+  letter-spacing: 0.1em; text-transform: uppercase;
+  color: var(--gray-300);
+  padding: 0 4px 0 2px;
+  white-space: nowrap;
+}
+
+.layout-toggle-sep {
+  width: 1px; height: 14px;
+  background: var(--gray-200);
+  margin: 0 2px;
+}
+
+.layout-toggle-btn {
+  font-family: var(--font-sans);
+  font-size: 11px; font-weight: 500;
+  padding: 4px 10px;
+  border-radius: var(--radius-pill);
+  border: none; cursor: pointer;
+  background: transparent;
+  color: var(--gray-500);
+  transition: background 0.12s, color 0.12s;
+  line-height: 1;
+  white-space: nowrap;
+}
+
+.layout-toggle-btn:hover {
+  background: var(--gray-100);
+  color: var(--gray-900);
+}
+
+.layout-toggle-btn.active {
+  background: var(--squid);
+  color: #fff;
+}
+
+/* ——— Alignment body classes ——— */
+body.layout-left .wrap,
+body.layout-left .wrap-narrow { margin-left: 0; margin-right: 0; }
+
+/* ——— Size body classes ——— */
+body.size-large p,
+body.size-large li                 { font-size: 17px; }
+body.size-large h2                 { font-size: clamp(24px, 3.2vw, 36px); }
+body.size-large h3                 { font-size: 22px; }
+body.size-large .section-title     { font-size: 34px; }
+body.size-large .page-header-title { font-size: clamp(30px, 4.5vw, 44px); }
+
+body.size-editorial p,
+body.size-editorial li                  { font-size: 19px; line-height: 1.85; }
+body.size-editorial h1                  { font-size: clamp(36px, 5vw, 56px); }
+body.size-editorial h2                  { font-size: clamp(28px, 3.8vw, 42px); }
+body.size-editorial h3                  { font-size: 26px; }
+body.size-editorial .section-title      { font-size: 40px; }
+body.size-editorial .section-desc       { font-size: 17px; }
+body.size-editorial .page-header-desc   { font-size: 16px; line-height: 1.75; }
+body.size-editorial .page-header-title  { font-size: clamp(32px, 5vw, 50px); }
+
+
+/* ——————————————————————————————————————————
+   16. DARK MODE
+   Applied automatically when the OS/browser is set to dark.
+   Brand colors (coral, wine, mist, squid) are unchanged.
+—————————————————————————————————————————— */
+@media (prefers-color-scheme: dark) {
+
+  :root {
+    /* Page hierarchy — darker = deeper layer */
+    --page-bg:  #070d17;   /* Body canvas */
+    --white:    #141e2e;   /* Card surfaces */
+
+    /* Neutral scale */
+    --gray-50:  #111828;
+    --gray-100: #1a2538;
+    --gray-200: rgba(255,255,255,0.08);
+    --gray-300: rgba(255,255,255,0.16);
+    --gray-500: rgba(255,255,255,0.42);
+    --gray-700: rgba(255,255,255,0.68);
+    --gray-900: rgba(255,255,255,0.90);
+
+    /* Shadows */
+    --shadow-sm: 0 1px 3px  rgba(0,0,0,0.45);
+    --shadow-md: 0 4px 12px rgba(0,0,0,0.55);
+    --shadow-lg: 0 8px 24px rgba(0,0,0,0.65);
+  }
+
+  /* Headings default to squid — remap for dark bg */
+  h1, h2, h3, h4 { color: rgba(255,255,255,0.90); }
+  h5             { color: rgba(255,255,255,0.90); }
+  h6             { color: rgba(255,255,255,0.40); }
+
+  strong { color: rgba(255,255,255,0.90); }
+
+  /* Dividers & rules */
+  hr, .divider    { border-top-color: rgba(255,255,255,0.07); }
+
+  /* Inline code */
+  code { background: rgba(255,255,255,0.07); color: var(--mist); }
+  pre  { background: rgba(255,255,255,0.05); }
+
+  blockquote { background: rgba(255,79,88,0.06); }
+
+  /* Page header — add border to distinguish from dark page bg */
+  .page-header { border: 1px solid rgba(255,255,255,0.05); }
+
+  /* Section title (explicitly sets --squid, needs override) */
+  .section-title    { color: rgba(255,255,255,0.90); }
+  .section-desc     { color: rgba(255,255,255,0.42); }
+  .subsection-label { border-bottom-color: rgba(255,255,255,0.07); }
+
+  /* Sidebar — subtle right border to separate from dark content area */
+  .sidebar { border-right: 1px solid rgba(255,255,255,0.05); }
+
+  /* Page footer */
+  .page-footer { border-top-color: rgba(255,255,255,0.07); }
+  .page-footer a { color: rgba(255,255,255,0.50); }
+
+  /* Tables */
+  .table-rdc th,
+  .table-rdc td { border-bottom-color: rgba(255,255,255,0.07); }
+
+  /* Buttons — adjust dark variants for dark bg */
+  .btn-dark { border: 1px solid rgba(255,255,255,0.08); }
+  .btn-outline-dark {
+    color: rgba(255,255,255,0.80);
+    border-color: rgba(255,255,255,0.22);
+  }
+
+  /* Alerts — override hardcoded light backgrounds */
+  .alert-info    { background: rgba(59,130,246,0.12);  color: #93c5fd; }
+  .alert-info .alert-dot { background: #60a5fa; }
+
+  .alert-success { background: rgba(34,197,94,0.10);   color: #86efac; }
+  .alert-success .alert-dot { background: #4ade80; }
+
+  .alert-warning { background: rgba(234,179,8,0.10);   color: #fde68a; }
+  .alert-warning .alert-dot { background: #facc15; }
+
+  .alert-banner  { background: rgba(255,79,88,0.08); }
+
+  /* Badges — override hardcoded light backgrounds */
+  .badge-success { background: rgba(34,197,94,0.15);   color: #4ade80; }
+  .badge-warning { background: rgba(234,179,8,0.13);   color: #fde068; }
+  .badge-neutral { background: rgba(255,255,255,0.08); color: rgba(255,255,255,0.55); }
+  .badge-squid   { background: rgba(255,255,255,0.08); color: rgba(255,255,255,0.70); }
+
+  /* Do / Don't boxes */
+  .do-box   { background: rgba(34,197,94,0.06);  border-color: rgba(34,197,94,0.18); }
+  .dont-box { background: rgba(239,68,68,0.06);  border-color: rgba(239,68,68,0.18); }
+  .do-box p, .dont-box p { color: rgba(255,255,255,0.68); }
+
+  /* Layout toggle — active btn on dark surface */
+  .layout-toggle-btn.active {
+    background: rgba(255,255,255,0.14);
+    color: #fff;
+  }
+  .layout-toggle-btn:hover {
+    background: rgba(255,255,255,0.07);
+    color: rgba(255,255,255,0.90);
+  }
+}

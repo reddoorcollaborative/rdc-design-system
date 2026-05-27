@@ -10,21 +10,60 @@
 <link rel="stylesheet" href="../css/rdc.css">
 </head>
 <body>
+
+<!-- Layout toggle — remove if not needed -->
+<div class="layout-toggle">
+  <div class="layout-toggle-group">
+    <span class="layout-toggle-label">Align</span>
+    <button class="layout-toggle-btn active" data-group="align" data-value="center">Center</button>
+    <button class="layout-toggle-btn" data-group="align" data-value="left">Left</button>
+  </div>
+  <div class="layout-toggle-sep"></div>
+  <div class="layout-toggle-group">
+    <span class="layout-toggle-label">Size</span>
+    <button class="layout-toggle-btn active" data-group="size" data-value="default">Default</button>
+    <button class="layout-toggle-btn" data-group="size" data-value="large">Large</button>
+    <button class="layout-toggle-btn" data-group="size" data-value="editorial">Editorial</button>
+  </div>
+</div>
+
 <div class="wrap-narrow">
 
+  <!-- ============================================================
+       PAGE HEADER
+       Replace [Project Name] and fill in metadata below.
+  ============================================================ -->
   <div class="page-header">
     <div class="eyebrow">Project brief</div>
     <h1 class="page-header-title">[Project Name]</h1>
     <p class="page-header-desc">[One sentence describing what this project is and what it will produce.]</p>
     <div class="header-meta">
-      <div class="header-meta-item"><span class="header-meta-label">Client</span><span class="header-meta-value">[Client name]</span></div>
-      <div class="header-meta-item"><span class="header-meta-label">Lead</span><span class="header-meta-value">[RDC lead name]</span></div>
-      <div class="header-meta-item"><span class="header-meta-label">Start date</span><span class="header-meta-value">[Month DD, YYYY]</span></div>
-      <div class="header-meta-item"><span class="header-meta-label">Target delivery</span><span class="header-meta-value">[Month DD, YYYY]</span></div>
-      <div class="header-meta-item"><span class="header-meta-label">Status</span><span class="header-meta-value">[Draft / In review / Approved]</span></div>
+      <div class="header-meta-item">
+        <span class="header-meta-label">Client</span>
+        <span class="header-meta-value">[Client name]</span>
+      </div>
+      <div class="header-meta-item">
+        <span class="header-meta-label">Lead</span>
+        <span class="header-meta-value">[RDC lead name]</span>
+      </div>
+      <div class="header-meta-item">
+        <span class="header-meta-label">Start date</span>
+        <span class="header-meta-value">[Month DD, YYYY]</span>
+      </div>
+      <div class="header-meta-item">
+        <span class="header-meta-label">Target delivery</span>
+        <span class="header-meta-value">[Month DD, YYYY]</span>
+      </div>
+      <div class="header-meta-item">
+        <span class="header-meta-label">Status</span>
+        <span class="header-meta-value">[Draft / In review / Approved]</span>
+      </div>
     </div>
   </div>
 
+  <!-- ============================================================
+       SERVICES / TAGS
+  ============================================================ -->
   <div style="margin-bottom:var(--space-8);">
     <div class="eyebrow" style="margin-bottom:var(--space-3);">Services involved</div>
     <div class="tag-row">
@@ -35,25 +74,37 @@
     </div>
   </div>
 
+  <!-- ============================================================
+       BACKGROUND
+  ============================================================ -->
   <div class="eyebrow" style="margin-bottom:4px;">Context</div>
   <h2 style="font-size:22px;font-weight:700;color:var(--squid);letter-spacing:-0.02em;margin:0 0 16px;padding-bottom:8px;border-bottom:1px solid var(--gray-200);">Background</h2>
+
   <div class="card" style="margin-bottom:var(--space-8);">
-    <p>[Describe the client situation, challenge, or opportunity that this project responds to. 2–4 sentences.]</p>
+    <p>[Describe the client situation, challenge, or opportunity that this project responds to. What is happening in their market, team, or strategy that makes this work necessary or timely? 2–4 sentences.]</p>
     <p>[What has RDC been engaged to do, and why is RDC the right partner for this work?]</p>
   </div>
 
+  <!-- ============================================================
+       OBJECTIVES
+  ============================================================ -->
   <div class="eyebrow" style="margin-bottom:4px;">Goals</div>
   <h2 style="font-size:22px;font-weight:700;color:var(--squid);letter-spacing:-0.02em;margin:0 0 16px;padding-bottom:8px;border-bottom:1px solid var(--gray-200);">Objectives</h2>
+
   <div class="card" style="margin-bottom:var(--space-8);">
     <ol style="line-height:2.2;">
-      <li>[Primary objective]</li>
-      <li>[Secondary objective]</li>
-      <li>[Tertiary objective]</li>
+      <li>[Primary objective — the most important outcome this project must achieve]</li>
+      <li>[Secondary objective — a supporting outcome that contributes to the primary]</li>
+      <li>[Tertiary objective — additional goal if applicable]</li>
     </ol>
   </div>
 
+  <!-- ============================================================
+       SCOPE
+  ============================================================ -->
   <div class="eyebrow" style="margin-bottom:4px;">Boundaries</div>
   <h2 style="font-size:22px;font-weight:700;color:var(--squid);letter-spacing:-0.02em;margin:0 0 16px;padding-bottom:8px;border-bottom:1px solid var(--gray-200);">Scope</h2>
+
   <div class="grid-2" style="margin-bottom:var(--space-8);">
     <div class="do-box">
       <div class="do-label">In scope</div>
@@ -74,68 +125,181 @@
     </div>
   </div>
 
+  <!-- ============================================================
+       DELIVERABLES
+  ============================================================ -->
   <div class="eyebrow" style="margin-bottom:4px;">What we're making</div>
   <h2 style="font-size:22px;font-weight:700;color:var(--squid);letter-spacing:-0.02em;margin:0 0 16px;padding-bottom:8px;border-bottom:1px solid var(--gray-200);">Deliverables</h2>
+
   <div class="card" style="margin-bottom:var(--space-8);">
     <table class="table-rdc">
-      <thead><tr><th>#</th><th>Deliverable</th><th>Format</th><th>Due</th><th>Status</th></tr></thead>
+      <thead>
+        <tr>
+          <th>#</th>
+          <th>Deliverable</th>
+          <th>Format</th>
+          <th>Due</th>
+          <th>Status</th>
+        </tr>
+      </thead>
       <tbody>
-        <tr><td class="mono">01</td><td>[Deliverable name]</td><td class="mono">[PDF / HTML / PPTX]</td><td class="mono">[MM/DD]</td><td><span class="badge badge-neutral">Not started</span></td></tr>
-        <tr><td class="mono">02</td><td>[Deliverable name]</td><td class="mono">[Format]</td><td class="mono">[MM/DD]</td><td><span class="badge badge-wine">In progress</span></td></tr>
-        <tr><td class="mono">03</td><td>[Deliverable name]</td><td class="mono">[Format]</td><td class="mono">[MM/DD]</td><td><span class="badge badge-warning">In review</span></td></tr>
-        <tr><td class="mono">04</td><td>[Deliverable name]</td><td class="mono">[Format]</td><td class="mono">[MM/DD]</td><td><span class="badge badge-success">Delivered</span></td></tr>
+        <tr>
+          <td class="mono">01</td>
+          <td>[Deliverable name]</td>
+          <td class="mono">[PDF / HTML / PPTX]</td>
+          <td class="mono">[MM/DD]</td>
+          <td><span class="badge badge-neutral">Not started</span></td>
+        </tr>
+        <tr>
+          <td class="mono">02</td>
+          <td>[Deliverable name]</td>
+          <td class="mono">[Format]</td>
+          <td class="mono">[MM/DD]</td>
+          <td><span class="badge badge-wine">In progress</span></td>
+        </tr>
+        <tr>
+          <td class="mono">03</td>
+          <td>[Deliverable name]</td>
+          <td class="mono">[Format]</td>
+          <td class="mono">[MM/DD]</td>
+          <td><span class="badge badge-warning">In review</span></td>
+        </tr>
+        <tr>
+          <td class="mono">04</td>
+          <td>[Deliverable name]</td>
+          <td class="mono">[Format]</td>
+          <td class="mono">[MM/DD]</td>
+          <td><span class="badge badge-success">Delivered</span></td>
+        </tr>
       </tbody>
     </table>
   </div>
 
+  <!-- ============================================================
+       TIMELINE
+  ============================================================ -->
   <div class="eyebrow" style="margin-bottom:4px;">Schedule</div>
   <h2 style="font-size:22px;font-weight:700;color:var(--squid);letter-spacing:-0.02em;margin:0 0 16px;padding-bottom:8px;border-bottom:1px solid var(--gray-200);">Timeline</h2>
+
   <div class="card" style="margin-bottom:var(--space-8);">
     <table class="table-rdc">
-      <thead><tr><th>Phase</th><th>Activities</th><th>Duration</th><th>Dates</th></tr></thead>
+      <thead>
+        <tr><th>Phase</th><th>Activities</th><th>Duration</th><th>Dates</th></tr>
+      </thead>
       <tbody>
-        <tr><td><strong>Phase 1</strong><br><span style="font-size:11px;color:var(--gray-500);">[Phase name]</span></td><td>[Key activities]</td><td class="mono">[X weeks]</td><td class="mono">[MM/DD – MM/DD]</td></tr>
-        <tr><td><strong>Phase 2</strong><br><span style="font-size:11px;color:var(--gray-500);">[Phase name]</span></td><td>[Key activities]</td><td class="mono">[X weeks]</td><td class="mono">[MM/DD – MM/DD]</td></tr>
-        <tr><td><strong>Phase 3</strong><br><span style="font-size:11px;color:var(--gray-500);">[Phase name]</span></td><td>[Key activities]</td><td class="mono">[X weeks]</td><td class="mono">[MM/DD – MM/DD]</td></tr>
-        <tr><td><strong>Phase 4</strong><br><span style="font-size:11px;color:var(--gray-500);">Final delivery</span></td><td>Client review, revisions, final handoff</td><td class="mono">[X weeks]</td><td class="mono">[MM/DD – MM/DD]</td></tr>
+        <tr>
+          <td><strong>Phase 1</strong><br><span style="font-size:11px;color:var(--gray-500);">[Phase name]</span></td>
+          <td>[Key activities in this phase]</td>
+          <td class="mono">[X weeks]</td>
+          <td class="mono">[MM/DD – MM/DD]</td>
+        </tr>
+        <tr>
+          <td><strong>Phase 2</strong><br><span style="font-size:11px;color:var(--gray-500);">[Phase name]</span></td>
+          <td>[Key activities in this phase]</td>
+          <td class="mono">[X weeks]</td>
+          <td class="mono">[MM/DD – MM/DD]</td>
+        </tr>
+        <tr>
+          <td><strong>Phase 3</strong><br><span style="font-size:11px;color:var(--gray-500);">[Phase name]</span></td>
+          <td>[Key activities in this phase]</td>
+          <td class="mono">[X weeks]</td>
+          <td class="mono">[MM/DD – MM/DD]</td>
+        </tr>
+        <tr>
+          <td><strong>Phase 4</strong><br><span style="font-size:11px;color:var(--gray-500);">Final delivery</span></td>
+          <td>Client review, revisions, final handoff</td>
+          <td class="mono">[X weeks]</td>
+          <td class="mono">[MM/DD – MM/DD]</td>
+        </tr>
       </tbody>
     </table>
   </div>
 
+  <!-- ============================================================
+       TEAM & STAKEHOLDERS
+  ============================================================ -->
   <div class="eyebrow" style="margin-bottom:4px;">People</div>
   <h2 style="font-size:22px;font-weight:700;color:var(--squid);letter-spacing:-0.02em;margin:0 0 16px;padding-bottom:8px;border-bottom:1px solid var(--gray-200);">Team &amp; stakeholders</h2>
+
   <div class="card" style="margin-bottom:var(--space-8);">
     <table class="table-rdc">
-      <thead><tr><th>Name</th><th>Role</th><th>Organization</th><th>Responsibilities</th></tr></thead>
+      <thead>
+        <tr><th>Name</th><th>Role</th><th>Organization</th><th>Responsibilities</th></tr>
+      </thead>
       <tbody>
-        <tr><td>[Name]</td><td>Project lead</td><td>RDC</td><td>[Key responsibilities]</td></tr>
-        <tr><td>[Name]</td><td>[Role]</td><td>RDC</td><td>[Key responsibilities]</td></tr>
-        <tr><td>[Name]</td><td>Stakeholder / approver</td><td>[Client org]</td><td>[Key responsibilities]</td></tr>
+        <tr>
+          <td>[Name]</td>
+          <td>Project lead</td>
+          <td>RDC</td>
+          <td>[Key responsibilities]</td>
+        </tr>
+        <tr>
+          <td>[Name]</td>
+          <td>[Role]</td>
+          <td>RDC</td>
+          <td>[Key responsibilities]</td>
+        </tr>
+        <tr>
+          <td>[Name]</td>
+          <td>Stakeholder / approver</td>
+          <td>[Client org]</td>
+          <td>[Key responsibilities]</td>
+        </tr>
       </tbody>
     </table>
   </div>
 
+  <!-- ============================================================
+       SUCCESS METRICS
+  ============================================================ -->
   <div class="eyebrow" style="margin-bottom:4px;">Measuring success</div>
   <h2 style="font-size:22px;font-weight:700;color:var(--squid);letter-spacing:-0.02em;margin:0 0 16px;padding-bottom:8px;border-bottom:1px solid var(--gray-200);">Success metrics</h2>
+
   <div class="grid-3" style="margin-bottom:var(--space-8);">
-    <div class="metric-card"><div class="metric-label">[Metric name]</div><div class="metric-value">[Target]</div><div class="metric-sub">[How measured]</div></div>
-    <div class="metric-card"><div class="metric-label">[Metric name]</div><div class="metric-value">[Target]</div><div class="metric-sub">[How measured]</div></div>
-    <div class="metric-card"><div class="metric-label">[Metric name]</div><div class="metric-value">[Target]</div><div class="metric-sub">[How measured]</div></div>
+    <div class="metric-card">
+      <div class="metric-label">[Metric name]</div>
+      <div class="metric-value">[Target]</div>
+      <div class="metric-sub">[How measured]</div>
+    </div>
+    <div class="metric-card">
+      <div class="metric-label">[Metric name]</div>
+      <div class="metric-value">[Target]</div>
+      <div class="metric-sub">[How measured]</div>
+    </div>
+    <div class="metric-card">
+      <div class="metric-label">[Metric name]</div>
+      <div class="metric-value">[Target]</div>
+      <div class="metric-sub">[How measured]</div>
+    </div>
   </div>
 
+  <!-- ============================================================
+       ASSUMPTIONS & RISKS (optional)
+  ============================================================ -->
   <div class="eyebrow" style="margin-bottom:4px;">Assumptions &amp; risks</div>
   <h2 style="font-size:22px;font-weight:700;color:var(--squid);letter-spacing:-0.02em;margin:0 0 16px;padding-bottom:8px;border-bottom:1px solid var(--gray-200);">Assumptions &amp; risks</h2>
+
   <div class="card" style="margin-bottom:var(--space-8);">
     <div style="margin-bottom:var(--space-4);">
       <div style="font-size:10px;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:var(--gray-500);margin-bottom:var(--space-2);">Assumptions</div>
-      <ul style="line-height:2.1;"><li>[Assumption 1]</li><li>[Assumption 2]</li><li>[Assumption 3]</li></ul>
+      <ul style="line-height:2.1;">
+        <li>[Assumption 1 — what we're taking as given without explicit confirmation]</li>
+        <li>[Assumption 2]</li>
+        <li>[Assumption 3]</li>
+      </ul>
     </div>
     <div>
       <div style="font-size:10px;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:var(--gray-500);margin-bottom:var(--space-2);">Risks</div>
-      <ul style="line-height:2.1;"><li>[Risk 1 — what could go wrong and its potential impact]</li><li>[Risk 2]</li></ul>
+      <ul style="line-height:2.1;">
+        <li>[Risk 1 — what could go wrong and its potential impact]</li>
+        <li>[Risk 2]</li>
+      </ul>
     </div>
   </div>
 
+  <!-- ============================================================
+       APPROVAL
+  ============================================================ -->
   <div class="alert alert-info" style="margin-bottom:var(--space-8);">
     <div class="alert-dot"></div>
     <div class="alert-body">
@@ -149,5 +313,25 @@
   </div>
 
 </div>
+
+<script>
+(function(){
+  document.querySelectorAll('.layout-toggle-btn').forEach(function(btn){
+    btn.addEventListener('click',function(){
+      var g=this.dataset.group,v=this.dataset.value;
+      document.querySelectorAll('.layout-toggle-btn[data-group="'+g+'"]')
+        .forEach(function(b){b.classList.remove('active');});
+      this.classList.add('active');
+      if(g==='align'){
+        document.body.classList.remove('layout-center','layout-left');
+        if(v!=='center') document.body.classList.add('layout-'+v);
+      } else {
+        document.body.classList.remove('size-default','size-large','size-editorial');
+        if(v!=='default') document.body.classList.add('size-'+v);
+      }
+    });
+  });
+})();
+</script>
 </body>
 </html>
