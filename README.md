@@ -2,7 +2,7 @@
 
 The visual and technical foundation for all Red Door Collaborative HTML output. Import one stylesheet and your HTML is on-brand by default.
 
-**Live docs:** https://brianjensen-rdc.github.io/rdc-design-system/
+**Live docs:** https://reddoorcollaborative.github.io/rdc-design-system/
 
 ---
 
@@ -17,7 +17,7 @@ Add these two blocks to the `<head>` of any HTML file:
 <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,300&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
 
 <!-- RDC Design System -->
-<link rel="stylesheet" href="https://brianjensen-rdc.github.io/rdc-design-system/css/rdc.css">
+<link rel="stylesheet" href="https://reddoorcollaborative.github.io/rdc-design-system/css/rdc.css">
 ```
 
 That's it. All brand colors, typography, components, and layout utilities are now available.
@@ -35,7 +35,7 @@ STYLESHEET — always include in <head>:
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,300&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://brianjensen-rdc.github.io/rdc-design-system/css/rdc.css">
+  <link rel="stylesheet" href="https://reddoorcollaborative.github.io/rdc-design-system/css/rdc.css">
 
 BRAND COLORS:
   --coral: #FF4F58   CTAs, links, eyebrow labels
@@ -63,7 +63,7 @@ RULES:
   - Max 3 font weights per page
   - Logo minimum size: 85px wide, no drop shadows
 
-DESIGN SYSTEM REFERENCE: https://brianjensen-rdc.github.io/rdc-design-system/
+DESIGN SYSTEM REFERENCE: https://reddoorcollaborative.github.io/rdc-design-system/
 ```
 
 **Pro tip:** Add this as a Project instruction in Claude so it applies automatically to every conversation in that project.
