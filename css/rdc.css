@@ -249,6 +249,7 @@ hr {
 
 .sidebar-inner {
   max-width: var(--content-max);
+  margin: 0 auto;
 }
 
 /* Grids */
@@ -807,7 +808,8 @@ hr {
 
 /* ——— Alignment body classes ——— */
 body.layout-left .wrap,
-body.layout-left .wrap-narrow { margin-left: 0; margin-right: 0; }
+body.layout-left .wrap-narrow,
+body.layout-left .sidebar-inner { margin-left: 0; margin-right: 0; }
 
 /* ——— Size body classes ——— */
 body.size-large p,
@@ -830,17 +832,16 @@ body.size-editorial .page-header-title  { font-size: clamp(32px, 5vw, 50px); }
 
 /* ——————————————————————————————————————————
    16. DARK MODE
-   Applied automatically when the OS/browser is set to dark.
+   Applied automatically via OS/browser dark preference.
+   Force override: set data-theme="light" or data-theme="dark" on <html>.
    Brand colors (coral, wine, mist, squid) are unchanged.
 —————————————————————————————————————————— */
+
+/* ——— Auto dark: OS preference, unless forced light ——— */
 @media (prefers-color-scheme: dark) {
-
-  :root {
-    /* Page hierarchy — darker = deeper layer */
-    --page-bg:  #070d17;   /* Body canvas */
-    --white:    #141e2e;   /* Card surfaces */
-
-    /* Neutral scale */
+  html:not([data-theme="light"]) {
+    --page-bg:  #070d17;
+    --white:    #141e2e;
     --gray-50:  #111828;
     --gray-100: #1a2538;
     --gray-200: rgba(255,255,255,0.08);
@@ -848,85 +849,104 @@ body.size-editorial .page-header-title  { font-size: clamp(32px, 5vw, 50px); }
     --gray-500: rgba(255,255,255,0.42);
     --gray-700: rgba(255,255,255,0.68);
     --gray-900: rgba(255,255,255,0.90);
-
-    /* Shadows */
     --shadow-sm: 0 1px 3px  rgba(0,0,0,0.45);
     --shadow-md: 0 4px 12px rgba(0,0,0,0.55);
     --shadow-lg: 0 8px 24px rgba(0,0,0,0.65);
   }
-
-  /* Headings default to squid — remap for dark bg */
-  h1, h2, h3, h4 { color: rgba(255,255,255,0.90); }
-  h5             { color: rgba(255,255,255,0.90); }
-  h6             { color: rgba(255,255,255,0.40); }
-
-  strong { color: rgba(255,255,255,0.90); }
-
-  /* Dividers & rules */
-  hr, .divider    { border-top-color: rgba(255,255,255,0.07); }
-
-  /* Inline code */
-  code { background: rgba(255,255,255,0.07); color: var(--mist); }
-  pre  { background: rgba(255,255,255,0.05); }
-
-  blockquote { background: rgba(255,79,88,0.06); }
-
-  /* Page header — add border to distinguish from dark page bg */
-  .page-header { border: 1px solid rgba(255,255,255,0.05); }
-
-  /* Section title (explicitly sets --squid, needs override) */
-  .section-title    { color: rgba(255,255,255,0.90); }
-  .section-desc     { color: rgba(255,255,255,0.42); }
-  .subsection-label { border-bottom-color: rgba(255,255,255,0.07); }
-
-  /* Sidebar — subtle right border to separate from dark content area */
-  .sidebar { border-right: 1px solid rgba(255,255,255,0.05); }
-
-  /* Page footer */
-  .page-footer { border-top-color: rgba(255,255,255,0.07); }
-  .page-footer a { color: rgba(255,255,255,0.50); }
-
-  /* Tables */
-  .table-rdc th,
-  .table-rdc td { border-bottom-color: rgba(255,255,255,0.07); }
-
-  /* Buttons — adjust dark variants for dark bg */
-  .btn-dark { border: 1px solid rgba(255,255,255,0.08); }
-  .btn-outline-dark {
-    color: rgba(255,255,255,0.80);
-    border-color: rgba(255,255,255,0.22);
-  }
-
-  /* Alerts — override hardcoded light backgrounds */
-  .alert-info    { background: rgba(59,130,246,0.12);  color: #93c5fd; }
-  .alert-info .alert-dot { background: #60a5fa; }
-
-  .alert-success { background: rgba(34,197,94,0.10);   color: #86efac; }
-  .alert-success .alert-dot { background: #4ade80; }
-
-  .alert-warning { background: rgba(234,179,8,0.10);   color: #fde68a; }
-  .alert-warning .alert-dot { background: #facc15; }
-
-  .alert-banner  { background: rgba(255,79,88,0.08); }
-
-  /* Badges — override hardcoded light backgrounds */
-  .badge-success { background: rgba(34,197,94,0.15);   color: #4ade80; }
-  .badge-warning { background: rgba(234,179,8,0.13);   color: #fde068; }
-  .badge-neutral { background: rgba(255,255,255,0.08); color: rgba(255,255,255,0.55); }
-  .badge-squid   { background: rgba(255,255,255,0.08); color: rgba(255,255,255,0.70); }
-
-  /* Do / Don't boxes */
-  .do-box   { background: rgba(34,197,94,0.06);  border-color: rgba(34,197,94,0.18); }
-  .dont-box { background: rgba(239,68,68,0.06);  border-color: rgba(239,68,68,0.18); }
-  .do-box p, .dont-box p { color: rgba(255,255,255,0.68); }
-
-  /* Layout toggle — active btn on dark surface */
-  .layout-toggle-btn.active {
-    background: rgba(255,255,255,0.14);
-    color: #fff;
-  }
-  .layout-toggle-btn:hover {
-    background: rgba(255,255,255,0.07);
-    color: rgba(255,255,255,0.90);
-  }
+  html:not([data-theme="light"]) h1,
+  html:not([data-theme="light"]) h2,
+  html:not([data-theme="light"]) h3,
+  html:not([data-theme="light"]) h4 { color: rgba(255,255,255,0.90); }
+  html:not([data-theme="light"]) h5 { color: rgba(255,255,255,0.90); }
+  html:not([data-theme="light"]) h6 { color: rgba(255,255,255,0.40); }
+  html:not([data-theme="light"]) strong { color: rgba(255,255,255,0.90); }
+  html:not([data-theme="light"]) hr,
+  html:not([data-theme="light"]) .divider { border-top-color: rgba(255,255,255,0.07); }
+  html:not([data-theme="light"]) code { background: rgba(255,255,255,0.07); color: var(--mist); }
+  html:not([data-theme="light"]) pre  { background: rgba(255,255,255,0.05); }
+  html:not([data-theme="light"]) blockquote { background: rgba(255,79,88,0.06); }
+  html:not([data-theme="light"]) .page-header { border: 1px solid rgba(255,255,255,0.05); }
+  html:not([data-theme="light"]) .section-title    { color: rgba(255,255,255,0.90); }
+  html:not([data-theme="light"]) .section-desc     { color: rgba(255,255,255,0.42); }
+  html:not([data-theme="light"]) .subsection-label { border-bottom-color: rgba(255,255,255,0.07); }
+  html:not([data-theme="light"]) .sidebar { border-right: 1px solid rgba(255,255,255,0.05); }
+  html:not([data-theme="light"]) .page-footer { border-top-color: rgba(255,255,255,0.07); }
+  html:not([data-theme="light"]) .page-footer a { color: rgba(255,255,255,0.50); }
+  html:not([data-theme="light"]) .table-rdc th,
+  html:not([data-theme="light"]) .table-rdc td { border-bottom-color: rgba(255,255,255,0.07); }
+  html:not([data-theme="light"]) .btn-dark { border: 1px solid rgba(255,255,255,0.08); }
+  html:not([data-theme="light"]) .btn-outline-dark { color: rgba(255,255,255,0.80); border-color: rgba(255,255,255,0.22); }
+  html:not([data-theme="light"]) .alert-info    { background: rgba(59,130,246,0.12);  color: #93c5fd; }
+  html:not([data-theme="light"]) .alert-info .alert-dot { background: #60a5fa; }
+  html:not([data-theme="light"]) .alert-success { background: rgba(34,197,94,0.10);   color: #86efac; }
+  html:not([data-theme="light"]) .alert-success .alert-dot { background: #4ade80; }
+  html:not([data-theme="light"]) .alert-warning { background: rgba(234,179,8,0.10);   color: #fde68a; }
+  html:not([data-theme="light"]) .alert-warning .alert-dot { background: #facc15; }
+  html:not([data-theme="light"]) .alert-banner  { background: rgba(255,79,88,0.08); }
+  html:not([data-theme="light"]) .badge-success { background: rgba(34,197,94,0.15);   color: #4ade80; }
+  html:not([data-theme="light"]) .badge-warning { background: rgba(234,179,8,0.13);   color: #fde068; }
+  html:not([data-theme="light"]) .badge-neutral { background: rgba(255,255,255,0.08); color: rgba(255,255,255,0.55); }
+  html:not([data-theme="light"]) .badge-squid   { background: rgba(255,255,255,0.08); color: rgba(255,255,255,0.70); }
+  html:not([data-theme="light"]) .do-box   { background: rgba(34,197,94,0.06);  border-color: rgba(34,197,94,0.18); }
+  html:not([data-theme="light"]) .dont-box { background: rgba(239,68,68,0.06);  border-color: rgba(239,68,68,0.18); }
+  html:not([data-theme="light"]) .do-box p,
+  html:not([data-theme="light"]) .dont-box p { color: rgba(255,255,255,0.68); }
+  html:not([data-theme="light"]) .layout-toggle-btn.active { background: rgba(255,255,255,0.14); color: #fff; }
+  html:not([data-theme="light"]) .layout-toggle-btn:hover  { background: rgba(255,255,255,0.07); color: rgba(255,255,255,0.90); }
 }
+
+/* ——— Forced dark (explicit, overrides OS light preference) ——— */
+html[data-theme="dark"] {
+  --page-bg:  #070d17;
+  --white:    #141e2e;
+  --gray-50:  #111828;
+  --gray-100: #1a2538;
+  --gray-200: rgba(255,255,255,0.08);
+  --gray-300: rgba(255,255,255,0.16);
+  --gray-500: rgba(255,255,255,0.42);
+  --gray-700: rgba(255,255,255,0.68);
+  --gray-900: rgba(255,255,255,0.90);
+  --shadow-sm: 0 1px 3px  rgba(0,0,0,0.45);
+  --shadow-md: 0 4px 12px rgba(0,0,0,0.55);
+  --shadow-lg: 0 8px 24px rgba(0,0,0,0.65);
+}
+html[data-theme="dark"] h1,
+html[data-theme="dark"] h2,
+html[data-theme="dark"] h3,
+html[data-theme="dark"] h4 { color: rgba(255,255,255,0.90); }
+html[data-theme="dark"] h5 { color: rgba(255,255,255,0.90); }
+html[data-theme="dark"] h6 { color: rgba(255,255,255,0.40); }
+html[data-theme="dark"] strong { color: rgba(255,255,255,0.90); }
+html[data-theme="dark"] hr,
+html[data-theme="dark"] .divider { border-top-color: rgba(255,255,255,0.07); }
+html[data-theme="dark"] code { background: rgba(255,255,255,0.07); color: var(--mist); }
+html[data-theme="dark"] pre  { background: rgba(255,255,255,0.05); }
+html[data-theme="dark"] blockquote { background: rgba(255,79,88,0.06); }
+html[data-theme="dark"] .page-header { border: 1px solid rgba(255,255,255,0.05); }
+html[data-theme="dark"] .section-title    { color: rgba(255,255,255,0.90); }
+html[data-theme="dark"] .section-desc     { color: rgba(255,255,255,0.42); }
+html[data-theme="dark"] .subsection-label { border-bottom-color: rgba(255,255,255,0.07); }
+html[data-theme="dark"] .sidebar { border-right: 1px solid rgba(255,255,255,0.05); }
+html[data-theme="dark"] .page-footer { border-top-color: rgba(255,255,255,0.07); }
+html[data-theme="dark"] .page-footer a { color: rgba(255,255,255,0.50); }
+html[data-theme="dark"] .table-rdc th,
+html[data-theme="dark"] .table-rdc td { border-bottom-color: rgba(255,255,255,0.07); }
+html[data-theme="dark"] .btn-dark { border: 1px solid rgba(255,255,255,0.08); }
+html[data-theme="dark"] .btn-outline-dark { color: rgba(255,255,255,0.80); border-color: rgba(255,255,255,0.22); }
+html[data-theme="dark"] .alert-info    { background: rgba(59,130,246,0.12);  color: #93c5fd; }
+html[data-theme="dark"] .alert-info .alert-dot { background: #60a5fa; }
+html[data-theme="dark"] .alert-success { background: rgba(34,197,94,0.10);   color: #86efac; }
+html[data-theme="dark"] .alert-success .alert-dot { background: #4ade80; }
+html[data-theme="dark"] .alert-warning { background: rgba(234,179,8,0.10);   color: #fde68a; }
+html[data-theme="dark"] .alert-warning .alert-dot { background: #facc15; }
+html[data-theme="dark"] .alert-banner  { background: rgba(255,79,88,0.08); }
+html[data-theme="dark"] .badge-success { background: rgba(34,197,94,0.15);   color: #4ade80; }
+html[data-theme="dark"] .badge-warning { background: rgba(234,179,8,0.13);   color: #fde068; }
+html[data-theme="dark"] .badge-neutral { background: rgba(255,255,255,0.08); color: rgba(255,255,255,0.55); }
+html[data-theme="dark"] .badge-squid   { background: rgba(255,255,255,0.08); color: rgba(255,255,255,0.70); }
+html[data-theme="dark"] .do-box   { background: rgba(34,197,94,0.06);  border-color: rgba(34,197,94,0.18); }
+html[data-theme="dark"] .dont-box { background: rgba(239,68,68,0.06);  border-color: rgba(239,68,68,0.18); }
+html[data-theme="dark"] .do-box p,
+html[data-theme="dark"] .dont-box p { color: rgba(255,255,255,0.68); }
+html[data-theme="dark"] .layout-toggle-btn.active { background: rgba(255,255,255,0.14); color: #fff; }
+html[data-theme="dark"] .layout-toggle-btn:hover  { background: rgba(255,255,255,0.07); color: rgba(255,255,255,0.90); }

@@ -25,6 +25,12 @@
     <button class="layout-toggle-btn" data-group="size" data-value="large">Large</button>
     <button class="layout-toggle-btn" data-group="size" data-value="editorial">Editorial</button>
   </div>
+  <div class="layout-toggle-sep"></div>
+  <div class="layout-toggle-group">
+    <span class="layout-toggle-label">Theme</span>
+    <button class="layout-toggle-btn" data-group="theme" data-value="light">Light</button>
+    <button class="layout-toggle-btn" data-group="theme" data-value="dark">Dark</button>
+  </div>
 </div>
 
 <div class="wrap-narrow">
@@ -316,15 +322,20 @@
 
 <script>
 (function(){
+  var prefersDark=window.matchMedia('(prefers-color-scheme: dark)').matches;
+  var initBtn=document.querySelector('.layout-toggle-btn[data-group="theme"][data-value="'+(prefersDark?'dark':'light')+'"]');
+  if(initBtn) initBtn.classList.add('active');
   document.querySelectorAll('.layout-toggle-btn').forEach(function(btn){
     btn.addEventListener('click',function(){
       var g=this.dataset.group,v=this.dataset.value;
-      document.querySelectorAll('.layout-toggle-btn[data-group="'+g+'"]')
+      document.querySelectorAll('.layout-toggle-btn[data-group="'+g+'"')
         .forEach(function(b){b.classList.remove('active');});
       this.classList.add('active');
       if(g==='align'){
         document.body.classList.remove('layout-center','layout-left');
         if(v!=='center') document.body.classList.add('layout-'+v);
+      } else if(g==='theme'){
+        document.documentElement.setAttribute('data-theme',v);
       } else {
         document.body.classList.remove('size-default','size-large','size-editorial');
         if(v!=='default') document.body.classList.add('size-'+v);
