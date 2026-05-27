@@ -430,7 +430,7 @@
   <section class="section" id="logos">
     <div class="section-eyebrow">Brand</div>
     <h2 class="section-title">Logo &amp; marks</h2>
-    <p class="section-desc">The primary logo — circular Wine/Coral mark + “red door collaborative” lowercase wordmark — leads all marketing contexts. Always use approved files from Box. Minimum digital size: 85px wide.</p>
+    <p class="section-desc">The primary logo — circular Wine/Coral mark + "red door collaborative" lowercase wordmark — leads all marketing contexts. Always use approved files from Box. Minimum digital size: 85px wide.</p>
 
     <div class="subsection">
       <div class="subsection-label">Primary lockup variants</div>
@@ -777,7 +777,7 @@
     <div class="page-header" style="margin-bottom:0;">
       <div class="eyebrow">Red Door Collaborative</div>
       <h1 class="page-header-title">Page title goes here</h1>
-      <p class="page-header-desc">One to two sentences describing the document’s purpose and audience. Keep it concise — this is orientation, not content.</p>
+      <p class="page-header-desc">One to two sentences describing the document's purpose and audience. Keep it concise — this is orientation, not content.</p>
       <div class="header-meta">
         <div class="header-meta-item"><span class="header-meta-label">Version</span><span class="header-meta-value">1.0</span></div>
         <div class="header-meta-item"><span class="header-meta-label">Status</span><span class="header-meta-value">Draft</span></div>
@@ -844,16 +844,44 @@
         </div>
       </a>
     </div>
+
+    <div class="subsection">
+      <div class="subsection-label">Which template to use</div>
+      <div class="card">
+        <table class="table-rdc">
+          <thead><tr><th>Use case</th><th>Template</th></tr></thead>
+          <tbody>
+            <tr><td>Index page linking to multiple deliverables or documents</td><td><a href="templates/hub.html">Hub / portal</a></td></tr>
+            <tr><td>SOP, guide, policy, or any multi-section reference doc</td><td><a href="templates/document.html">Long-form document</a></td></tr>
+            <tr><td>Scoping document, proposal, or statement of work</td><td><a href="templates/brief.html">Project brief</a></td></tr>
+            <tr><td>Campaign, analytics, or performance summary</td><td><a href="templates/report.html">Metrics report</a></td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <div class="subsection">
+      <div class="subsection-label">How to build from a template</div>
+      <div class="card">
+        <ol style="line-height:2.4;">
+          <li><strong>Copy the file</strong> — duplicate the template from the <code>templates/</code> folder and rename it for your project (e.g., <code>acme-q2-report.html</code>).</li>
+          <li><strong>Check the CSS path</strong> — templates reference <code>../css/rdc.css</code> for local use. If the file will live outside this repo, swap the path for the CDN link: <code>https://reddoorcollaborative.github.io/rdc-design-system/css/rdc.css</code></li>
+          <li><strong>Fill every placeholder</strong> — all <code>[bracketed]</code> tokens are placeholders. Replace them before sharing. A find-and-replace for <code>[</code> will catch any you missed.</li>
+          <li><strong>Layout toggle is pre-wired</strong> — Align, Size, and Theme controls are already included. Remove the toggle block and its <code>&lt;script&gt;</code> only if the embedding context conflicts with fixed positioning.</li>
+          <li><strong>No build step needed</strong> — open the file directly in a browser or host it anywhere. There is no framework, bundler, or dependency beyond the single CSS import.</li>
+        </ol>
+      </div>
+    </div>
   </section>
   <hr class="divider">
 
   <!-- ============================================================
-       LAYOUT TOGGLE
+       GUIDELINES
   ============================================================ -->
   <section class="section" id="layout-toggle">
     <div class="section-eyebrow">Page patterns</div>
     <h2 class="section-title">Layout toggle</h2>
-    <p class="section-desc">A fixed floating control bar — active on this page (top-right corner) — that lets readers adjust content alignment, text size, and theme without touching code. Include it in every generated HTML deliverable.</p>
+    <p class="section-desc">A fixed floating control bar — active on this page (top-right corner) — that lets readers adjust content alignment and text size without touching code. Include it in every generated HTML deliverable.</p>
 
     <div class="subsection">
       <div class="subsection-label">What it controls</div>
@@ -865,8 +893,7 @@
             <tr><td><strong>Size — Default</strong></td><td class="mono">15px / 1.7lh</td><td>Standard reading size</td></tr>
             <tr><td><strong>Size — Large</strong></td><td class="mono">17px</td><td>Comfortable for presentation or client review</td></tr>
             <tr><td><strong>Size — Editorial</strong></td><td class="mono">19px / 1.85lh</td><td>Long-form reading, wide-format layouts</td></tr>
-            <tr><td><strong>Theme — Light</strong></td><td class="mono">data-theme="light"</td><td>Forces light mode regardless of OS preference</td></tr>
-            <tr><td><strong>Theme — Dark</strong></td><td class="mono">data-theme="dark"</td><td>Forces dark mode regardless of OS preference</td></tr>
+            <tr><td><strong>Theme</strong></td><td class="mono">Light · Dark</td><td>Overrides the OS/browser dark mode preference; initializes to match system setting on load</td></tr>
           </tbody>
         </table>
       </div>
@@ -907,7 +934,7 @@
   document.querySelectorAll(<span class="str">'.layout-toggle-btn'</span>).forEach(function(btn){
     btn.addEventListener(<span class="str">'click'</span>,function(){
       <span class="kw">var</span> g=this.dataset.group,v=this.dataset.value;
-      document.querySelectorAll(<span class="str">'.layout-toggle-btn[data-group="'+g+'"'</span>)
+      document.querySelectorAll(<span class="str">'.layout-toggle-btn[data-group="'+g+'"</span>]')
         .forEach(function(b){b.classList.remove(<span class="str">'active'</span>);});
       this.classList.add(<span class="str">'active'</span>);
       <span class="kw">if</span>(g===<span class="str">'align'</span>){
@@ -930,7 +957,7 @@
       <div class="do-dont">
         <div class="do-box">
           <div class="do-label">Do</div>
-          <p>Include in all generated HTML deliverables. Keep “Center” and “Default” as the <code>active</code> starting state. The Theme button reflects the OS preference on load.</p>
+          <p>Include in all generated HTML deliverables. Keep "Center" and "Default" as the <code>active</code> starting state.</p>
         </div>
         <div class="dont-box">
           <div class="dont-label">Don't</div>
@@ -944,12 +971,12 @@
   <section class="section" id="dark-mode">
     <div class="section-eyebrow">Page patterns</div>
     <h2 class="section-title">Dark mode</h2>
-    <p class="section-desc">All RDC HTML output automatically adapts to the user’s OS dark mode preference via <code>@media (prefers-color-scheme: dark)</code>. The Theme toggle in the top-right corner overrides this preference manually.</p>
+    <p class="section-desc">All RDC HTML output automatically adapts to the user's OS dark mode preference via <code>@media (prefers-color-scheme: dark)</code>. Set your system to dark mode to preview — no extra code required.</p>
 
     <div class="subsection">
       <div class="subsection-label">How it works</div>
       <div class="card">
-        <p>The stylesheet remaps all neutral surface tokens inside a <code>@media (prefers-color-scheme: dark)</code> block while leaving brand colors (Coral, Wine, Mist, Squid) unchanged. Any document that imports <code>rdc.css</code> inherits dark mode for free. The Theme toggle sets <code>data-theme="light"</code> or <code>data-theme="dark"</code> on the <code>&lt;html&gt;</code> element to override the OS preference.</p>
+        <p>The stylesheet remaps all neutral surface tokens inside a <code>@media (prefers-color-scheme: dark)</code> block while leaving brand colors (Coral, Wine, Mist, Squid) unchanged. Any document that imports <code>rdc.css</code> inherits dark mode for free.</p>
       </div>
     </div>
 
@@ -976,7 +1003,7 @@
         <div class="alert-dot"></div>
         <div class="alert-body">
           <div class="alert-title">Coral, Wine, Mist, and Squid are never remapped</div>
-          Only neutral UI surfaces flip in dark mode. Brand identity colors stay identical so documents look consistent regardless of the viewer’s system preference.
+          Only neutral UI surfaces flip in dark mode. Brand identity colors stay identical so documents look consistent regardless of the viewer's system preference.
         </div>
       </div>
     </div>
@@ -1004,7 +1031,7 @@
     <div class="subsection">
       <div class="subsection-label">Logo</div>
       <div class="do-dont">
-        <div class="do-box"><div class="do-label">Do</div><p>Use approved Box files. Maintain clear space (logo’s own bounding square) on all sides. Match the logo variant to the background — light logo on dark, dark logo on light.</p></div>
+        <div class="do-box"><div class="do-label">Do</div><p>Use approved Box files. Maintain clear space (logo's own bounding square) on all sides. Match the logo variant to the background — light logo on dark, dark logo on light.</p></div>
         <div class="dont-box"><div class="dont-label">Don't</div><p>Recreate or approximate the logo. Add drop shadows, glows, or effects. Stretch, skew, rotate, or recolor the mark. Place the logo below the 85px minimum digital size.</p></div>
       </div>
     </div>
@@ -1013,14 +1040,14 @@
       <div class="subsection-label">Color</div>
       <div class="do-dont">
         <div class="do-box"><div class="do-label">Do</div><p>Lead with Coral for all CTAs and primary actions. Use Squid to anchor dark backgrounds. Use the Wine-to-Coral gradient for decorative accents only. Limit to 3 colors per layout.</p></div>
-        <div class="dont-box"><div class="dont-label">Don't</div><p>Use Mist as a primary page background — it’s an accent only. Set Coral text on Wine (insufficient contrast). Introduce colors outside the approved palette without design lead approval.</p></div>
+        <div class="dont-box"><div class="dont-label">Don't</div><p>Use Mist as a primary page background — it's an accent only. Set Coral text on Wine (insufficient contrast). Introduce colors outside the approved palette without design lead approval.</p></div>
       </div>
     </div>
 
     <div class="subsection">
       <div class="subsection-label">Typography</div>
       <div class="do-dont">
-        <div class="do-box"><div class="do-label">Do</div><p>Use Suisse Int’l for all branded communications. Use sentence case for all headings. Build hierarchy through weight, not size alone. Ensure body text is accessible (16px+ at WCAG AA contrast).</p></div>
+        <div class="do-box"><div class="do-label">Do</div><p>Use Suisse Int'l for all branded communications. Use sentence case for all headings. Build hierarchy through weight, not size alone. Ensure body text is accessible (16px+ at WCAG AA contrast).</p></div>
         <div class="dont-box"><div class="dont-label">Don't</div><p>Use more than 3 weights on a single page. Use title case or all-caps for headings. Italicize headings as an emphasis device. Use condensed variants for body copy.</p></div>
       </div>
     </div>
@@ -1064,7 +1091,7 @@ BRAND COLORS (exact hex — never approximate):
   --page-bg: #F7F6F4  Warm off-white body background
 
 TYPOGRAPHY:
-  Font: DM Sans (loaded above) — web substitute for Suisse Int’l
+  Font: DM Sans (loaded above) — web substitute for Suisse Int'l
   Rules: sentence case headings only, max 3 weights per page, no italics on headings
 
 COMPONENT CLASSES (use these — do not write custom CSS for covered patterns):
@@ -1213,7 +1240,7 @@ function copyPrompt() {
 <script>
 (function(){
   var prefersDark=window.matchMedia('(prefers-color-scheme: dark)').matches;
-  var initBtn=document.querySelector('.layout-toggle-btn[data-group="theme"][data-value="'+(prefersDark?'dark':'light')+'"]');
+  var initBtn=document.querySelector('.layout-toggle-btn[data-group="theme"][data-value="'+(prefersDark?'dark':'light')+'"');
   if(initBtn) initBtn.classList.add('active');
   document.querySelectorAll('.layout-toggle-btn').forEach(function(btn){
     btn.addEventListener('click',function(){
