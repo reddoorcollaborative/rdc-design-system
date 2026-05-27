@@ -69,6 +69,12 @@
     <button class="layout-toggle-btn" data-group="size" data-value="large">Large</button>
     <button class="layout-toggle-btn" data-group="size" data-value="editorial">Editorial</button>
   </div>
+  <div class="layout-toggle-sep"></div>
+  <div class="layout-toggle-group">
+    <span class="layout-toggle-label">Theme</span>
+    <button class="layout-toggle-btn" data-group="theme" data-value="light">Light</button>
+    <button class="layout-toggle-btn" data-group="theme" data-value="dark">Dark</button>
+  </div>
 </div>
 
 <aside class="sidebar">
@@ -105,7 +111,7 @@
   <a class="nav-link" href="#guidelines">Brand rules</a>
   <a class="nav-link" href="#for-claude">Using with Claude</a>
 
-  <div class="sidebar-version">v1.0 &middot; 2025</div>
+  <div class="sidebar-version">v1.0 · 2025</div>
 </aside>
 
 <!-- ============================================================
@@ -126,27 +132,87 @@
     </div>
   </div>
 
+  <!-- ============================================================
+       COLORS
+  ============================================================ -->
   <section class="section" id="colors">
     <div class="section-eyebrow">Foundation</div>
     <h2 class="section-title">Color palette</h2>
     <p class="section-desc">Six colors define the RDC brand. Coral leads all CTAs and accents. Squid grounds dark surfaces. Wine and Mist provide tonal range. All values sourced from the official brand guide v1.0.</p>
+
     <div class="subsection">
       <div class="subsection-label">Primary palette</div>
       <div class="grid-3">
-        <div class="swatch"><div class="swatch-block" style="background:#FF4F58;"></div><div class="swatch-info"><div class="swatch-name">RDC Coral</div><div class="swatch-hex">#FF4F58</div><div class="swatch-sub">RGB 255·79·88</div><div class="swatch-sub">CMYK 0·84·58·0</div></div></div>
-        <div class="swatch"><div class="swatch-block" style="background:#0D1724;"></div><div class="swatch-info"><div class="swatch-name">Squid</div><div class="swatch-hex">#0D1724</div><div class="swatch-sub">RGB 13·23·36</div><div class="swatch-sub">CMYK 87·75·56·71</div></div></div>
-        <div class="swatch"><div class="swatch-block" style="background:#7F0046;"></div><div class="swatch-info"><div class="swatch-name">Wine</div><div class="swatch-hex">#7F0046</div><div class="swatch-sub">RGB 127·0·70</div><div class="swatch-sub">CMYK 35·100·48·25</div></div></div>
+        <div class="swatch">
+          <div class="swatch-block" style="background:#FF4F58;"></div>
+          <div class="swatch-info">
+            <div class="swatch-name">RDC Coral</div>
+            <div class="swatch-hex">#FF4F58</div>
+            <div class="swatch-sub">RGB 255·79·88</div>
+            <div class="swatch-sub">CMYK 0·84·58·0</div>
+          </div>
+        </div>
+        <div class="swatch">
+          <div class="swatch-block" style="background:#0D1724;"></div>
+          <div class="swatch-info">
+            <div class="swatch-name">Squid</div>
+            <div class="swatch-hex">#0D1724</div>
+            <div class="swatch-sub">RGB 13·23·36</div>
+            <div class="swatch-sub">CMYK 87·75·56·71</div>
+          </div>
+        </div>
+        <div class="swatch">
+          <div class="swatch-block" style="background:#7F0046;"></div>
+          <div class="swatch-info">
+            <div class="swatch-name">Wine</div>
+            <div class="swatch-hex">#7F0046</div>
+            <div class="swatch-sub">RGB 127·0·70</div>
+            <div class="swatch-sub">CMYK 35·100·48·25</div>
+          </div>
+        </div>
       </div>
     </div>
+
     <div class="subsection">
       <div class="subsection-label">Secondary palette</div>
       <div class="grid-4">
-        <div class="swatch"><div class="swatch-block" style="background:#ABDCE0;"></div><div class="swatch-info"><div class="swatch-name">Mist</div><div class="swatch-hex">#ABDCE0</div><div class="swatch-sub">RGB 171·220·224</div><div class="swatch-sub">CMYK 36·0·13·0</div></div></div>
-        <div class="swatch"><div class="swatch-block" style="background:#F3F3F3;border-bottom:1px solid var(--gray-200);"></div><div class="swatch-info"><div class="swatch-name">Gray</div><div class="swatch-hex">#F3F3F3</div><div class="swatch-sub">RGB 243·243·243</div><div class="swatch-sub">CMYK 3·2·2·0</div></div></div>
-        <div class="swatch"><div class="swatch-block" style="background:#FFFFFF;border-bottom:1px solid var(--gray-200);"></div><div class="swatch-info"><div class="swatch-name">White</div><div class="swatch-hex">#FFFFFF</div><div class="swatch-sub">CMYK 0·0·0·0</div></div></div>
-        <div class="swatch"><div class="swatch-block" style="background:linear-gradient(180deg,#7F0046 0%,#FF4F58 100%);"></div><div class="swatch-info"><div class="swatch-name">Gradient</div><div class="swatch-hex">Wine → Coral</div><div class="swatch-sub">180° · decorative</div></div></div>
+        <div class="swatch">
+          <div class="swatch-block" style="background:#ABDCE0;"></div>
+          <div class="swatch-info">
+            <div class="swatch-name">Mist</div>
+            <div class="swatch-hex">#ABDCE0</div>
+            <div class="swatch-sub">RGB 171·220·224</div>
+            <div class="swatch-sub">CMYK 36·0·13·0</div>
+          </div>
+        </div>
+        <div class="swatch">
+          <div class="swatch-block" style="background:#F3F3F3;border-bottom:1px solid var(--gray-200);"></div>
+          <div class="swatch-info">
+            <div class="swatch-name">Gray</div>
+            <div class="swatch-hex">#F3F3F3</div>
+            <div class="swatch-sub">RGB 243·243·243</div>
+            <div class="swatch-sub">CMYK 3·2·2·0</div>
+          </div>
+        </div>
+        <div class="swatch">
+          <div class="swatch-block" style="background:#FFFFFF;border-bottom:1px solid var(--gray-200);"></div>
+          <div class="swatch-info">
+            <div class="swatch-name">White</div>
+            <div class="swatch-hex">#FFFFFF</div>
+            <div class="swatch-sub">CMYK 0·0·0·0</div>
+          </div>
+        </div>
+        <div class="swatch">
+          <div class="swatch-block" style="background:linear-gradient(180deg,#7F0046 0%,#FF4F58 100%);"></div>
+          <div class="swatch-info">
+            <div class="swatch-name">Gradient</div>
+            <div class="swatch-hex">Wine → Coral</div>
+            <div class="swatch-sub">180° · decorative</div>
+          </div>
+        </div>
       </div>
     </div>
+
     <div class="subsection">
       <div class="subsection-label">Color purpose</div>
       <div class="card">
@@ -162,19 +228,37 @@
         </table>
       </div>
     </div>
+
     <div class="subsection">
       <div class="subsection-label">Approved color pairings</div>
       <div class="card">
-        <div class="pairing-row"><div class="pairing-strip"><div style="flex:3;background:#0D1724;"></div><div style="flex:1;background:#7F0046;"></div><div style="flex:1;background:#FF4F58;"></div></div><div class="pairing-label">Squid-anchored dark</div></div>
-        <div class="pairing-row"><div class="pairing-strip"><div style="flex:1;background:#FF4F58;"></div><div style="flex:3;background:#0D1724;"></div></div><div class="pairing-label">Coral on Squid</div></div>
-        <div class="pairing-row"><div class="pairing-strip"><div style="flex:3;background:#F3F3F3;"></div><div style="flex:1;background:#7F0046;"></div><div style="flex:0.5;background:#FF4F58;"></div></div><div class="pairing-label">Light with accent</div></div>
-        <div class="pairing-row"><div class="pairing-strip"><div style="flex:1;background:linear-gradient(135deg,#7F0046,#FF4F58);"></div><div style="flex:2;background:#FFFFFF;"></div></div><div class="pairing-label">Gradient + White</div></div>
-        <div class="pairing-row"><div class="pairing-strip"><div style="flex:1;background:#7F0046;"></div><div style="flex:1;background:#ABDCE0;"></div></div><div class="pairing-label">Wine + Mist contrast</div></div>
+        <div class="pairing-row">
+          <div class="pairing-strip"><div style="flex:3;background:#0D1724;"></div><div style="flex:1;background:#7F0046;"></div><div style="flex:1;background:#FF4F58;"></div></div>
+          <div class="pairing-label">Squid-anchored dark</div>
+        </div>
+        <div class="pairing-row">
+          <div class="pairing-strip"><div style="flex:1;background:#FF4F58;"></div><div style="flex:3;background:#0D1724;"></div></div>
+          <div class="pairing-label">Coral on Squid</div>
+        </div>
+        <div class="pairing-row">
+          <div class="pairing-strip"><div style="flex:3;background:#F3F3F3;"></div><div style="flex:1;background:#7F0046;"></div><div style="flex:0.5;background:#FF4F58;"></div></div>
+          <div class="pairing-label">Light with accent</div>
+        </div>
+        <div class="pairing-row">
+          <div class="pairing-strip"><div style="flex:1;background:linear-gradient(135deg,#7F0046,#FF4F58);"></div><div style="flex:2;background:#FFFFFF;"></div></div>
+          <div class="pairing-label">Gradient + White</div>
+        </div>
+        <div class="pairing-row">
+          <div class="pairing-strip"><div style="flex:1;background:#7F0046;"></div><div style="flex:1;background:#ABDCE0;"></div></div>
+          <div class="pairing-label">Wine + Mist contrast</div>
+        </div>
       </div>
     </div>
+
     <div class="subsection">
       <div class="subsection-label">CSS tokens</div>
-      <div class="code-block"><span class="cmt">/* Available via rdc.css */</span>
+      <div class="code-block">
+<span class="cmt">/* Available via rdc.css — reference anywhere in your HTML */</span>
 <span class="kw">--coral</span>:  <span class="str">#FF4F58</span>;  <span class="cmt">/* Primary CTA + accent */</span>
 <span class="kw">--squid</span>:  <span class="str">#0D1724</span>;  <span class="cmt">/* Dark surfaces */</span>
 <span class="kw">--wine</span>:   <span class="str">#7F0046</span>;  <span class="cmt">/* Secondary accent */</span>
@@ -185,10 +269,14 @@
   </section>
   <hr class="divider">
 
+  <!-- ============================================================
+       TYPOGRAPHY
+  ============================================================ -->
   <section class="section" id="typography">
     <div class="section-eyebrow">Foundation</div>
     <h2 class="section-title">Typography</h2>
-    <p class="section-desc">Suisse Int'l (Swiss Typefaces) is the primary brand typeface. Proxima Nova (Adobe Fonts) is the approved secondary digital face. DM Sans is the Google Fonts substitute for HTML deliverables.</p>
+    <p class="section-desc">Suisse Int'l (Swiss Typefaces) is the primary brand typeface for all print and licensed digital contexts. Proxima Nova (Adobe Fonts) is the approved secondary digital face. DM Sans is the Google Fonts substitute for HTML deliverables where licensed fonts are unavailable.</p>
+
     <div class="subsection">
       <div class="subsection-label">Typeface hierarchy</div>
       <div class="card">
@@ -203,19 +291,45 @@
         </table>
       </div>
     </div>
+
     <div class="subsection">
       <div class="subsection-label">Type scale</div>
       <div class="card">
-        <div class="type-row"><div class="type-meta">Display · 48/700</div><div class="type-specimen" style="font-size:34px;font-weight:700;letter-spacing:-0.03em;line-height:1.05;color:var(--squid);">Creativity meets strategy</div></div>
-        <div class="type-row"><div class="type-meta">H1 · 36/700</div><div class="type-specimen" style="font-size:26px;font-weight:700;letter-spacing:-0.025em;color:var(--squid);">Red Door is a multidisciplinary agency</div></div>
-        <div class="type-row"><div class="type-meta">H2 · 24/600</div><div class="type-specimen" style="font-size:20px;font-weight:600;letter-spacing:-0.01em;color:var(--squid);">Section heading</div></div>
-        <div class="type-row"><div class="type-meta">H3 · 18/600</div><div class="type-specimen" style="font-size:16px;font-weight:600;color:var(--squid);">Component or card heading</div></div>
-        <div class="type-row"><div class="type-meta">Body · 16/400</div><div class="type-specimen" style="font-size:15px;font-weight:400;line-height:1.7;color:#1A1A1A;">We value the people who walk through our door and take pride in the ones we help open for others.</div></div>
-        <div class="type-row"><div class="type-meta">Small · 14/400</div><div class="type-specimen" style="font-size:13px;font-weight:400;color:var(--gray-500);line-height:1.6;">Supporting copy, captions, and secondary information.</div></div>
-        <div class="type-row"><div class="type-meta">Eyebrow · 10/600</div><div class="type-specimen" style="font-size:10px;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;color:var(--coral);">Category · Tag · Section label</div></div>
-        <div class="type-row"><div class="type-meta">Mono · 12/400</div><div class="type-specimen" style="font-family:var(--font-mono);font-size:12px;color:var(--gray-500);">#FF4F58 · path/to/file.html · v1.0</div></div>
+        <div class="type-row">
+          <div class="type-meta">Display · 48/700</div>
+          <div class="type-specimen" style="font-size:34px;font-weight:700;letter-spacing:-0.03em;line-height:1.05;color:var(--squid);">Creativity meets strategy</div>
+        </div>
+        <div class="type-row">
+          <div class="type-meta">H1 · 36/700</div>
+          <div class="type-specimen" style="font-size:26px;font-weight:700;letter-spacing:-0.025em;color:var(--squid);">Red Door is a multidisciplinary agency</div>
+        </div>
+        <div class="type-row">
+          <div class="type-meta">H2 · 24/600</div>
+          <div class="type-specimen" style="font-size:20px;font-weight:600;letter-spacing:-0.01em;color:var(--squid);">Section heading</div>
+        </div>
+        <div class="type-row">
+          <div class="type-meta">H3 · 18/600</div>
+          <div class="type-specimen" style="font-size:16px;font-weight:600;color:var(--squid);">Component or card heading</div>
+        </div>
+        <div class="type-row">
+          <div class="type-meta">Body · 16/400</div>
+          <div class="type-specimen" style="font-size:15px;font-weight:400;line-height:1.7;color:#1A1A1A;">We value the people who walk through our door and take pride in the ones we help open for others.</div>
+        </div>
+        <div class="type-row">
+          <div class="type-meta">Small · 14/400</div>
+          <div class="type-specimen" style="font-size:13px;font-weight:400;color:var(--gray-500);line-height:1.6;">Supporting copy, captions, and secondary information.</div>
+        </div>
+        <div class="type-row">
+          <div class="type-meta">Eyebrow · 10/600</div>
+          <div class="type-specimen" style="font-size:10px;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;color:var(--coral);">Category · Tag · Section label</div>
+        </div>
+        <div class="type-row">
+          <div class="type-meta">Mono · 12/400</div>
+          <div class="type-specimen" style="font-family:var(--font-mono);font-size:12px;color:var(--gray-500);">#FF4F58 · path/to/file.html · v1.0</div>
+        </div>
       </div>
     </div>
+
     <div class="subsection">
       <div class="subsection-label">Typography rules</div>
       <div class="card">
@@ -223,12 +337,14 @@
           <li>Always <strong>sentence case</strong> for headings — never title case or all caps (eyebrow labels excepted)</li>
           <li>Maximum <strong>3 font weights</strong> on any single page or spread</li>
           <li>Do <strong>not italicize</strong> headings as an emphasis style</li>
+          <li>Do <strong>not</strong> set body copy in condensed or decorative variants</li>
           <li>Create hierarchy through <strong>weight variation</strong>, not size alone</li>
         </ul>
       </div>
     </div>
+
     <div class="subsection">
-      <div class="subsection-label">Google Fonts import</div>
+      <div class="subsection-label">Google Fonts import (for HTML deliverables)</div>
       <div class="code-block"><span class="cmt">&lt;!-- Paste in &lt;head&gt; before rdc.css --&gt;</span>
 &lt;<span class="kw">link</span> rel=<span class="str">"preconnect"</span> href=<span class="str">"https://fonts.googleapis.com"</span>&gt;
 &lt;<span class="kw">link</span> rel=<span class="str">"preconnect"</span> href=<span class="str">"https://fonts.gstatic.com"</span> crossorigin&gt;
@@ -237,10 +353,14 @@
   </section>
   <hr class="divider">
 
+  <!-- ============================================================
+       SPACING
+  ============================================================ -->
   <section class="section" id="spacing">
     <div class="section-eyebrow">Foundation</div>
     <h2 class="section-title">Spacing &amp; layout grid</h2>
-    <p class="section-desc">RDC uses an 8pt base grid. All spacing values are multiples of 4px.</p>
+    <p class="section-desc">RDC uses an 8pt base grid. All spacing values are multiples of 4px. Layouts use a 12-column grid at desktop, collapsing to 4 columns on mobile.</p>
+
     <div class="subsection">
       <div class="subsection-label">Spacing scale</div>
       <div class="card">
@@ -254,6 +374,7 @@
         <div class="space-demo"><div class="space-bar" style="width:64px;"></div><div class="space-token">--space-16</div><div class="space-val">64px</div><div class="space-use">Hero and section-level spacing</div></div>
       </div>
     </div>
+
     <div class="subsection">
       <div class="subsection-label">Layout grid</div>
       <div class="card">
@@ -266,26 +387,32 @@
             <tr><td>Wide</td><td class="mono">&gt;1440px</td><td>12</td><td class="mono">32px</td><td class="mono">auto</td></tr>
           </tbody>
         </table>
+        <p style="font-size:12px;color:var(--gray-500);margin-top:12px;">Max content width: 1280px. Page sections use 64–96px top/bottom padding on desktop.</p>
       </div>
     </div>
   </section>
   <hr class="divider">
 
+  <!-- ============================================================
+       RADIUS & SHADOW
+  ============================================================ -->
   <section class="section" id="tokens">
     <div class="section-eyebrow">Foundation</div>
     <h2 class="section-title">Radius &amp; shadow tokens</h2>
+
     <div class="subsection">
       <div class="subsection-label">Border radius</div>
       <div class="card">
         <div class="radius-row">
-          <div class="radius-item"><div class="radius-block" style="border-radius:4px;"></div><div class="radius-lbl">--radius-sm</div><div class="radius-lbl" style="color:var(--gray-300);">4px · badges</div></div>
-          <div class="radius-item"><div class="radius-block" style="border-radius:8px;"></div><div class="radius-lbl">--radius-md</div><div class="radius-lbl" style="color:var(--gray-300);">8px · inputs</div></div>
+          <div class="radius-item"><div class="radius-block" style="border-radius:4px;"></div><div class="radius-lbl">--radius-sm</div><div class="radius-lbl" style="color:var(--gray-300);">4px · badges, code</div></div>
+          <div class="radius-item"><div class="radius-block" style="border-radius:8px;"></div><div class="radius-lbl">--radius-md</div><div class="radius-lbl" style="color:var(--gray-300);">8px · inputs, alerts</div></div>
           <div class="radius-item"><div class="radius-block" style="border-radius:12px;"></div><div class="radius-lbl">--radius-lg</div><div class="radius-lbl" style="color:var(--gray-300);">12px · cards</div></div>
-          <div class="radius-item"><div class="radius-block" style="border-radius:18px;"></div><div class="radius-lbl">--radius-xl</div><div class="radius-lbl" style="color:var(--gray-300);">18px · hero</div></div>
-          <div class="radius-item"><div class="radius-block" style="border-radius:999px;width:52px;height:28px;"></div><div class="radius-lbl">--radius-pill</div><div class="radius-lbl" style="color:var(--gray-300);">999px · buttons</div></div>
+          <div class="radius-item"><div class="radius-block" style="border-radius:18px;"></div><div class="radius-lbl">--radius-xl</div><div class="radius-lbl" style="color:var(--gray-300);">18px · hero blocks</div></div>
+          <div class="radius-item"><div class="radius-block" style="border-radius:999px;width:52px;height:28px;"></div><div class="radius-lbl">--radius-pill</div><div class="radius-lbl" style="color:var(--gray-300);">999px · buttons, tags</div></div>
         </div>
       </div>
     </div>
+
     <div class="subsection">
       <div class="subsection-label">Shadows</div>
       <div class="grid-3">
@@ -297,18 +424,57 @@
   </section>
   <hr class="divider">
 
+  <!-- ============================================================
+       LOGOS
+  ============================================================ -->
   <section class="section" id="logos">
     <div class="section-eyebrow">Brand</div>
     <h2 class="section-title">Logo &amp; marks</h2>
-    <p class="section-desc">The primary logo — circular Wine/Coral mark + "red door collaborative" lowercase wordmark. Always use approved files from Box. Minimum digital size: 85px wide.</p>
+    <p class="section-desc">The primary logo — circular Wine/Coral mark + “red door collaborative” lowercase wordmark — leads all marketing contexts. Always use approved files from Box. Minimum digital size: 85px wide.</p>
+
     <div class="subsection">
       <div class="subsection-label">Primary lockup variants</div>
       <div class="grid-3">
-        <div><div class="logo-preview" style="background:#F3F3F3;"><div class="logo-lockup"><div class="logo-mark">rd</div><div class="logo-wordmark" style="color:var(--squid);">red door<br>collaborative</div></div></div><div class="logo-preview-lbl">Full color · light bg</div></div>
-        <div><div class="logo-preview" style="background:var(--squid);"><div class="logo-lockup"><div class="logo-mark">rd</div><div class="logo-wordmark" style="color:#fff;">red door<br>collaborative</div></div></div><div class="logo-preview-lbl">Full color · dark bg</div></div>
-        <div><div class="logo-preview" style="background:var(--coral);"><div class="logo-lockup"><div class="logo-mark" style="background:#fff;color:var(--coral);">rd</div><div class="logo-wordmark" style="color:#fff;">red door<br>collaborative</div></div></div><div class="logo-preview-lbl">Reversed · coral bg</div></div>
+        <div>
+          <div class="logo-preview" style="background:#F3F3F3;">
+            <div class="logo-lockup">
+              <div class="logo-mark">rd</div>
+              <div class="logo-wordmark" style="color:var(--squid);">red door<br>collaborative</div>
+            </div>
+          </div>
+          <div class="logo-preview-lbl">Full color · light bg</div>
+        </div>
+        <div>
+          <div class="logo-preview" style="background:var(--squid);">
+            <div class="logo-lockup">
+              <div class="logo-mark">rd</div>
+              <div class="logo-wordmark" style="color:#fff;">red door<br>collaborative</div>
+            </div>
+          </div>
+          <div class="logo-preview-lbl">Full color · dark bg</div>
+        </div>
+        <div>
+          <div class="logo-preview" style="background:var(--coral);">
+            <div class="logo-lockup">
+              <div class="logo-mark" style="background:#fff;color:var(--coral);">rd</div>
+              <div class="logo-wordmark" style="color:#fff;">red door<br>collaborative</div>
+            </div>
+          </div>
+          <div class="logo-preview-lbl">Reversed · coral bg</div>
+        </div>
       </div>
     </div>
+
+    <div class="subsection">
+      <div class="subsection-label">Mark only variants</div>
+      <div class="card" style="display:flex;gap:28px;align-items:flex-end;flex-wrap:wrap;">
+        <div style="display:flex;flex-direction:column;align-items:center;gap:8px;"><div class="logo-mark" style="width:52px;height:52px;font-size:19px;">rd</div><div style="font-size:10px;color:var(--gray-500);letter-spacing:0.08em;text-transform:uppercase;">Primary</div></div>
+        <div style="display:flex;flex-direction:column;align-items:center;gap:8px;"><div class="logo-mark" style="width:52px;height:52px;font-size:19px;background:var(--squid);color:var(--coral);">rd</div><div style="font-size:10px;color:var(--gray-500);letter-spacing:0.08em;text-transform:uppercase;">Squid</div></div>
+        <div style="display:flex;flex-direction:column;align-items:center;gap:8px;"><div class="logo-mark" style="width:52px;height:52px;font-size:19px;background:var(--coral);color:#fff;">rd</div><div style="font-size:10px;color:var(--gray-500);letter-spacing:0.08em;text-transform:uppercase;">Coral</div></div>
+        <div style="display:flex;flex-direction:column;align-items:center;gap:8px;background:var(--squid);padding:16px;border-radius:10px;"><div class="logo-mark" style="width:52px;height:52px;font-size:19px;background:transparent;border:1.5px solid var(--coral);color:var(--coral);">rd</div><div style="font-size:10px;color:rgba(255,255,255,0.35);letter-spacing:0.08em;text-transform:uppercase;">Outline</div></div>
+      </div>
+    </div>
+
     <div class="subsection">
       <div class="subsection-label">Minimum sizes &amp; clear space</div>
       <div class="card">
@@ -317,12 +483,13 @@
           <tbody>
             <tr><td>Full lockup (digital)</td><td class="mono">85px</td><td>Per brand guide v1.0</td></tr>
             <tr><td>Full lockup (print)</td><td class="mono">0.25 in</td><td>Per brand guide v1.0</td></tr>
-            <tr><td>Mark only (digital)</td><td class="mono">24px</td><td>Favicons, avatars</td></tr>
+            <tr><td>Mark only (digital)</td><td class="mono">24px</td><td>Favicons, avatars, app icons</td></tr>
           </tbody>
         </table>
-        <p style="font-size:13px;color:var(--gray-500);margin-top:1rem;line-height:1.6;">Clear space: the logo fits within a square. Use that square's dimensions as the minimum clear space on all four sides.</p>
+        <p style="font-size:13px;color:var(--gray-500);margin-top:1rem;line-height:1.6;">Clear space: the logo fits within a square. Use that square's dimensions as the minimum clear space on all four sides. No other elements should enter this zone.</p>
       </div>
     </div>
+
     <div class="subsection">
       <div class="subsection-label">Logo misuse — do not do the following</div>
       <div class="misuse-grid">
@@ -337,47 +504,91 @@
   </section>
   <hr class="divider">
 
+  <!-- ============================================================
+       BACKGROUNDS
+  ============================================================ -->
   <section class="section" id="backgrounds">
     <div class="section-eyebrow">Brand</div>
     <h2 class="section-title">Backgrounds</h2>
-    <p class="section-desc">Four official background treatments from the brand guide.</p>
+    <p class="section-desc">Backgrounds draw from the primary color palette. Four official background treatments from the brand guide.</p>
+
     <div class="grid-4">
-      <div style="border-radius:var(--radius-lg);overflow:hidden;border:1px solid var(--gray-200);"><div style="height:80px;background:linear-gradient(135deg,#7F0046,#FF4F58);"></div><div style="padding:10px 12px;background:var(--white);"><div style="font-size:11px;font-weight:700;color:var(--gray-900);">Gradient</div><div style="font-size:10px;color:var(--gray-500);">Wine → Coral · decorative</div></div></div>
-      <div style="border-radius:var(--radius-lg);overflow:hidden;border:1px solid var(--gray-200);"><div style="height:80px;background:#F3F3F3;"></div><div style="padding:10px 12px;background:var(--white);"><div style="font-size:11px;font-weight:700;color:var(--gray-900);">Gray</div><div style="font-size:10px;color:var(--gray-500);">#F3F3F3 · primary light bg</div></div></div>
-      <div style="border-radius:var(--radius-lg);overflow:hidden;border:1px solid var(--gray-200);"><div style="height:80px;background:#0D1724;"></div><div style="padding:10px 12px;background:var(--white);"><div style="font-size:11px;font-weight:700;color:var(--gray-900);">Squid</div><div style="font-size:10px;color:var(--gray-500);">#0D1724 · dark/authority</div></div></div>
-      <div style="border-radius:var(--radius-lg);overflow:hidden;border:1px solid var(--gray-200);"><div style="height:80px;background:#7F0046;"></div><div style="padding:10px 12px;background:var(--white);"><div style="font-size:11px;font-weight:700;color:var(--gray-900);">Wine</div><div style="font-size:10px;color:var(--gray-500);">#7F0046 · bold accent bg</div></div></div>
+      <div style="border-radius:var(--radius-lg);overflow:hidden;border:1px solid var(--gray-200);">
+        <div style="height:80px;background:linear-gradient(135deg,#7F0046,#FF4F58);"></div>
+        <div style="padding:10px 12px;background:var(--white);"><div style="font-size:11px;font-weight:700;color:var(--gray-900);">Gradient</div><div style="font-size:10px;color:var(--gray-500);">Wine → Coral · decorative</div></div>
+      </div>
+      <div style="border-radius:var(--radius-lg);overflow:hidden;border:1px solid var(--gray-200);">
+        <div style="height:80px;background:#F3F3F3;"></div>
+        <div style="padding:10px 12px;background:var(--white);"><div style="font-size:11px;font-weight:700;color:var(--gray-900);">Gray</div><div style="font-size:10px;color:var(--gray-500);">#F3F3F3 · primary light bg</div></div>
+      </div>
+      <div style="border-radius:var(--radius-lg);overflow:hidden;border:1px solid var(--gray-200);">
+        <div style="height:80px;background:#0D1724;"></div>
+        <div style="padding:10px 12px;background:var(--white);"><div style="font-size:11px;font-weight:700;color:var(--gray-900);">Squid</div><div style="font-size:10px;color:var(--gray-500);">#0D1724 · dark/authority</div></div>
+      </div>
+      <div style="border-radius:var(--radius-lg);overflow:hidden;border:1px solid var(--gray-200);">
+        <div style="height:80px;background:#7F0046;"></div>
+        <div style="padding:10px 12px;background:var(--white);"><div style="font-size:11px;font-weight:700;color:var(--gray-900);">Wine</div><div style="font-size:10px;color:var(--gray-500);">#7F0046 · bold accent bg</div></div>
+      </div>
     </div>
   </section>
   <hr class="divider">
 
+  <!-- ============================================================
+       BUTTONS
+  ============================================================ -->
   <section class="section" id="buttons">
     <div class="section-eyebrow">Components</div>
     <h2 class="section-title">Buttons</h2>
     <p class="section-desc">All buttons use <code>border-radius: 999px</code> (pill shape). Coral is the primary CTA. Three sizes. Never use more than two button styles in a single view.</p>
+
     <div class="card">
       <div class="btn-group-label">Filled</div>
-      <div class="btn-row"><button class="btn btn-primary">Hire us</button><button class="btn btn-dark">Learn more</button><button class="btn btn-wine">Get started</button></div>
+      <div class="btn-row">
+        <button class="btn btn-primary">Hire us</button>
+        <button class="btn btn-dark">Learn more</button>
+        <button class="btn btn-wine">Get started</button>
+      </div>
       <div class="btn-group-label">Outlined</div>
-      <div class="btn-row"><button class="btn btn-outline-coral">View services</button><button class="btn btn-outline-dark">See our work</button><button class="btn btn-ghost">Cancel</button></div>
+      <div class="btn-row">
+        <button class="btn btn-outline-coral">View services</button>
+        <button class="btn btn-outline-dark">See our work</button>
+        <button class="btn btn-ghost">Cancel</button>
+      </div>
       <div class="btn-group-label">Sizes</div>
-      <div class="btn-row"><button class="btn btn-primary btn-sm">Small</button><button class="btn btn-primary">Default</button><button class="btn btn-primary btn-lg">Large</button></div>
-      <div class="btn-group-label">Disabled</div>
-      <div class="btn-row"><button class="btn btn-primary" disabled>Disabled</button><button class="btn btn-outline-coral" disabled>Disabled</button></div>
+      <div class="btn-row">
+        <button class="btn btn-primary btn-sm">Small</button>
+        <button class="btn btn-primary">Default</button>
+        <button class="btn btn-primary btn-lg">Large</button>
+      </div>
+      <div class="btn-group-label">Disabled state</div>
+      <div class="btn-row">
+        <button class="btn btn-primary" disabled>Disabled</button>
+        <button class="btn btn-outline-coral" disabled>Disabled</button>
+      </div>
     </div>
+
     <div class="subsection" style="margin-top:1.5rem;">
       <div class="subsection-label">Usage</div>
       <div class="code-block"><span class="cmt">&lt;!-- Primary CTA --&gt;</span>
 &lt;<span class="kw">button</span> class=<span class="str">"btn btn-primary"</span>&gt;Hire us&lt;/button&gt;
+
+<span class="cmt">&lt;!-- As a link --&gt;</span>
 &lt;<span class="kw">a</span> href=<span class="str">"#"</span> class=<span class="str">"btn btn-dark"</span>&gt;Learn more&lt;/a&gt;
+
+<span class="cmt">&lt;!-- Small size --&gt;</span>
 &lt;<span class="kw">button</span> class=<span class="str">"btn btn-primary btn-sm"</span>&gt;View case study&lt;/button&gt;</div>
     </div>
   </section>
   <hr class="divider">
 
+  <!-- ============================================================
+       BADGES
+  ============================================================ -->
   <section class="section" id="badges">
     <div class="section-eyebrow">Components</div>
     <h2 class="section-title">Badges &amp; tags</h2>
     <p class="section-desc">Inline labels for categories, clients, statuses, and services. Always pill-shaped. Always use tinted backgrounds — never solid fills.</p>
+
     <div class="card">
       <div class="tag-row">
         <span class="badge badge-coral">Brand strategy</span>
@@ -392,26 +603,64 @@
   </section>
   <hr class="divider">
 
+  <!-- ============================================================
+       CARDS
+  ============================================================ -->
   <section class="section" id="cards">
     <div class="section-eyebrow">Components</div>
     <h2 class="section-title">Cards</h2>
-    <p class="section-desc">Three card types for different content contexts. The colored top bar is 4px and uses brand colors to signal category.</p>
+    <p class="section-desc">Three card types for different content contexts. All use the same base border and radius. The colored top bar is 4px and uses brand colors to signal category.</p>
+
     <div class="subsection">
       <div class="subsection-label">Doc cards — navigational links</div>
       <div class="grid-2">
-        <a href="#" class="doc-card"><div class="doc-card-bar"></div><div class="doc-card-body"><div class="eyebrow">Case study · Microsoft</div><h3>Azure Essentials Show</h3><p>Brand strategy, digital marketing, content marketing, social media, video production.</p><div class="doc-card-lock">Open access</div></div></a>
-        <a href="#" class="doc-card"><div class="doc-card-bar" style="background:var(--squid);"></div><div class="doc-card-body"><div class="eyebrow">SOP · R1 Draft</div><h3>File Taxonomy SOP</h3><p>16 sections + 4 appendices covering storage, taxonomy, naming, versioning, and migration.</p><div class="doc-card-lock">Password-protected</div></div></a>
+        <a href="#" class="doc-card">
+          <div class="doc-card-bar"></div>
+          <div class="doc-card-body">
+            <div class="eyebrow">Case study · Microsoft</div>
+            <h3>Azure Essentials Show</h3>
+            <p>Brand strategy, digital marketing, content marketing, social media, video production.</p>
+            <div class="doc-card-lock">Open access</div>
+          </div>
+        </a>
+        <a href="#" class="doc-card">
+          <div class="doc-card-bar" style="background:var(--squid);"></div>
+          <div class="doc-card-body">
+            <div class="eyebrow">SOP · R1 Draft</div>
+            <h3>File Taxonomy SOP</h3>
+            <p>16 sections + 4 appendices covering storage, taxonomy, naming, versioning, and migration.</p>
+            <div class="doc-card-lock">Password-protected</div>
+          </div>
+        </a>
       </div>
     </div>
+
     <div class="subsection">
       <div class="subsection-label">Content cards — editorial</div>
       <div class="grid-2">
-        <div class="content-card"><div class="content-card-bar" style="background:var(--coral);"></div><div class="content-card-body"><div class="content-card-eyebrow">Microsoft</div><div class="content-card-title">Azure Essentials Show</div><div class="content-card-copy">Brand strategy, digital marketing, content marketing, social media, video production.</div><button class="btn btn-primary btn-sm">Case study</button></div></div>
-        <div class="content-card"><div class="content-card-bar" style="background:var(--wine);"></div><div class="content-card-body"><div class="content-card-eyebrow">Databricks</div><div class="content-card-title">Lakehouse data warehousing guide</div><div class="content-card-copy">Content marketing, graphic design, long-form e-book production.</div><button class="btn btn-dark btn-sm">Read more</button></div></div>
+        <div class="content-card">
+          <div class="content-card-bar" style="background:var(--coral);"></div>
+          <div class="content-card-body">
+            <div class="content-card-eyebrow">Microsoft</div>
+            <div class="content-card-title">Azure Essentials Show</div>
+            <div class="content-card-copy">Brand strategy, digital marketing, content marketing, social media, video production.</div>
+            <button class="btn btn-primary btn-sm">Case study</button>
+          </div>
+        </div>
+        <div class="content-card">
+          <div class="content-card-bar" style="background:var(--wine);"></div>
+          <div class="content-card-body">
+            <div class="content-card-eyebrow">Databricks</div>
+            <div class="content-card-title">Lakehouse data warehousing guide</div>
+            <div class="content-card-copy">Content marketing, graphic design, long-form e-book production.</div>
+            <button class="btn btn-dark btn-sm">Read more</button>
+          </div>
+        </div>
       </div>
     </div>
+
     <div class="subsection">
-      <div class="subsection-label">Metric cards</div>
+      <div class="subsection-label">Metric cards — dashboards &amp; summaries</div>
       <div class="grid-3">
         <div class="metric-card"><div class="metric-label">Client projects</div><div class="metric-value">48</div><div class="metric-delta">↑ +12 this quarter</div></div>
         <div class="metric-card"><div class="metric-label">Services offered</div><div class="metric-value">14</div><div class="metric-sub">Across 3 pillars</div></div>
@@ -421,32 +670,71 @@
   </section>
   <hr class="divider">
 
+  <!-- ============================================================
+       FORMS
+  ============================================================ -->
   <section class="section" id="forms">
     <div class="section-eyebrow">Components</div>
     <h2 class="section-title">Forms</h2>
-    <p class="section-desc">Inputs use Coral as the focus ring color. Labels sit above inputs in 12px/600.</p>
+    <p class="section-desc">Inputs use Coral as the focus ring color. Labels sit above inputs in 12px/600 with slight tracking. Always group related fields.</p>
+
     <div class="card">
       <div class="grid-2" style="gap:var(--space-4);margin-bottom:var(--space-4);">
-        <div class="form-group"><label class="form-label">Full name</label><input class="input-rdc" type="text" placeholder="Chris Telfer"></div>
-        <div class="form-group"><label class="form-label">Email address</label><input class="input-rdc" type="email" placeholder="hello@reddoorcollaborative.com"></div>
+        <div class="form-group">
+          <label class="form-label">Full name</label>
+          <input class="input-rdc" type="text" placeholder="Chris Telfer">
+        </div>
+        <div class="form-group">
+          <label class="form-label">Email address</label>
+          <input class="input-rdc" type="email" placeholder="hello@reddoorcollaborative.com">
+        </div>
       </div>
-      <div class="form-group"><label class="form-label">Service interest</label><select class="select-rdc"><option>Brand strategy</option><option>Content marketing</option><option>Digital marketing</option><option>Graphic design services</option><option>Video marketing and production</option></select></div>
-      <div class="form-group"><label class="form-label">Message</label><textarea class="input-rdc" rows="3" placeholder="Tell us about your project..." style="resize:vertical;"></textarea></div>
+      <div class="form-group">
+        <label class="form-label">Service interest</label>
+        <select class="select-rdc">
+          <option>Brand strategy</option>
+          <option>Content marketing</option>
+          <option>Digital marketing</option>
+          <option>Graphic design services</option>
+          <option>Video marketing and production</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label class="form-label">Message</label>
+        <textarea class="input-rdc" rows="3" placeholder="Tell us about your project..." style="resize:vertical;"></textarea>
+      </div>
       <button class="btn btn-primary">Send message</button>
     </div>
   </section>
   <hr class="divider">
 
+  <!-- ============================================================
+       ALERTS
+  ============================================================ -->
   <section class="section" id="alerts">
     <div class="section-eyebrow">Components</div>
     <h2 class="section-title">Alerts &amp; banners</h2>
-    <p class="section-desc">Four semantic alert levels plus a banner variant. Always use tinted backgrounds with a colored indicator dot.</p>
+    <p class="section-desc">Four semantic alert levels plus a banner variant. Always use tinted backgrounds with a colored indicator dot — never solid fills.</p>
+
     <div class="card" style="display:flex;flex-direction:column;gap:0;">
-      <div class="alert alert-coral"><div class="alert-dot"></div><div class="alert-body"><div class="alert-title">Brand consistency required</div>Always use approved logo files from Box — not recreations or screenshots.</div></div>
-      <div class="alert alert-info"><div class="alert-dot"></div><div class="alert-body"><div class="alert-title">Design system updated</div>v1.0 is live. This version supersedes all previous brand documents.</div></div>
-      <div class="alert alert-success"><div class="alert-dot"></div><div class="alert-body"><div class="alert-title">Asset approved</div>This file meets brand standards and is cleared for use in client-facing materials.</div></div>
-      <div class="alert alert-warning"><div class="alert-dot"></div><div class="alert-body"><div class="alert-title">Review needed</div>This document is pending sign-off before external distribution.</div></div>
+      <div class="alert alert-coral">
+        <div class="alert-dot"></div>
+        <div class="alert-body"><div class="alert-title">Brand consistency required</div>Always use approved logo files from Box — not recreations or screenshots.</div>
+      </div>
+      <div class="alert alert-info">
+        <div class="alert-dot"></div>
+        <div class="alert-body"><div class="alert-title">Design system updated</div>v1.0 is live. This version supersedes all previous brand documents.</div>
+      </div>
+      <div class="alert alert-success">
+        <div class="alert-dot"></div>
+        <div class="alert-body"><div class="alert-title">Asset approved</div>This file meets brand standards and is cleared for use in client-facing materials.</div>
+      </div>
+      <div class="alert alert-warning">
+        <div class="alert-dot"></div>
+        <div class="alert-body"><div class="alert-title">Review needed</div>This document is pending sign-off before external distribution.</div>
+      </div>
     </div>
+
     <div style="margin-top:var(--space-4);">
       <div class="subsection-label" style="margin-bottom:var(--space-3);">Banner variant</div>
       <div class="alert-banner"><strong>Access:</strong> Password-protected documents require the access password. Request from Brian.</div>
@@ -454,13 +742,19 @@
   </section>
   <hr class="divider">
 
+  <!-- ============================================================
+       TABLES
+  ============================================================ -->
   <section class="section" id="tables">
     <div class="section-eyebrow">Components</div>
     <h2 class="section-title">Tables</h2>
-    <p class="section-desc">Tables use minimal borders — only a bottom rule per row. Headers are uppercase 10px labels. Mono font for technical values.</p>
+    <p class="section-desc">Tables use minimal borders — only a bottom rule per row. Headers are uppercase 10px labels. Mono font for technical values like hex codes and file paths.</p>
+
     <div class="card">
       <table class="table-rdc">
-        <thead><tr><th>Service</th><th>Status</th><th>Client</th><th>Delivered</th></tr></thead>
+        <thead>
+          <tr><th>Service</th><th>Status</th><th>Client</th><th>Delivered</th></tr>
+        </thead>
         <tbody>
           <tr><td>Brand strategy</td><td><span class="badge badge-success">Delivered</span></td><td>Microsoft</td><td class="mono">2025-Q1</td></tr>
           <tr><td>Content marketing</td><td><span class="badge badge-wine">In progress</span></td><td>Databricks</td><td class="mono">2025-Q2</td></tr>
@@ -472,44 +766,95 @@
   </section>
   <hr class="divider">
 
+  <!-- ============================================================
+       PAGE PATTERNS
+  ============================================================ -->
   <section class="section" id="patterns">
     <div class="section-eyebrow">Page patterns</div>
     <h2 class="section-title">Hero header</h2>
-    <p class="section-desc">The dark Squid hero block is the standard page opener for all RDC HTML deliverables. The <code>rd</code> watermark in the lower right is a subtle brand signature — do not remove it.</p>
+    <p class="section-desc">The dark Squid hero block is the standard page opener for all RDC HTML deliverables. The watermark <code>rd</code> in the lower right corner is a subtle brand signature — do not remove it.</p>
+
     <div class="page-header" style="margin-bottom:0;">
       <div class="eyebrow">Red Door Collaborative</div>
       <h1 class="page-header-title">Page title goes here</h1>
-      <p class="page-header-desc">One to two sentences describing the document's purpose and audience.</p>
-      <div class="header-meta"><div class="header-meta-item"><span class="header-meta-label">Version</span><span class="header-meta-value">1.0</span></div><div class="header-meta-item"><span class="header-meta-label">Status</span><span class="header-meta-value">Draft</span></div><div class="header-meta-item"><span class="header-meta-label">Owner</span><span class="header-meta-value">Brian Jensen</span></div></div>
+      <p class="page-header-desc">One to two sentences describing the document’s purpose and audience. Keep it concise — this is orientation, not content.</p>
+      <div class="header-meta">
+        <div class="header-meta-item"><span class="header-meta-label">Version</span><span class="header-meta-value">1.0</span></div>
+        <div class="header-meta-item"><span class="header-meta-label">Status</span><span class="header-meta-value">Draft</span></div>
+        <div class="header-meta-item"><span class="header-meta-label">Owner</span><span class="header-meta-value">Brian Jensen</span></div>
+      </div>
     </div>
+
     <div class="subsection" style="margin-top:2rem;">
       <div class="subsection-label">Code</div>
       <div class="code-block">&lt;<span class="kw">div</span> class=<span class="str">"page-header"</span>&gt;
   &lt;<span class="kw">div</span> class=<span class="str">"eyebrow"</span>&gt;Red Door Collaborative&lt;/div&gt;
   &lt;<span class="kw">h1</span> class=<span class="str">"page-header-title"</span>&gt;Page title&lt;/h1&gt;
   &lt;<span class="kw">p</span> class=<span class="str">"page-header-desc"</span>&gt;Description&lt;/p&gt;
+  &lt;<span class="kw">div</span> class=<span class="str">"header-meta"</span>&gt;
+    &lt;<span class="kw">div</span> class=<span class="str">"header-meta-item"</span>&gt;
+      &lt;<span class="kw">span</span> class=<span class="str">"header-meta-label"</span>&gt;Version&lt;/span&gt;
+      &lt;<span class="kw">span</span> class=<span class="str">"header-meta-value"</span>&gt;1.0&lt;/span&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
 &lt;/div&gt;</div>
     </div>
   </section>
   <hr class="divider">
 
+  <!-- ============================================================
+       TEMPLATES
+  ============================================================ -->
   <section class="section" id="templates">
     <div class="section-eyebrow">Page patterns</div>
     <h2 class="section-title">HTML templates</h2>
     <p class="section-desc">Four ready-to-use templates. Each links to <code>rdc.css</code> and follows all brand rules. Copy, rename, and fill in your content.</p>
+
     <div class="grid-2">
-      <a href="templates/hub.html" class="doc-card"><div class="doc-card-bar"></div><div class="doc-card-body"><div class="eyebrow">Template</div><h3>Hub / portal</h3><p>Knowledge base index, project hub, or any page that links to a collection of documents via cards.</p></div></a>
-      <a href="templates/document.html" class="doc-card"><div class="doc-card-bar" style="background:var(--squid);"></div><div class="doc-card-body"><div class="eyebrow">Template</div><h3>Long-form document</h3><p>SOPs, guides, and reports with a fixed sidebar navigation and scroll-spy active state.</p></div></a>
-      <a href="templates/brief.html" class="doc-card"><div class="doc-card-bar" style="background:var(--wine);"></div><div class="doc-card-body"><div class="eyebrow">Template</div><h3>Project brief</h3><p>Scoping documents and proposals with metadata strip, objectives, deliverables, and timeline.</p></div></a>
-      <a href="templates/report.html" class="doc-card"><div class="doc-card-bar" style="background:var(--mist);"></div><div class="doc-card-body"><div class="eyebrow">Template</div><h3>Metrics report</h3><p>Performance and analytics reports with a hero metrics row, data tables, and summary sections.</p></div></a>
+      <a href="templates/hub.html" class="doc-card">
+        <div class="doc-card-bar"></div>
+        <div class="doc-card-body">
+          <div class="eyebrow">Template</div>
+          <h3>Hub / portal</h3>
+          <p>Knowledge base index, project hub, or any page that links to a collection of documents via cards.</p>
+        </div>
+      </a>
+      <a href="templates/document.html" class="doc-card">
+        <div class="doc-card-bar" style="background:var(--squid);"></div>
+        <div class="doc-card-body">
+          <div class="eyebrow">Template</div>
+          <h3>Long-form document</h3>
+          <p>SOPs, guides, and reports with a fixed sidebar navigation and scroll-spy active state.</p>
+        </div>
+      </a>
+      <a href="templates/brief.html" class="doc-card">
+        <div class="doc-card-bar" style="background:var(--wine);"></div>
+        <div class="doc-card-body">
+          <div class="eyebrow">Template</div>
+          <h3>Project brief</h3>
+          <p>Scoping documents and proposals with metadata strip, objectives, deliverables, and timeline.</p>
+        </div>
+      </a>
+      <a href="templates/report.html" class="doc-card">
+        <div class="doc-card-bar" style="background:var(--mist);"></div>
+        <div class="doc-card-body">
+          <div class="eyebrow">Template</div>
+          <h3>Metrics report</h3>
+          <p>Performance and analytics reports with a hero metrics row, data tables, and summary sections.</p>
+        </div>
+      </a>
     </div>
   </section>
   <hr class="divider">
 
+  <!-- ============================================================
+       LAYOUT TOGGLE
+  ============================================================ -->
   <section class="section" id="layout-toggle">
     <div class="section-eyebrow">Page patterns</div>
     <h2 class="section-title">Layout toggle</h2>
-    <p class="section-desc">A fixed floating control bar — active on this page (top-right corner) — that lets readers adjust content alignment and text size without touching code. Include it in every generated HTML deliverable.</p>
+    <p class="section-desc">A fixed floating control bar — active on this page (top-right corner) — that lets readers adjust content alignment, text size, and theme without touching code. Include it in every generated HTML deliverable.</p>
+
     <div class="subsection">
       <div class="subsection-label">What it controls</div>
       <div class="card">
@@ -520,10 +865,13 @@
             <tr><td><strong>Size — Default</strong></td><td class="mono">15px / 1.7lh</td><td>Standard reading size</td></tr>
             <tr><td><strong>Size — Large</strong></td><td class="mono">17px</td><td>Comfortable for presentation or client review</td></tr>
             <tr><td><strong>Size — Editorial</strong></td><td class="mono">19px / 1.85lh</td><td>Long-form reading, wide-format layouts</td></tr>
+            <tr><td><strong>Theme — Light</strong></td><td class="mono">data-theme="light"</td><td>Forces light mode regardless of OS preference</td></tr>
+            <tr><td><strong>Theme — Dark</strong></td><td class="mono">data-theme="dark"</td><td>Forces dark mode regardless of OS preference</td></tr>
           </tbody>
         </table>
       </div>
     </div>
+
     <div class="subsection">
       <div class="subsection-label">HTML — paste immediately after &lt;body&gt;</div>
       <div class="code-block"><span class="cmt">&lt;!-- Layout toggle — remove if not needed --&gt;</span>
@@ -540,21 +888,33 @@
     &lt;<span class="kw">button</span> class=<span class="str">"layout-toggle-btn"</span> data-group=<span class="str">"size"</span> data-value=<span class="str">"large"</span>&gt;Large&lt;/<span class="kw">button</span>&gt;
     &lt;<span class="kw">button</span> class=<span class="str">"layout-toggle-btn"</span> data-group=<span class="str">"size"</span> data-value=<span class="str">"editorial"</span>&gt;Editorial&lt;/<span class="kw">button</span>&gt;
   &lt;/<span class="kw">div</span>&gt;
+  &lt;<span class="kw">div</span> class=<span class="str">"layout-toggle-sep"</span>&gt;&lt;/<span class="kw">div</span>&gt;
+  &lt;<span class="kw">div</span> class=<span class="str">"layout-toggle-group"</span>&gt;
+    &lt;<span class="kw">span</span> class=<span class="str">"layout-toggle-label"</span>&gt;Theme&lt;/<span class="kw">span</span>&gt;
+    &lt;<span class="kw">button</span> class=<span class="str">"layout-toggle-btn"</span> data-group=<span class="str">"theme"</span> data-value=<span class="str">"light"</span>&gt;Light&lt;/<span class="kw">button</span>&gt;
+    &lt;<span class="kw">button</span> class=<span class="str">"layout-toggle-btn"</span> data-group=<span class="str">"theme"</span> data-value=<span class="str">"dark"</span>&gt;Dark&lt;/<span class="kw">button</span>&gt;
+  &lt;/<span class="kw">div</span>&gt;
 &lt;/<span class="kw">div</span>&gt;</div>
     </div>
+
     <div class="subsection">
       <div class="subsection-label">JavaScript — paste before &lt;/body&gt;</div>
       <div class="code-block">&lt;<span class="kw">script</span>&gt;
 (function(){
+  <span class="kw">var</span> prefersDark=window.matchMedia(<span class="str">'(prefers-color-scheme: dark)'</span>).matches;
+  <span class="kw">var</span> initBtn=document.querySelector(<span class="str">'.layout-toggle-btn[data-group="theme"][data-value="'</span>+(prefersDark?<span class="str">'dark'</span>:<span class="str">'light'</span>)+<span class="str">'"]'</span>);
+  <span class="kw">if</span>(initBtn) initBtn.classList.add(<span class="str">'active'</span>);
   document.querySelectorAll(<span class="str">'.layout-toggle-btn'</span>).forEach(function(btn){
     btn.addEventListener(<span class="str">'click'</span>,function(){
       <span class="kw">var</span> g=this.dataset.group,v=this.dataset.value;
-      document.querySelectorAll(<span class="str">'.layout-toggle-btn[data-group="'+g+'"'</span>]')
+      document.querySelectorAll(<span class="str">'.layout-toggle-btn[data-group="'+g+'"'</span>)
         .forEach(function(b){b.classList.remove(<span class="str">'active'</span>);});
       this.classList.add(<span class="str">'active'</span>);
       <span class="kw">if</span>(g===<span class="str">'align'</span>){
         document.body.classList.remove(<span class="str">'layout-center'</span>,<span class="str">'layout-left'</span>);
         <span class="kw">if</span>(v!==<span class="str">'center'</span>) document.body.classList.add(<span class="str">'layout-'+v</span>);
+      } <span class="kw">else if</span>(g===<span class="str">'theme'</span>){
+        document.documentElement.setAttribute(<span class="str">'data-theme'</span>,v);
       } <span class="kw">else</span> {
         document.body.classList.remove(<span class="str">'size-default'</span>,<span class="str">'size-large'</span>,<span class="str">'size-editorial'</span>);
         <span class="kw">if</span>(v!==<span class="str">'default'</span>) document.body.classList.add(<span class="str">'size-'+v</span>);
@@ -564,11 +924,18 @@
 })();
 &lt;/<span class="kw">script</span>&gt;</div>
     </div>
+
     <div class="subsection">
       <div class="subsection-label">Usage</div>
       <div class="do-dont">
-        <div class="do-box"><div class="do-label">Do</div><p>Include in all generated HTML deliverables. Keep "Center" and "Default" as the <code>active</code> starting state.</p></div>
-        <div class="dont-box"><div class="dont-label">Don't</div><p>Modify the toggle's fixed position or z-index. Remove only when embedding in a context where a fixed element would conflict.</p></div>
+        <div class="do-box">
+          <div class="do-label">Do</div>
+          <p>Include in all generated HTML deliverables. Keep “Center” and “Default” as the <code>active</code> starting state. The Theme button reflects the OS preference on load.</p>
+        </div>
+        <div class="dont-box">
+          <div class="dont-label">Don't</div>
+          <p>Modify the toggle's fixed position or z-index. Remove only when embedding in a context where a fixed element would conflict.</p>
+        </div>
       </div>
     </div>
   </section>
@@ -577,13 +944,15 @@
   <section class="section" id="dark-mode">
     <div class="section-eyebrow">Page patterns</div>
     <h2 class="section-title">Dark mode</h2>
-    <p class="section-desc">All RDC HTML output automatically adapts to the user's OS dark mode preference via <code>@media (prefers-color-scheme: dark)</code>. Set your system to dark mode to preview — no extra code required.</p>
+    <p class="section-desc">All RDC HTML output automatically adapts to the user’s OS dark mode preference via <code>@media (prefers-color-scheme: dark)</code>. The Theme toggle in the top-right corner overrides this preference manually.</p>
+
     <div class="subsection">
       <div class="subsection-label">How it works</div>
       <div class="card">
-        <p>The stylesheet remaps all neutral surface tokens inside a <code>@media (prefers-color-scheme: dark)</code> block while leaving brand colors (Coral, Wine, Mist, Squid) unchanged. Any document that imports <code>rdc.css</code> inherits dark mode for free.</p>
+        <p>The stylesheet remaps all neutral surface tokens inside a <code>@media (prefers-color-scheme: dark)</code> block while leaving brand colors (Coral, Wine, Mist, Squid) unchanged. Any document that imports <code>rdc.css</code> inherits dark mode for free. The Theme toggle sets <code>data-theme="light"</code> or <code>data-theme="dark"</code> on the <code>&lt;html&gt;</code> element to override the OS preference.</p>
       </div>
     </div>
+
     <div class="subsection">
       <div class="subsection-label">Tokens that change in dark mode</div>
       <div class="card">
@@ -600,21 +969,29 @@
         </table>
       </div>
     </div>
+
     <div class="subsection">
       <div class="subsection-label">Brand colors stay unchanged</div>
       <div class="alert alert-info">
         <div class="alert-dot"></div>
         <div class="alert-body">
           <div class="alert-title">Coral, Wine, Mist, and Squid are never remapped</div>
-          Only neutral UI surfaces flip in dark mode. Brand identity colors stay identical so documents look consistent regardless of the viewer's system preference.
+          Only neutral UI surfaces flip in dark mode. Brand identity colors stay identical so documents look consistent regardless of the viewer’s system preference.
         </div>
       </div>
     </div>
+
     <div class="subsection">
       <div class="subsection-label">Keep styles token-based</div>
       <div class="do-dont">
-        <div class="do-box"><div class="do-label">Do</div><p>Use CSS token variables — <code>var(--gray-700)</code>, <code>var(--white)</code>, <code>var(--page-bg)</code> — for all custom text colors and background surfaces.</p></div>
-        <div class="dont-box"><div class="dont-label">Don't</div><p>Hard-code hex values for text or backgrounds in inline styles. They bypass the dark mode overrides and will look wrong on dark-themed systems.</p></div>
+        <div class="do-box">
+          <div class="do-label">Do</div>
+          <p>Use CSS token variables — <code>var(--gray-700)</code>, <code>var(--white)</code>, <code>var(--page-bg)</code> — for all custom text colors and background surfaces.</p>
+        </div>
+        <div class="dont-box">
+          <div class="dont-label">Don't</div>
+          <p>Hard-code hex values for text or backgrounds in inline styles. They bypass the dark mode overrides and will look wrong on dark-themed systems.</p>
+        </div>
       </div>
     </div>
   </section>
@@ -623,17 +1000,48 @@
   <section class="section" id="guidelines">
     <div class="section-eyebrow">Usage</div>
     <h2 class="section-title">Brand rules</h2>
-    <div class="subsection"><div class="subsection-label">Logo</div><div class="do-dont"><div class="do-box"><div class="do-label">Do</div><p>Use approved Box files. Maintain clear space on all sides. Match the logo variant to the background.</p></div><div class="dont-box"><div class="dont-label">Don't</div><p>Recreate or approximate the logo. Add drop shadows, glows, or effects. Stretch, skew, rotate, or recolor. Place below the 85px minimum.</p></div></div></div>
-    <div class="subsection"><div class="subsection-label">Color</div><div class="do-dont"><div class="do-box"><div class="do-label">Do</div><p>Lead with Coral for all CTAs. Use Squid for dark backgrounds. Use the Wine-to-Coral gradient for decorative accents. Limit to 3 colors per layout.</p></div><div class="dont-box"><div class="dont-label">Don't</div><p>Use Mist as a primary page background. Set Coral text on Wine. Introduce colors outside the approved palette.</p></div></div></div>
-    <div class="subsection"><div class="subsection-label">Typography</div><div class="do-dont"><div class="do-box"><div class="do-label">Do</div><p>Use Suisse Int'l for all branded communications. Use sentence case for all headings. Build hierarchy through weight.</p></div><div class="dont-box"><div class="dont-label">Don't</div><p>Use more than 3 weights on a single page. Use title case or all-caps for headings. Italicize headings.</p></div></div></div>
-    <div class="subsection"><div class="subsection-label">Photography &amp; illustration</div><div class="card"><p style="font-size:14px;line-height:1.7;">RDC photography should feel candid, human, and professional — never stock-photo staged. All assets are maintained in Box under <strong>Red Door File Database → Red Door Guidelines and Assets → RDC 2025 Branding</strong>.</p></div></div>
+
+    <div class="subsection">
+      <div class="subsection-label">Logo</div>
+      <div class="do-dont">
+        <div class="do-box"><div class="do-label">Do</div><p>Use approved Box files. Maintain clear space (logo’s own bounding square) on all sides. Match the logo variant to the background — light logo on dark, dark logo on light.</p></div>
+        <div class="dont-box"><div class="dont-label">Don't</div><p>Recreate or approximate the logo. Add drop shadows, glows, or effects. Stretch, skew, rotate, or recolor the mark. Place the logo below the 85px minimum digital size.</p></div>
+      </div>
+    </div>
+
+    <div class="subsection">
+      <div class="subsection-label">Color</div>
+      <div class="do-dont">
+        <div class="do-box"><div class="do-label">Do</div><p>Lead with Coral for all CTAs and primary actions. Use Squid to anchor dark backgrounds. Use the Wine-to-Coral gradient for decorative accents only. Limit to 3 colors per layout.</p></div>
+        <div class="dont-box"><div class="dont-label">Don't</div><p>Use Mist as a primary page background — it’s an accent only. Set Coral text on Wine (insufficient contrast). Introduce colors outside the approved palette without design lead approval.</p></div>
+      </div>
+    </div>
+
+    <div class="subsection">
+      <div class="subsection-label">Typography</div>
+      <div class="do-dont">
+        <div class="do-box"><div class="do-label">Do</div><p>Use Suisse Int’l for all branded communications. Use sentence case for all headings. Build hierarchy through weight, not size alone. Ensure body text is accessible (16px+ at WCAG AA contrast).</p></div>
+        <div class="dont-box"><div class="dont-label">Don't</div><p>Use more than 3 weights on a single page. Use title case or all-caps for headings. Italicize headings as an emphasis device. Use condensed variants for body copy.</p></div>
+      </div>
+    </div>
+
+    <div class="subsection">
+      <div class="subsection-label">Photography &amp; illustration</div>
+      <div class="card">
+        <p style="font-size:14px;line-height:1.7;">RDC photography should feel candid, human, and professional — never stock-photo staged. Illustrations use the brand palette with a geometric line style. All custom illustration and photography assets are maintained in Box under <strong>Red Door File Database → Red Door Guidelines and Assets → RDC 2025 Branding</strong>.</p>
+      </div>
+    </div>
   </section>
   <hr class="divider">
 
+  <!-- ============================================================
+       FOR CLAUDE
+  ============================================================ -->
   <section class="section" id="for-claude">
     <div class="section-eyebrow">Usage</div>
     <h2 class="section-title">Using with Claude</h2>
-    <p class="section-desc">Paste this system prompt at the start of any Claude conversation where you need on-brand HTML output.</p>
+    <p class="section-desc">Paste this system prompt at the start of any Claude conversation where you need on-brand HTML output. It gives Claude everything it needs to apply the design system without deviation.</p>
+
     <div class="subsection">
       <div class="subsection-label">System prompt — copy and paste to Claude</div>
       <div class="prompt-box">
@@ -656,7 +1064,7 @@ BRAND COLORS (exact hex — never approximate):
   --page-bg: #F7F6F4  Warm off-white body background
 
 TYPOGRAPHY:
-  Font: DM Sans (loaded above) — web substitute for Suisse Int'l
+  Font: DM Sans (loaded above) — web substitute for Suisse Int’l
   Rules: sentence case headings only, max 3 weights per page, no italics on headings
 
 COMPONENT CLASSES (use these — do not write custom CSS for covered patterns):
@@ -700,12 +1108,21 @@ LAYOUT TOGGLE — include in every generated HTML file:
       &lt;button class="layout-toggle-btn" data-group="size" data-value="large"&gt;Large&lt;/button&gt;
       &lt;button class="layout-toggle-btn" data-group="size" data-value="editorial"&gt;Editorial&lt;/button&gt;
     &lt;/div&gt;
+    &lt;div class="layout-toggle-sep"&gt;&lt;/div&gt;
+    &lt;div class="layout-toggle-group"&gt;
+      &lt;span class="layout-toggle-label"&gt;Theme&lt;/span&gt;
+      &lt;button class="layout-toggle-btn" data-group="theme" data-value="light"&gt;Light&lt;/button&gt;
+      &lt;button class="layout-toggle-btn" data-group="theme" data-value="dark"&gt;Dark&lt;/button&gt;
+    &lt;/div&gt;
   &lt;/div&gt;
 
   Paste immediately before the closing &lt;/body&gt; tag:
 
   &lt;script&gt;
   (function(){
+    var prefersDark=window.matchMedia('(prefers-color-scheme: dark)').matches;
+    var initBtn=document.querySelector('.layout-toggle-btn[data-group="theme"][data-value="'+(prefersDark?'dark':'light')+'"');
+    if(initBtn) initBtn.classList.add('active');
     document.querySelectorAll('.layout-toggle-btn').forEach(function(btn){
       btn.addEventListener('click',function(){
         var g=this.dataset.group,v=this.dataset.value;
@@ -715,6 +1132,8 @@ LAYOUT TOGGLE — include in every generated HTML file:
         if(g==='align'){
           document.body.classList.remove('layout-center','layout-left');
           if(v!=='center') document.body.classList.add('layout-'+v);
+        } else if(g==='theme'){
+          document.documentElement.setAttribute('data-theme',v);
         } else {
           document.body.classList.remove('size-default','size-large','size-editorial');
           if(v!=='default') document.body.classList.add('size-'+v);
@@ -731,6 +1150,7 @@ DARK MODE — automatic, no extra code needed:
 DESIGN SYSTEM REFERENCE: https://reddoorcollaborative.github.io/rdc-design-system/</div>
       </div>
     </div>
+
     <div class="subsection">
       <div class="subsection-label">How to use</div>
       <div class="card">
@@ -738,9 +1158,11 @@ DESIGN SYSTEM REFERENCE: https://reddoorcollaborative.github.io/rdc-design-syste
           <li>Open a new Claude conversation</li>
           <li>Paste the system prompt above as your first message (or add to your Claude project instructions)</li>
           <li>Describe the HTML page you need — Claude will apply all brand rules automatically</li>
-          <li>The generated HTML links to <code>rdc.css</code> from the live GitHub Pages URL, so it renders correctly in any browser</li>
+          <li>The generated HTML will link to <code>rdc.css</code> from the live GitHub Pages URL, so it renders correctly in any browser</li>
         </ol>
-        <div class="alert-banner" style="margin-top:var(--space-4);"><strong>Tip:</strong> Save the system prompt as a Claude Project instruction so it applies automatically to every conversation in that project.</div>
+        <div class="alert-banner" style="margin-top:var(--space-4);">
+          <strong>Tip:</strong> Save the system prompt as a Claude Project instruction so it applies automatically to every conversation in that project — no need to paste it each time.
+        </div>
       </div>
     </div>
   </section>
@@ -755,6 +1177,7 @@ DESIGN SYSTEM REFERENCE: https://reddoorcollaborative.github.io/rdc-design-syste
 </main>
 
 <script>
+// Scroll spy
 (function() {
   const sections = document.querySelectorAll('.section');
   const navLinks = document.querySelectorAll('.nav-link');
@@ -773,6 +1196,7 @@ DESIGN SYSTEM REFERENCE: https://reddoorcollaborative.github.io/rdc-design-syste
   }));
 })();
 
+// Copy prompt
 function copyPrompt() {
   const text = document.getElementById('claude-prompt').innerText;
   navigator.clipboard.writeText(text).then(() => {
@@ -785,8 +1209,12 @@ function copyPrompt() {
 }
 </script>
 
+
 <script>
 (function(){
+  var prefersDark=window.matchMedia('(prefers-color-scheme: dark)').matches;
+  var initBtn=document.querySelector('.layout-toggle-btn[data-group="theme"][data-value="'+(prefersDark?'dark':'light')+'"]');
+  if(initBtn) initBtn.classList.add('active');
   document.querySelectorAll('.layout-toggle-btn').forEach(function(btn){
     btn.addEventListener('click',function(){
       var g=this.dataset.group,v=this.dataset.value;
@@ -796,6 +1224,8 @@ function copyPrompt() {
       if(g==='align'){
         document.body.classList.remove('layout-center','layout-left');
         if(v!=='center') document.body.classList.add('layout-'+v);
+      } else if(g==='theme'){
+        document.documentElement.setAttribute('data-theme',v);
       } else {
         document.body.classList.remove('size-default','size-large','size-editorial');
         if(v!=='default') document.body.classList.add('size-'+v);
