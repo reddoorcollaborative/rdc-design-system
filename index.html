@@ -9,6 +9,7 @@
 <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,300&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="css/rdc.css">
 <style>
+/* Doc-only styles — not part of rdc.css */
 .swatch { border-radius: var(--radius-md); overflow: hidden; border: 1px solid var(--gray-200); background: var(--white); }
 .swatch-block { height: 72px; width: 100%; }
 .swatch-info { padding: 10px 12px; }
@@ -54,6 +55,22 @@
 </head>
 <body>
 
+<!-- Layout toggle -->
+<div class="layout-toggle">
+  <div class="layout-toggle-group">
+    <span class="layout-toggle-label">Align</span>
+    <button class="layout-toggle-btn active" data-group="align" data-value="center">Center</button>
+    <button class="layout-toggle-btn" data-group="align" data-value="left">Left</button>
+  </div>
+  <div class="layout-toggle-sep"></div>
+  <div class="layout-toggle-group">
+    <span class="layout-toggle-label">Size</span>
+    <button class="layout-toggle-btn active" data-group="size" data-value="default">Default</button>
+    <button class="layout-toggle-btn" data-group="size" data-value="large">Large</button>
+    <button class="layout-toggle-btn" data-group="size" data-value="editorial">Editorial</button>
+  </div>
+</div>
+
 <aside class="sidebar">
   <a class="sidebar-logo" href="#">
     <div class="logo-mark">rd</div>
@@ -81,6 +98,8 @@
   <div class="nav-section-label">Page patterns</div>
   <a class="nav-link" href="#patterns">Hero header</a>
   <a class="nav-link" href="#templates">Templates</a>
+  <a class="nav-link" href="#layout-toggle">Layout toggle</a>
+  <a class="nav-link" href="#dark-mode">Dark mode</a>
 
   <div class="nav-section-label">Usage</div>
   <a class="nav-link" href="#guidelines">Brand rules</a>
@@ -89,6 +108,9 @@
   <div class="sidebar-version">v1.0 &middot; 2025</div>
 </aside>
 
+<!-- ============================================================
+     MAIN CONTENT
+============================================================ -->
 <main class="sidebar-content">
 <div class="sidebar-inner">
 
@@ -108,7 +130,6 @@
     <div class="section-eyebrow">Foundation</div>
     <h2 class="section-title">Color palette</h2>
     <p class="section-desc">Six colors define the RDC brand. Coral leads all CTAs and accents. Squid grounds dark surfaces. Wine and Mist provide tonal range. All values sourced from the official brand guide v1.0.</p>
-
     <div class="subsection">
       <div class="subsection-label">Primary palette</div>
       <div class="grid-3">
@@ -117,7 +138,6 @@
         <div class="swatch"><div class="swatch-block" style="background:#7F0046;"></div><div class="swatch-info"><div class="swatch-name">Wine</div><div class="swatch-hex">#7F0046</div><div class="swatch-sub">RGB 127·0·70</div><div class="swatch-sub">CMYK 35·100·48·25</div></div></div>
       </div>
     </div>
-
     <div class="subsection">
       <div class="subsection-label">Secondary palette</div>
       <div class="grid-4">
@@ -127,7 +147,6 @@
         <div class="swatch"><div class="swatch-block" style="background:linear-gradient(180deg,#7F0046 0%,#FF4F58 100%);"></div><div class="swatch-info"><div class="swatch-name">Gradient</div><div class="swatch-hex">Wine → Coral</div><div class="swatch-sub">180° · decorative</div></div></div>
       </div>
     </div>
-
     <div class="subsection">
       <div class="subsection-label">Color purpose</div>
       <div class="card">
@@ -143,7 +162,6 @@
         </table>
       </div>
     </div>
-
     <div class="subsection">
       <div class="subsection-label">Approved color pairings</div>
       <div class="card">
@@ -154,7 +172,6 @@
         <div class="pairing-row"><div class="pairing-strip"><div style="flex:1;background:#7F0046;"></div><div style="flex:1;background:#ABDCE0;"></div></div><div class="pairing-label">Wine + Mist contrast</div></div>
       </div>
     </div>
-
     <div class="subsection">
       <div class="subsection-label">CSS tokens</div>
       <div class="code-block"><span class="cmt">/* Available via rdc.css */</span>
@@ -172,7 +189,6 @@
     <div class="section-eyebrow">Foundation</div>
     <h2 class="section-title">Typography</h2>
     <p class="section-desc">Suisse Int'l (Swiss Typefaces) is the primary brand typeface. Proxima Nova (Adobe Fonts) is the approved secondary digital face. DM Sans is the Google Fonts substitute for HTML deliverables.</p>
-
     <div class="subsection">
       <div class="subsection-label">Typeface hierarchy</div>
       <div class="card">
@@ -187,7 +203,6 @@
         </table>
       </div>
     </div>
-
     <div class="subsection">
       <div class="subsection-label">Type scale</div>
       <div class="card">
@@ -201,7 +216,6 @@
         <div class="type-row"><div class="type-meta">Mono · 12/400</div><div class="type-specimen" style="font-family:var(--font-mono);font-size:12px;color:var(--gray-500);">#FF4F58 · path/to/file.html · v1.0</div></div>
       </div>
     </div>
-
     <div class="subsection">
       <div class="subsection-label">Typography rules</div>
       <div class="card">
@@ -213,7 +227,6 @@
         </ul>
       </div>
     </div>
-
     <div class="subsection">
       <div class="subsection-label">Google Fonts import</div>
       <div class="code-block"><span class="cmt">&lt;!-- Paste in &lt;head&gt; before rdc.css --&gt;</span>
@@ -493,6 +506,120 @@
   </section>
   <hr class="divider">
 
+  <section class="section" id="layout-toggle">
+    <div class="section-eyebrow">Page patterns</div>
+    <h2 class="section-title">Layout toggle</h2>
+    <p class="section-desc">A fixed floating control bar — active on this page (top-right corner) — that lets readers adjust content alignment and text size without touching code. Include it in every generated HTML deliverable.</p>
+    <div class="subsection">
+      <div class="subsection-label">What it controls</div>
+      <div class="card">
+        <table class="table-rdc">
+          <thead><tr><th>Group</th><th>Options</th><th>Effect</th></tr></thead>
+          <tbody>
+            <tr><td><strong>Align</strong></td><td class="mono">Center · Left</td><td>Toggles content column between centered (default) and left-aligned</td></tr>
+            <tr><td><strong>Size — Default</strong></td><td class="mono">15px / 1.7lh</td><td>Standard reading size</td></tr>
+            <tr><td><strong>Size — Large</strong></td><td class="mono">17px</td><td>Comfortable for presentation or client review</td></tr>
+            <tr><td><strong>Size — Editorial</strong></td><td class="mono">19px / 1.85lh</td><td>Long-form reading, wide-format layouts</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <div class="subsection">
+      <div class="subsection-label">HTML — paste immediately after &lt;body&gt;</div>
+      <div class="code-block"><span class="cmt">&lt;!-- Layout toggle — remove if not needed --&gt;</span>
+&lt;<span class="kw">div</span> class=<span class="str">"layout-toggle"</span>&gt;
+  &lt;<span class="kw">div</span> class=<span class="str">"layout-toggle-group"</span>&gt;
+    &lt;<span class="kw">span</span> class=<span class="str">"layout-toggle-label"</span>&gt;Align&lt;/<span class="kw">span</span>&gt;
+    &lt;<span class="kw">button</span> class=<span class="str">"layout-toggle-btn active"</span> data-group=<span class="str">"align"</span> data-value=<span class="str">"center"</span>&gt;Center&lt;/<span class="kw">button</span>&gt;
+    &lt;<span class="kw">button</span> class=<span class="str">"layout-toggle-btn"</span> data-group=<span class="str">"align"</span> data-value=<span class="str">"left"</span>&gt;Left&lt;/<span class="kw">button</span>&gt;
+  &lt;/<span class="kw">div</span>&gt;
+  &lt;<span class="kw">div</span> class=<span class="str">"layout-toggle-sep"</span>&gt;&lt;/<span class="kw">div</span>&gt;
+  &lt;<span class="kw">div</span> class=<span class="str">"layout-toggle-group"</span>&gt;
+    &lt;<span class="kw">span</span> class=<span class="str">"layout-toggle-label"</span>&gt;Size&lt;/<span class="kw">span</span>&gt;
+    &lt;<span class="kw">button</span> class=<span class="str">"layout-toggle-btn active"</span> data-group=<span class="str">"size"</span> data-value=<span class="str">"default"</span>&gt;Default&lt;/<span class="kw">button</span>&gt;
+    &lt;<span class="kw">button</span> class=<span class="str">"layout-toggle-btn"</span> data-group=<span class="str">"size"</span> data-value=<span class="str">"large"</span>&gt;Large&lt;/<span class="kw">button</span>&gt;
+    &lt;<span class="kw">button</span> class=<span class="str">"layout-toggle-btn"</span> data-group=<span class="str">"size"</span> data-value=<span class="str">"editorial"</span>&gt;Editorial&lt;/<span class="kw">button</span>&gt;
+  &lt;/<span class="kw">div</span>&gt;
+&lt;/<span class="kw">div</span>&gt;</div>
+    </div>
+    <div class="subsection">
+      <div class="subsection-label">JavaScript — paste before &lt;/body&gt;</div>
+      <div class="code-block">&lt;<span class="kw">script</span>&gt;
+(function(){
+  document.querySelectorAll(<span class="str">'.layout-toggle-btn'</span>).forEach(function(btn){
+    btn.addEventListener(<span class="str">'click'</span>,function(){
+      <span class="kw">var</span> g=this.dataset.group,v=this.dataset.value;
+      document.querySelectorAll(<span class="str">'.layout-toggle-btn[data-group="'+g+'"'</span>]')
+        .forEach(function(b){b.classList.remove(<span class="str">'active'</span>);});
+      this.classList.add(<span class="str">'active'</span>);
+      <span class="kw">if</span>(g===<span class="str">'align'</span>){
+        document.body.classList.remove(<span class="str">'layout-center'</span>,<span class="str">'layout-left'</span>);
+        <span class="kw">if</span>(v!==<span class="str">'center'</span>) document.body.classList.add(<span class="str">'layout-'+v</span>);
+      } <span class="kw">else</span> {
+        document.body.classList.remove(<span class="str">'size-default'</span>,<span class="str">'size-large'</span>,<span class="str">'size-editorial'</span>);
+        <span class="kw">if</span>(v!==<span class="str">'default'</span>) document.body.classList.add(<span class="str">'size-'+v</span>);
+      }
+    });
+  });
+})();
+&lt;/<span class="kw">script</span>&gt;</div>
+    </div>
+    <div class="subsection">
+      <div class="subsection-label">Usage</div>
+      <div class="do-dont">
+        <div class="do-box"><div class="do-label">Do</div><p>Include in all generated HTML deliverables. Keep "Center" and "Default" as the <code>active</code> starting state.</p></div>
+        <div class="dont-box"><div class="dont-label">Don't</div><p>Modify the toggle's fixed position or z-index. Remove only when embedding in a context where a fixed element would conflict.</p></div>
+      </div>
+    </div>
+  </section>
+  <hr class="divider">
+
+  <section class="section" id="dark-mode">
+    <div class="section-eyebrow">Page patterns</div>
+    <h2 class="section-title">Dark mode</h2>
+    <p class="section-desc">All RDC HTML output automatically adapts to the user's OS dark mode preference via <code>@media (prefers-color-scheme: dark)</code>. Set your system to dark mode to preview — no extra code required.</p>
+    <div class="subsection">
+      <div class="subsection-label">How it works</div>
+      <div class="card">
+        <p>The stylesheet remaps all neutral surface tokens inside a <code>@media (prefers-color-scheme: dark)</code> block while leaving brand colors (Coral, Wine, Mist, Squid) unchanged. Any document that imports <code>rdc.css</code> inherits dark mode for free.</p>
+      </div>
+    </div>
+    <div class="subsection">
+      <div class="subsection-label">Tokens that change in dark mode</div>
+      <div class="card">
+        <table class="table-rdc">
+          <thead><tr><th>Token</th><th>Light</th><th>Dark</th><th>Role</th></tr></thead>
+          <tbody>
+            <tr><td class="mono">--page-bg</td><td class="mono">#F7F6F4</td><td class="mono">#070d17</td><td>Body background</td></tr>
+            <tr><td class="mono">--white</td><td class="mono">#FFFFFF</td><td class="mono">#141e2e</td><td>Card &amp; panel surfaces</td></tr>
+            <tr><td class="mono">--gray-100</td><td class="mono">#F3F3F3</td><td class="mono">#1a2538</td><td>Metric cards, subtle bg</td></tr>
+            <tr><td class="mono">--gray-200</td><td class="mono">#E5E5E5</td><td class="mono">rgba(255,255,255,0.08)</td><td>Borders, dividers</td></tr>
+            <tr><td class="mono">--gray-700</td><td class="mono">#374151</td><td class="mono">rgba(255,255,255,0.68)</td><td>Body text</td></tr>
+            <tr><td class="mono">--gray-900</td><td class="mono">#111827</td><td class="mono">rgba(255,255,255,0.90)</td><td>Headings, strong text</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <div class="subsection">
+      <div class="subsection-label">Brand colors stay unchanged</div>
+      <div class="alert alert-info">
+        <div class="alert-dot"></div>
+        <div class="alert-body">
+          <div class="alert-title">Coral, Wine, Mist, and Squid are never remapped</div>
+          Only neutral UI surfaces flip in dark mode. Brand identity colors stay identical so documents look consistent regardless of the viewer's system preference.
+        </div>
+      </div>
+    </div>
+    <div class="subsection">
+      <div class="subsection-label">Keep styles token-based</div>
+      <div class="do-dont">
+        <div class="do-box"><div class="do-label">Do</div><p>Use CSS token variables — <code>var(--gray-700)</code>, <code>var(--white)</code>, <code>var(--page-bg)</code> — for all custom text colors and background surfaces.</p></div>
+        <div class="dont-box"><div class="dont-label">Don't</div><p>Hard-code hex values for text or backgrounds in inline styles. They bypass the dark mode overrides and will look wrong on dark-themed systems.</p></div>
+      </div>
+    </div>
+  </section>
+  <hr class="divider">
+
   <section class="section" id="guidelines">
     <div class="section-eyebrow">Usage</div>
     <h2 class="section-title">Brand rules</h2>
@@ -557,6 +684,50 @@ DESIGN RULES:
   - No drop shadows on the logo mark
   - Card top accent bars are always 4px height
 
+LAYOUT TOGGLE — include in every generated HTML file:
+  Paste immediately after the opening &lt;body&gt; tag:
+
+  &lt;div class="layout-toggle"&gt;
+    &lt;div class="layout-toggle-group"&gt;
+      &lt;span class="layout-toggle-label"&gt;Align&lt;/span&gt;
+      &lt;button class="layout-toggle-btn active" data-group="align" data-value="center"&gt;Center&lt;/button&gt;
+      &lt;button class="layout-toggle-btn" data-group="align" data-value="left"&gt;Left&lt;/button&gt;
+    &lt;/div&gt;
+    &lt;div class="layout-toggle-sep"&gt;&lt;/div&gt;
+    &lt;div class="layout-toggle-group"&gt;
+      &lt;span class="layout-toggle-label"&gt;Size&lt;/span&gt;
+      &lt;button class="layout-toggle-btn active" data-group="size" data-value="default"&gt;Default&lt;/button&gt;
+      &lt;button class="layout-toggle-btn" data-group="size" data-value="large"&gt;Large&lt;/button&gt;
+      &lt;button class="layout-toggle-btn" data-group="size" data-value="editorial"&gt;Editorial&lt;/button&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+
+  Paste immediately before the closing &lt;/body&gt; tag:
+
+  &lt;script&gt;
+  (function(){
+    document.querySelectorAll('.layout-toggle-btn').forEach(function(btn){
+      btn.addEventListener('click',function(){
+        var g=this.dataset.group,v=this.dataset.value;
+        document.querySelectorAll('.layout-toggle-btn[data-group="'+g+'"')
+          .forEach(function(b){b.classList.remove('active');});
+        this.classList.add('active');
+        if(g==='align'){
+          document.body.classList.remove('layout-center','layout-left');
+          if(v!=='center') document.body.classList.add('layout-'+v);
+        } else {
+          document.body.classList.remove('size-default','size-large','size-editorial');
+          if(v!=='default') document.body.classList.add('size-'+v);
+        }
+      });
+    });
+  })();
+  &lt;/script&gt;
+
+DARK MODE — automatic, no extra code needed:
+  rdc.css adapts to @media (prefers-color-scheme: dark) automatically.
+  Always use var(--token) variables for text and backgrounds — never hard-code hex values.
+
 DESIGN SYSTEM REFERENCE: https://reddoorcollaborative.github.io/rdc-design-system/</div>
       </div>
     </div>
@@ -612,6 +783,26 @@ function copyPrompt() {
     setTimeout(() => { btn.textContent = 'Copy'; btn.style.color = ''; btn.style.borderColor = ''; }, 2000);
   });
 }
+</script>
+
+<script>
+(function(){
+  document.querySelectorAll('.layout-toggle-btn').forEach(function(btn){
+    btn.addEventListener('click',function(){
+      var g=this.dataset.group,v=this.dataset.value;
+      document.querySelectorAll('.layout-toggle-btn[data-group="'+g+'"')
+        .forEach(function(b){b.classList.remove('active');});
+      this.classList.add('active');
+      if(g==='align'){
+        document.body.classList.remove('layout-center','layout-left');
+        if(v!=='center') document.body.classList.add('layout-'+v);
+      } else {
+        document.body.classList.remove('size-default','size-large','size-editorial');
+        if(v!=='default') document.body.classList.add('size-'+v);
+      }
+    });
+  });
+})();
 </script>
 
 </body>
