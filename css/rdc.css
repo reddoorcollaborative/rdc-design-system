@@ -302,7 +302,7 @@ hr {
   bottom: -40px;
   font-size: 200px;
   font-weight: 700;
-  color: rgba(255, 255, 255, 0.03);
+  color: rgba(127, 0, 70, 0.40); /* wine — consistent across light and dark since page-header bg is always var(--squid) */
   letter-spacing: -0.05em;
   line-height: 1;
   pointer-events: none;
@@ -882,7 +882,7 @@ body.size-editorial .page-header-title  { font-size: clamp(32px, 5vw, 50px); }
   html:not([data-theme="light"]) .alert-success .alert-dot { background: #4ade80; }
   html:not([data-theme="light"]) .alert-warning { background: rgba(234,179,8,0.10);   color: #fde68a; }
   html:not([data-theme="light"]) .alert-warning .alert-dot { background: #facc15; }
-  html:not([data-theme="light"]) .alert-banner  { background: rgba(255,79,88,0.08); }
+  html:not([data-theme="light"]) .alert-banner  { background: rgba(255,79,88,0.10); color: #ff8a90; }
   html:not([data-theme="light"]) .badge-success { background: rgba(34,197,94,0.15);   color: #4ade80; }
   html:not([data-theme="light"]) .badge-warning { background: rgba(234,179,8,0.13);   color: #fde068; }
   html:not([data-theme="light"]) .badge-neutral { background: rgba(255,255,255,0.08); color: rgba(255,255,255,0.55); }
@@ -893,6 +893,17 @@ body.size-editorial .page-header-title  { font-size: clamp(32px, 5vw, 50px); }
   html:not([data-theme="light"]) .dont-box p { color: rgba(255,255,255,0.68); }
   html:not([data-theme="light"]) .layout-toggle-btn.active { background: rgba(255,255,255,0.14); color: #fff; }
   html:not([data-theme="light"]) .layout-toggle-btn:hover  { background: rgba(255,255,255,0.07); color: rgba(255,255,255,0.90); }
+  /* ——— Component legibility: var(--squid) text → readable on dark bg ——— */
+  html:not([data-theme="light"]) .doc-card h3        { color: rgba(255,255,255,0.90); }
+  html:not([data-theme="light"]) .metric-value       { color: rgba(255,255,255,0.90); }
+  html:not([data-theme="light"]) .content-card-title { color: rgba(255,255,255,0.90); }
+  /* ——— Badge corrections: brand colors lightened for dark backgrounds ——— */
+  html:not([data-theme="light"]) .badge-coral { color: #ff8a90; background: rgba(255,79,88,0.14); }
+  html:not([data-theme="light"]) .badge-wine  { color: #e07ba3; background: rgba(127,0,70,0.18); }
+  html:not([data-theme="light"]) .badge-mist  { color: var(--mist); background: rgba(171,220,224,0.10); }
+  /* ——— Alert-coral corrections ——— */
+  html:not([data-theme="light"]) .alert-coral          { color: #ff8a90; background: rgba(255,79,88,0.10); }
+  html:not([data-theme="light"]) .alert-coral .alert-dot { background: var(--coral); }
 }
 
 /* ——— Forced dark (explicit, overrides OS light preference) ——— */
@@ -939,7 +950,7 @@ html[data-theme="dark"] .alert-success { background: rgba(34,197,94,0.10);   col
 html[data-theme="dark"] .alert-success .alert-dot { background: #4ade80; }
 html[data-theme="dark"] .alert-warning { background: rgba(234,179,8,0.10);   color: #fde68a; }
 html[data-theme="dark"] .alert-warning .alert-dot { background: #facc15; }
-html[data-theme="dark"] .alert-banner  { background: rgba(255,79,88,0.08); }
+html[data-theme="dark"] .alert-banner  { background: rgba(255,79,88,0.10); color: #ff8a90; }
 html[data-theme="dark"] .badge-success { background: rgba(34,197,94,0.15);   color: #4ade80; }
 html[data-theme="dark"] .badge-warning { background: rgba(234,179,8,0.13);   color: #fde068; }
 html[data-theme="dark"] .badge-neutral { background: rgba(255,255,255,0.08); color: rgba(255,255,255,0.55); }
@@ -950,3 +961,14 @@ html[data-theme="dark"] .do-box p,
 html[data-theme="dark"] .dont-box p { color: rgba(255,255,255,0.68); }
 html[data-theme="dark"] .layout-toggle-btn.active { background: rgba(255,255,255,0.14); color: #fff; }
 html[data-theme="dark"] .layout-toggle-btn:hover  { background: rgba(255,255,255,0.07); color: rgba(255,255,255,0.90); }
+/* ——— Component legibility: var(--squid) text → readable on dark bg ——— */
+html[data-theme="dark"] .doc-card h3        { color: rgba(255,255,255,0.90); }
+html[data-theme="dark"] .metric-value       { color: rgba(255,255,255,0.90); }
+html[data-theme="dark"] .content-card-title { color: rgba(255,255,255,0.90); }
+/* ——— Badge corrections: brand colors lightened for dark backgrounds ——— */
+html[data-theme="dark"] .badge-coral { color: #ff8a90; background: rgba(255,79,88,0.14); }
+html[data-theme="dark"] .badge-wine  { color: #e07ba3; background: rgba(127,0,70,0.18); }
+html[data-theme="dark"] .badge-mist  { color: var(--mist); background: rgba(171,220,224,0.10); }
+/* ——— Alert-coral corrections ——— */
+html[data-theme="dark"] .alert-coral          { color: #ff8a90; background: rgba(255,79,88,0.10); }
+html[data-theme="dark"] .alert-coral .alert-dot { background: var(--coral); }
