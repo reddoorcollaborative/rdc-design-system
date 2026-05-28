@@ -4,6 +4,8 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>[Project Name] — Project Brief · Red Door Collaborative</title>
+<!-- FOUC prevention: read localStorage before stylesheets paint -->
+<script>(function(){try{var p=JSON.parse(localStorage.getItem('rdc-prefs')||'{}');document.documentElement.setAttribute('data-theme',p.theme||(window.matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light'));}catch(e){}})();<\/script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,300&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
@@ -11,17 +13,17 @@
 </head>
 <body>
 
-<!-- Layout toggle — remove if not needed -->
+<!-- Layout toggle — include on every page; do not remove -->
 <div class="layout-toggle">
   <div class="layout-toggle-group">
     <span class="layout-toggle-label">Align</span>
-    <button class="layout-toggle-btn active" data-group="align" data-value="center">Center</button>
+    <button class="layout-toggle-btn" data-group="align" data-value="center">Center</button>
     <button class="layout-toggle-btn" data-group="align" data-value="left">Left</button>
   </div>
   <div class="layout-toggle-sep"></div>
   <div class="layout-toggle-group">
     <span class="layout-toggle-label">Size</span>
-    <button class="layout-toggle-btn active" data-group="size" data-value="default">Default</button>
+    <button class="layout-toggle-btn" data-group="size" data-value="default">Default</button>
     <button class="layout-toggle-btn" data-group="size" data-value="large">Large</button>
     <button class="layout-toggle-btn" data-group="size" data-value="editorial">Editorial</button>
   </div>
@@ -84,7 +86,7 @@
        BACKGROUND
   ============================================================ -->
   <div class="eyebrow" style="margin-bottom:4px;">Context</div>
-  <h2 style="font-size:22px;font-weight:700;color:var(--squid);letter-spacing:-0.02em;margin:0 0 16px;padding-bottom:8px;border-bottom:1px solid var(--gray-200);">Background</h2>
+  <h2 style="font-size:22px;font-weight:700;color:var(--gray-900);letter-spacing:-0.02em;margin:0 0 16px;padding-bottom:8px;border-bottom:1px solid var(--gray-200);">Background</h2>
 
   <div class="card" style="margin-bottom:var(--space-8);">
     <p>[Describe the client situation, challenge, or opportunity that this project responds to. What is happening in their market, team, or strategy that makes this work necessary or timely? 2–4 sentences.]</p>
@@ -95,7 +97,7 @@
        OBJECTIVES
   ============================================================ -->
   <div class="eyebrow" style="margin-bottom:4px;">Goals</div>
-  <h2 style="font-size:22px;font-weight:700;color:var(--squid);letter-spacing:-0.02em;margin:0 0 16px;padding-bottom:8px;border-bottom:1px solid var(--gray-200);">Objectives</h2>
+  <h2 style="font-size:22px;font-weight:700;color:var(--gray-900);letter-spacing:-0.02em;margin:0 0 16px;padding-bottom:8px;border-bottom:1px solid var(--gray-200);">Objectives</h2>
 
   <div class="card" style="margin-bottom:var(--space-8);">
     <ol style="line-height:2.2;">
@@ -109,7 +111,7 @@
        SCOPE
   ============================================================ -->
   <div class="eyebrow" style="margin-bottom:4px;">Boundaries</div>
-  <h2 style="font-size:22px;font-weight:700;color:var(--squid);letter-spacing:-0.02em;margin:0 0 16px;padding-bottom:8px;border-bottom:1px solid var(--gray-200);">Scope</h2>
+  <h2 style="font-size:22px;font-weight:700;color:var(--gray-900);letter-spacing:-0.02em;margin:0 0 16px;padding-bottom:8px;border-bottom:1px solid var(--gray-200);">Scope</h2>
 
   <div class="grid-2" style="margin-bottom:var(--space-8);">
     <div class="do-box">
@@ -135,7 +137,7 @@
        DELIVERABLES
   ============================================================ -->
   <div class="eyebrow" style="margin-bottom:4px;">What we're making</div>
-  <h2 style="font-size:22px;font-weight:700;color:var(--squid);letter-spacing:-0.02em;margin:0 0 16px;padding-bottom:8px;border-bottom:1px solid var(--gray-200);">Deliverables</h2>
+  <h2 style="font-size:22px;font-weight:700;color:var(--gray-900);letter-spacing:-0.02em;margin:0 0 16px;padding-bottom:8px;border-bottom:1px solid var(--gray-200);">Deliverables</h2>
 
   <div class="card" style="margin-bottom:var(--space-8);">
     <table class="table-rdc">
@@ -185,7 +187,7 @@
        TIMELINE
   ============================================================ -->
   <div class="eyebrow" style="margin-bottom:4px;">Schedule</div>
-  <h2 style="font-size:22px;font-weight:700;color:var(--squid);letter-spacing:-0.02em;margin:0 0 16px;padding-bottom:8px;border-bottom:1px solid var(--gray-200);">Timeline</h2>
+  <h2 style="font-size:22px;font-weight:700;color:var(--gray-900);letter-spacing:-0.02em;margin:0 0 16px;padding-bottom:8px;border-bottom:1px solid var(--gray-200);">Timeline</h2>
 
   <div class="card" style="margin-bottom:var(--space-8);">
     <table class="table-rdc">
@@ -225,7 +227,7 @@
        TEAM & STAKEHOLDERS
   ============================================================ -->
   <div class="eyebrow" style="margin-bottom:4px;">People</div>
-  <h2 style="font-size:22px;font-weight:700;color:var(--squid);letter-spacing:-0.02em;margin:0 0 16px;padding-bottom:8px;border-bottom:1px solid var(--gray-200);">Team &amp; stakeholders</h2>
+  <h2 style="font-size:22px;font-weight:700;color:var(--gray-900);letter-spacing:-0.02em;margin:0 0 16px;padding-bottom:8px;border-bottom:1px solid var(--gray-200);">Team &amp; stakeholders</h2>
 
   <div class="card" style="margin-bottom:var(--space-8);">
     <table class="table-rdc">
@@ -259,7 +261,7 @@
        SUCCESS METRICS
   ============================================================ -->
   <div class="eyebrow" style="margin-bottom:4px;">Measuring success</div>
-  <h2 style="font-size:22px;font-weight:700;color:var(--squid);letter-spacing:-0.02em;margin:0 0 16px;padding-bottom:8px;border-bottom:1px solid var(--gray-200);">Success metrics</h2>
+  <h2 style="font-size:22px;font-weight:700;color:var(--gray-900);letter-spacing:-0.02em;margin:0 0 16px;padding-bottom:8px;border-bottom:1px solid var(--gray-200);">Success metrics</h2>
 
   <div class="grid-3" style="margin-bottom:var(--space-8);">
     <div class="metric-card">
@@ -283,7 +285,7 @@
        ASSUMPTIONS & RISKS (optional)
   ============================================================ -->
   <div class="eyebrow" style="margin-bottom:4px;">Assumptions &amp; risks</div>
-  <h2 style="font-size:22px;font-weight:700;color:var(--squid);letter-spacing:-0.02em;margin:0 0 16px;padding-bottom:8px;border-bottom:1px solid var(--gray-200);">Assumptions &amp; risks</h2>
+  <h2 style="font-size:22px;font-weight:700;color:var(--gray-900);letter-spacing:-0.02em;margin:0 0 16px;padding-bottom:8px;border-bottom:1px solid var(--gray-200);">Assumptions &amp; risks</h2>
 
   <div class="card" style="margin-bottom:var(--space-8);">
     <div style="margin-bottom:var(--space-4);">
@@ -321,28 +323,31 @@
 </div>
 
 <script>
+/* Layout toggle — reads/writes localStorage 'rdc-prefs' for cross-page persistence */
 (function(){
-  var prefersDark=window.matchMedia('(prefers-color-scheme: dark)').matches;
-  var initBtn=document.querySelector('.layout-toggle-btn[data-group="theme"][data-value="'+(prefersDark?'dark':'light')+'"]');
-  if(initBtn) initBtn.classList.add('active');
+  var prefs={};try{prefs=JSON.parse(localStorage.getItem('rdc-prefs')||'{}');}catch(e){}
+  if(prefs.size&&prefs.size!=='default') document.body.classList.add('size-'+prefs.size);
+  if(prefs.align&&prefs.align!=='center') document.body.classList.add('layout-'+prefs.align);
+  function cur(g){
+    if(g==='theme') return document.documentElement.getAttribute('data-theme')||'light';
+    if(g==='size')  return (Array.from(document.body.classList).find(function(c){return c.startsWith('size-');})||'size-default').replace('size-','');
+    return (Array.from(document.body.classList).find(function(c){return c.startsWith('layout-');})||'layout-center').replace('layout-','');
+  }
+  document.querySelectorAll('.layout-toggle-btn').forEach(function(b){
+    b.classList.toggle('active', b.dataset.value===cur(b.dataset.group));
+  });
   document.querySelectorAll('.layout-toggle-btn').forEach(function(btn){
     btn.addEventListener('click',function(){
       var g=this.dataset.group,v=this.dataset.value;
-      document.querySelectorAll('.layout-toggle-btn[data-group="'+g+'"')
-        .forEach(function(b){b.classList.remove('active');});
+      document.querySelectorAll('.layout-toggle-btn[data-group="'+g+'"]').forEach(function(b){b.classList.remove('active');});
       this.classList.add('active');
-      if(g==='align'){
-        document.body.classList.remove('layout-center','layout-left');
-        if(v!=='center') document.body.classList.add('layout-'+v);
-      } else if(g==='theme'){
-        document.documentElement.setAttribute('data-theme',v);
-      } else {
-        document.body.classList.remove('size-default','size-large','size-editorial');
-        if(v!=='default') document.body.classList.add('size-'+v);
-      }
+      if(g==='theme'){ document.documentElement.setAttribute('data-theme',v); }
+      else if(g==='align'){ document.body.classList.remove('layout-center','layout-left'); if(v!=='center') document.body.classList.add('layout-'+v); }
+      else { document.body.classList.remove('size-default','size-large','size-editorial'); if(v!=='default') document.body.classList.add('size-'+v); }
+      try{var p=JSON.parse(localStorage.getItem('rdc-prefs')||'{}');p[g]=v;localStorage.setItem('rdc-prefs',JSON.stringify(p));}catch(e){}
     });
   });
 })();
-</script>
+<\/script>
 </body>
 </html>

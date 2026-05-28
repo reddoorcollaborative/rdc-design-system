@@ -4,24 +4,46 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>[Document Title] — Red Door Collaborative</title>
+<!-- FOUC prevention: set data-theme before stylesheets paint -->
+<script>(function(){try{var p=JSON.parse(localStorage.getItem('rdc-prefs')||'{}');document.documentElement.setAttribute('data-theme',p.theme||(window.matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light'));}catch(e){}})();<\/script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,300&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="../css/rdc.css">
+<style>
+/* Use var(--gray-900) for prose text — flips properly in dark mode. NEVER var(--squid). */
+.page-header-meta{font-size:13px;color:rgba(255,255,255,0.55);line-height:1.7;max-width:560px;margin-top:0.75rem;}
+.page-header-meta strong{color:rgba(255,255,255,0.85);font-weight:600;}
+.content h2{margin:56px 0 14px;scroll-margin-top:1rem;font-size:26px;}
+.content h2:first-child{margin-top:0;}
+.content h3{margin:32px 0 10px;scroll-margin-top:1rem;font-size:18px;}
+.content h4{margin:22px 0 6px;}
+.content p{margin:10px 0 14px;}
+.content ul,.content ol{margin:10px 0 16px;}
+.content li{margin:5px 0;font-size:15px;}
+.content li>ul,.content li>ol{margin:6px 0;}
+.content strong{color:var(--gray-900);}
+.content pre code{background:transparent;padding:0;font-size:inherit;color:inherit;}
+.content input[type="checkbox"]{margin-right:6px;}
+.content table{border-collapse:collapse;width:100%;margin:16px 0;font-size:13px;background:var(--white);border:1px solid var(--gray-200);border-radius:var(--radius-md);overflow:hidden;}
+.content table thead th{background:var(--gray-100);font-size:10px;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:var(--gray-500);text-align:left;padding:12px 14px;border-bottom:1px solid var(--gray-200);}
+.content table tbody td{padding:10px 14px;border-bottom:1px solid var(--gray-200);color:var(--gray-900);vertical-align:top;}
+.content table tbody tr:last-child td{border-bottom:none;}
+</style>
 </head>
 <body>
 
-<!-- Layout toggle — remove if not needed -->
+<!-- LAYOUT TOGGLE — include on every page; gives users control of align/size/theme -->
 <div class="layout-toggle">
   <div class="layout-toggle-group">
     <span class="layout-toggle-label">Align</span>
-    <button class="layout-toggle-btn active" data-group="align" data-value="center">Center</button>
+    <button class="layout-toggle-btn" data-group="align" data-value="center">Center</button>
     <button class="layout-toggle-btn" data-group="align" data-value="left">Left</button>
   </div>
   <div class="layout-toggle-sep"></div>
   <div class="layout-toggle-group">
     <span class="layout-toggle-label">Size</span>
-    <button class="layout-toggle-btn active" data-group="size" data-value="default">Default</button>
+    <button class="layout-toggle-btn" data-group="size" data-value="default">Default</button>
     <button class="layout-toggle-btn" data-group="size" data-value="large">Large</button>
     <button class="layout-toggle-btn" data-group="size" data-value="editorial">Editorial</button>
   </div>
@@ -34,291 +56,118 @@
 </div>
 
 <!-- ============================================================
-     SIDEBAR NAVIGATION
-     Add/remove nav-link items and nav-section-label groups to
-     match the sections in your document. The scroll observer
-     script at the bottom auto-highlights the active section.
+     SIDEBAR
+     - Logo links back to hub (../index.html) — do not use href="#"
+     - Logo subtitle stays SHORT ("Knowledge Base", not full doc title)
+     - sidebar-version shows date or status; use &middot; for separators
 ============================================================ -->
 <aside class="sidebar">
-  <a class="sidebar-logo" href="#">
+  <a class="sidebar-logo" href="../index.html">
     <div class="logo-mark">rd</div>
-    <div class="logo-text">Red Door<br>Collaborative<span>[Document type]</span></div>
+    <div class="logo-text">Red Door<br>Collaborative<span>[Hub Name]</span></div>
   </a>
-
-  <div class="nav-section-label">Overview</div>
-  <a class="nav-link active" href="#introduction">Introduction</a>
-  <a class="nav-link" href="#background">Background</a>
-
-  <div class="nav-section-label">Main content</div>
-  <a class="nav-link" href="#section-a">[Section A]</a>
-  <a class="nav-link" href="#section-b">[Section B]</a>
-  <a class="nav-link" href="#section-c">[Section C]</a>
-
-  <div class="nav-section-label">Appendix</div>
-  <a class="nav-link" href="#appendix-a">Appendix A</a>
-
-  <div class="sidebar-version">v1.0 · [Month Year]</div>
+  <div class="nav-section-label">Sections</div>
+  <a class="nav-link active" href="#section-1" onclick="setActive(this)">[Section 1]</a>
+  <a class="nav-link" href="#section-2" onclick="setActive(this)">[Section 2]</a>
+  <a class="nav-link" href="#section-3" onclick="setActive(this)">[Section 3]</a>
+  <!-- Add more nav-links as needed -->
+  <div class="sidebar-version">Updated: [Month DD, YYYY]</div>
 </aside>
 
 <!-- ============================================================
      MAIN CONTENT
+     Use .sidebar-content + .sidebar-inner — NOT .main or .inner
 ============================================================ -->
 <main class="sidebar-content">
 <div class="sidebar-inner">
 
-  <!-- Page header -->
+  <!-- ============================================================
+       PAGE HEADER
+       eyebrow = category / doc type
+       page-header-title = document name
+       page-header-meta = owner, status, version, date, etc.
+  ============================================================ -->
   <div class="page-header">
-    <div class="eyebrow">[Document category]</div>
-    <h1 class="page-header-title">[Document Title]</h1>
-    <p class="page-header-desc">[One to two sentences describing what this document is and its purpose.]</p>
-    <div class="header-meta">
-      <div class="header-meta-item">
-        <span class="header-meta-label">Version</span>
-        <span class="header-meta-value">1.0</span>
-      </div>
-      <div class="header-meta-item">
-        <span class="header-meta-label">Status</span>
-        <span class="header-meta-value">[Draft / Review / Approved]</span>
-      </div>
-      <div class="header-meta-item">
-        <span class="header-meta-label">Owner</span>
-        <span class="header-meta-value">[Name]</span>
-      </div>
-      <div class="header-meta-item">
-        <span class="header-meta-label">Last updated</span>
-        <span class="header-meta-value">[Month Year]</span>
-      </div>
+    <div class="eyebrow">[Category &middot; Doc type]</div>
+    <div class="page-header-title">[Document Title]</div>
+    <div class="page-header-meta">
+      <strong>Owner:</strong> [Name] &middot;
+      <strong>Status:</strong> [Draft / Under Review / Approved] &middot;
+      <strong>Version:</strong> [v1.0]
     </div>
   </div>
 
   <!-- ============================================================
-       SECTION: Introduction
+       DOCUMENT CONTENT
+       All section <h2> elements need matching id= for scroll-spy.
+       Nav links href must match: href="#section-id"
   ============================================================ -->
-  <section class="section" id="introduction">
-    <div class="section-eyebrow">Overview</div>
-    <h2 class="section-title">Introduction</h2>
-    <p class="section-desc">[Brief section description — what this section covers and why it matters.]</p>
+  <div class="content">
 
-    <div class="card">
-      <p>[Introduction body text. Use standard <code>&lt;p&gt;</code> tags for paragraphs. This card wrapper is optional — remove it if you prefer bare text.]</p>
-    </div>
-  </section>
-  <hr class="divider">
+    <h2 id="section-1">[Section 1 Heading]</h2>
+    <p>[Section 1 content. Replace with actual document content.]</p>
 
-  <!-- ============================================================
-       SECTION: Background
-  ============================================================ -->
-  <section class="section" id="background">
-    <div class="section-eyebrow">Context</div>
-    <h2 class="section-title">Background</h2>
-    <p class="section-desc">[What context or history does the reader need?]</p>
+    <h2 id="section-2">[Section 2 Heading]</h2>
+    <p>[Section 2 content.]</p>
 
-    <div class="subsection">
-      <div class="subsection-label">Key points</div>
-      <div class="card">
-        <ul>
-          <li>[Key point one]</li>
-          <li>[Key point two]</li>
-          <li>[Key point three]</li>
-        </ul>
-      </div>
-    </div>
+    <h2 id="section-3">[Section 3 Heading]</h2>
+    <p>[Section 3 content.]</p>
 
-    <!-- Alert example -->
-    <div class="alert alert-info">
-      <div class="alert-dot"></div>
-      <div class="alert-body">
-        <div class="alert-title">[Alert title]</div>
-        [Supporting context or important note for the reader.]
-      </div>
-    </div>
-  </section>
-  <hr class="divider">
-
-  <!-- ============================================================
-       SECTION: Section A — with table
-  ============================================================ -->
-  <section class="section" id="section-a">
-    <div class="section-eyebrow">[Category]</div>
-    <h2 class="section-title">[Section A Title]</h2>
-    <p class="section-desc">[What does this section cover?]</p>
-
-    <div class="subsection">
-      <div class="subsection-label">[Subsection label]</div>
-      <div class="card">
-        <table class="table-rdc">
-          <thead>
-            <tr>
-              <th>[Column 1]</th>
-              <th>[Column 2]</th>
-              <th>[Column 3]</th>
-              <th>[Notes]</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>[Value]</td>
-              <td class="mono">[Code or path]</td>
-              <td><span class="badge badge-success">Active</span></td>
-              <td>[Notes]</td>
-            </tr>
-            <tr>
-              <td>[Value]</td>
-              <td class="mono">[Code or path]</td>
-              <td><span class="badge badge-warning">Pending</span></td>
-              <td>[Notes]</td>
-            </tr>
-            <tr>
-              <td>[Value]</td>
-              <td class="mono">[Code or path]</td>
-              <td><span class="badge badge-neutral">Archived</span></td>
-              <td>[Notes]</td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-    </div>
-  </section>
-  <hr class="divider">
-
-  <!-- ============================================================
-       SECTION: Section B — with do/don't
-  ============================================================ -->
-  <section class="section" id="section-b">
-    <div class="section-eyebrow">[Category]</div>
-    <h2 class="section-title">[Section B Title]</h2>
-    <p class="section-desc">[What does this section cover?]</p>
-
-    <div class="subsection">
-      <div class="subsection-label">[Subsection label]</div>
-      <div class="do-dont">
-        <div class="do-box">
-          <div class="do-label">Do</div>
-          <p>[Correct approach or required behavior. Be specific and actionable.]</p>
-        </div>
-        <div class="dont-box">
-          <div class="dont-label">Don't</div>
-          <p>[What to avoid and why. Frame it around real failure modes, not hypotheticals.]</p>
-        </div>
-      </div>
-    </div>
-
-    <div class="subsection">
-      <div class="subsection-label">[Another subsection]</div>
-      <div class="card">
-        <p>[Body content. Add more subsections as needed by duplicating the <code>.subsection</code> block above.]</p>
-      </div>
-    </div>
-  </section>
-  <hr class="divider">
-
-  <!-- ============================================================
-       SECTION: Section C — with content cards
-  ============================================================ -->
-  <section class="section" id="section-c">
-    <div class="section-eyebrow">[Category]</div>
-    <h2 class="section-title">[Section C Title]</h2>
-    <p class="section-desc">[What does this section cover?]</p>
-
-    <div class="grid-2">
-      <div class="content-card">
-        <div class="content-card-bar" style="background:var(--coral);"></div>
-        <div class="content-card-body">
-          <div class="content-card-eyebrow">[Label]</div>
-          <div class="content-card-title">[Card Title]</div>
-          <div class="content-card-copy">[Supporting description for this item.]</div>
-          <a href="#" class="btn btn-primary btn-sm">Learn more</a>
-        </div>
-      </div>
-      <div class="content-card">
-        <div class="content-card-bar" style="background:var(--wine);"></div>
-        <div class="content-card-body">
-          <div class="content-card-eyebrow">[Label]</div>
-          <div class="content-card-title">[Card Title]</div>
-          <div class="content-card-copy">[Supporting description for this item.]</div>
-          <a href="#" class="btn btn-dark btn-sm">View details</a>
-        </div>
-      </div>
-    </div>
-  </section>
-  <hr class="divider">
-
-  <!-- ============================================================
-       SECTION: Appendix A
-  ============================================================ -->
-  <section class="section" id="appendix-a">
-    <div class="section-eyebrow">Appendix</div>
-    <h2 class="section-title">Appendix A — [Title]</h2>
-    <p class="section-desc">[What supplementary material is in this appendix?]</p>
-
-    <div class="card">
-      <div class="asset-row">
-        <div>
-          <div class="asset-name">[File or reference name]</div>
-          <div class="asset-format">[Format — PDF, XLSX, etc.]</div>
-        </div>
-        <div class="asset-path">[path/to/file]</div>
-      </div>
-      <div class="asset-row">
-        <div>
-          <div class="asset-name">[File or reference name]</div>
-          <div class="asset-format">[Format]</div>
-        </div>
-        <div class="asset-path">[path/to/file]</div>
-      </div>
-    </div>
-  </section>
+  </div>
 
 </div>
 </main>
 
-<!-- Scroll-spy: highlights the active sidebar nav item -->
+<!-- ============================================================
+     SCRIPTS
+     IMPORTANT: setActive() must be at script scope (not inside an
+     IIFE) so onclick="setActive(this)" on nav links can reach it.
+     IntersectionObserver handles auto-highlighting on scroll.
+     Layout toggle reads/writes localStorage 'rdc-prefs' for
+     cross-page persistence of theme/align/size preferences.
+============================================================ -->
 <script>
-(function() {
-  const sections = document.querySelectorAll('.section');
-  const navLinks = document.querySelectorAll('.nav-link');
-  function setActive(el) {
-    navLinks.forEach(l => l.classList.remove('active'));
-    if (el) el.classList.add('active');
-  }
-  navLinks.forEach(l => l.addEventListener('click', function() { setActive(this); }));
-  const observer = new IntersectionObserver(entries => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        const id = entry.target.getAttribute('id');
-        const link = document.querySelector('.nav-link[href="#' + id + '"]');
-        setActive(link);
+function setActive(el){
+  document.querySelectorAll('.nav-link').forEach(function(l){l.classList.remove('active');});
+  el.classList.add('active');
+}
+(function(){
+  var headings=document.querySelectorAll('.content h2');
+  var navLinks=document.querySelectorAll('.nav-link');
+  var obs=new IntersectionObserver(function(entries){
+    entries.forEach(function(entry){
+      if(entry.isIntersecting){
+        var id=entry.target.getAttribute('id');
+        navLinks.forEach(function(l){l.classList.toggle('active',l.getAttribute('href')==='#'+id);});
       }
     });
-  }, { rootMargin: '-20% 0px -70% 0px' });
-  sections.forEach(s => observer.observe(s));
+  },{rootMargin:'-15% 0px -75% 0px'});
+  headings.forEach(function(h){obs.observe(h);});
 })();
-</script>
-
-<script>
 (function(){
-  var prefersDark=window.matchMedia('(prefers-color-scheme: dark)').matches;
-  var initBtn=document.querySelector('.layout-toggle-btn[data-group="theme"][data-value="'+(prefersDark?'dark':'light')+'"]');
-  if(initBtn) initBtn.classList.add('active');
+  var prefs={};try{prefs=JSON.parse(localStorage.getItem('rdc-prefs')||'{}');}catch(e){}
+  if(prefs.size&&prefs.size!=='default') document.body.classList.add('size-'+prefs.size);
+  if(prefs.align&&prefs.align!=='center') document.body.classList.add('layout-'+prefs.align);
+  function cur(g){
+    if(g==='theme') return document.documentElement.getAttribute('data-theme')||'light';
+    if(g==='size')  return (Array.from(document.body.classList).find(function(c){return c.startsWith('size-');})||'size-default').replace('size-','');
+    return (Array.from(document.body.classList).find(function(c){return c.startsWith('layout-');})||'layout-center').replace('layout-','');
+  }
+  document.querySelectorAll('.layout-toggle-btn').forEach(function(b){
+    b.classList.toggle('active', b.dataset.value===cur(b.dataset.group));
+  });
   document.querySelectorAll('.layout-toggle-btn').forEach(function(btn){
     btn.addEventListener('click',function(){
       var g=this.dataset.group,v=this.dataset.value;
-      document.querySelectorAll('.layout-toggle-btn[data-group="'+g+'"')
-        .forEach(function(b){b.classList.remove('active');});
+      document.querySelectorAll('.layout-toggle-btn[data-group="'+g+'"]').forEach(function(b){b.classList.remove('active');});
       this.classList.add('active');
-      if(g==='align'){
-        document.body.classList.remove('layout-center','layout-left');
-        if(v!=='center') document.body.classList.add('layout-'+v);
-      } else if(g==='theme'){
-        document.documentElement.setAttribute('data-theme',v);
-      } else {
-        document.body.classList.remove('size-default','size-large','size-editorial');
-        if(v!=='default') document.body.classList.add('size-'+v);
-      }
+      if(g==='theme'){ document.documentElement.setAttribute('data-theme',v); }
+      else if(g==='align'){ document.body.classList.remove('layout-center','layout-left'); if(v!=='center') document.body.classList.add('layout-'+v); }
+      else { document.body.classList.remove('size-default','size-large','size-editorial'); if(v!=='default') document.body.classList.add('size-'+v); }
+      try{var p=JSON.parse(localStorage.getItem('rdc-prefs')||'{}');p[g]=v;localStorage.setItem('rdc-prefs',JSON.stringify(p));}catch(e){}
     });
   });
 })();
-</script>
-
+<\/script>
 </body>
 </html>
