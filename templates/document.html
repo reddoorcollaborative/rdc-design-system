@@ -11,6 +11,8 @@
 <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,300&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="../css/rdc.css">
 <style>
+/* Sidebar page subtitle — outside the logo anchor so it doesn't affect lockup alignment */
+.sidebar-logo-sub{display:block;font-size:9px;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:rgba(255,255,255,0.3);margin:-1rem 0 1.5rem;padding-left:46px;}
 /* Use var(--gray-900) for prose text — flips properly in dark mode. NEVER var(--squid). */
 .page-header-meta{font-size:13px;color:rgba(255,255,255,0.55);line-height:1.7;max-width:560px;margin-top:0.75rem;}
 .page-header-meta strong{color:rgba(255,255,255,0.85);font-weight:600;}
@@ -58,14 +60,18 @@
 <!-- ============================================================
      SIDEBAR
      - Logo links back to hub (../index.html) — do not use href="#"
-     - Logo subtitle stays SHORT ("Knowledge Base", not full doc title)
+     - Subtitle goes in .sidebar-logo-sub AFTER the </a>, NOT inside
+       .logo-text. Putting it inside inflates the flex-row height and
+       offsets the logo-mark via align-items:center. The subtitle should
+       name the current page (e.g. "Implementation Plan", "Baseline Index").
      - sidebar-version shows date or status; use &middot; for separators
 ============================================================ -->
 <aside class="sidebar">
   <a class="sidebar-logo" href="../index.html">
     <div class="logo-mark">rd</div>
-    <div class="logo-text">Red Door<br>Collaborative<span>[Hub Name]</span></div>
+    <div class="logo-text">Red Door<br>Collaborative</div>
   </a>
+  <div class="sidebar-logo-sub">[Page Name]</div>
   <div class="nav-section-label">Sections</div>
   <a class="nav-link active" href="#section-1" onclick="setActive(this)">[Section 1]</a>
   <a class="nav-link" href="#section-2" onclick="setActive(this)">[Section 2]</a>
