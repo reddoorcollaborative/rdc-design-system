@@ -302,7 +302,7 @@ hr {
   bottom: -40px;
   font-size: 200px;
   font-weight: 700;
-  color: rgba(127, 0, 70, 0.40); /* wine — consistent across light and dark since page-header bg is always var(--squid) */
+  color: rgba(255, 255, 255, 0.03); /* subtle white watermark — wine was illegible on squid */
   letter-spacing: -0.05em;
   line-height: 1;
   pointer-events: none;
